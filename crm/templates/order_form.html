@@ -1,0 +1,1210 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/ordered/items">Orders</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Orders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/ordered/items">Orders</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Orders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>ADD ORDERS</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form method="POST" action="{% url 'crm:add_order' %}" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="all-form-element-inner">
+
+                                            <hr>
+                                            <h4> Customer Details</h4>
+                                            <hr>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Customer Code <span style="color:  #b30000">*</label>
+                                                        <input type="text" name="customer_code" id="customer_code" class="form-control" required />
+
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                                        <label class="">Customer Name<span style="color:  #b30000">*</label>
+
+                                                        <select id="c_name" name="customer_name" class="form-control" required>
+                                                            <option id="c1"></option>
+                                                            <option selected="True">--------</option>
+                                                             {% for l in lead %}
+                                                            <option value="{{ l.lead_id }}" id="{{ product.id }}">{{ l }}</option>
+                                                            {% endfor %}
+                                                    </select>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <label class="">Factory Address<span style="color:  #b30000">*</label>
+                                                        <input name="f_address" value="" id="f_address" type="text" class="form-control" required/>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Shipment Priority<span style="color:  #b30000">*</label>
+                                                        <select class="form-control" name="shipment_priority" required>
+                                                            <option  value="Normal">Normal</option>
+                                                            <option value="Fast">Fast</option>
+                                                            <option value="Urgent">Urgent</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">GST No.<span style="color:  #b30000">*</label>
+                                                        <input type="text" name="gst" class="form-control" required/>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Statutory Details</label>
+                                                        <input type="text" name="statutory" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <label class="">Shipment Preference</label>
+                                                        <input type="text" name="shipment_preference" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">City<span style="color:  #b30000">*</label>
+                                                        <input type="text" name="city" id="city" class="form-control" required/>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">Street<span style="color:  #b30000">*</label>
+                                                        <input type="text" name="street" id="street" class="form-control" required/>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Country<span style="color:  #b30000">*</label>
+                                                        <input type="text" name="country" id="country" class="form-control" required/>
+
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">State<span style="color:  #b30000">*</label>
+                                                        <input type="text" name="state" id="state" class="form-control" required/>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Postal Code<span style="color:  #b30000">*</label>
+                                                        <input type="phone" id="postal_code" name="postal_code" class="form-control" required/>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <h4> Product Details</h4>
+                                        <hr>1.
+                                        <div class="form-group-inner">
+                                            <div class="row">
+                                                <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label class="">Product Code</label>
+                                                    <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>  
+                                                </div> -->
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                    <label class="">Product Name<span style="color:  #b30000">*</label>
+                                                    <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                    <select id="p_name" name="product_name" class="form-control" required>
+                                                            
+                                                            <option selected="True"></option>
+                                                             {% for product in products %}
+                                                            <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                            {% endfor %}
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label class="">Item Quantity<span style="color:  #b30000">*</label>
+                                                    <input type="text" name="quantity" class="form-control" required/>
+
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label class="">Unit Price<span style="color:  #b30000">*</label>
+                                                    <input type="text" id="pup" name="per_item_price" class="form-control" required/>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label class="">UOM<span style="color:  #b30000">*</label>
+                                                    <select name="uom" id="uom" class="form-control" required>
+                                                        <option>----Select----</option>
+                                                        <option>N/A</option>
+                                                        <option value="KGS">KGS</option>
+                                                        <option value="LITRES">LITRES</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-inner">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label class="">Solubility<span style="color:  #b30000">*</label>
+                                                    <select class="form-control" id="sol" name="solubility" required>
+                                                        <option>----Select----</option>
+                                                        <option>N/A</option>
+                                                        <option value="Oil Soluable">Oil Soluable</option>
+                                                        <option value="Water Soluable">Water Soluable</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                    <label class="">Packaging<span style="color:  #b30000">*</label>
+                                                    <select name="packaging" class="form-control" required>
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+                                                </div>
+
+                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                    <label class="">Categories<span style="color:  #b30000">*</label>
+                                                    <select name="categories" class="form-control" required>
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option value="spf">SPF</option>
+                                                        </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sx-6">
+                                                <button type="button" id="show11" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="col-lg-6 col-sx-6">
+                                                <button type="button" id="hide11" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div id="onOff3" style="display:none">
+                                            2.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Product Name<span style="color:  #b30000">*</span></label>
+
+                                                        <select id="p_name2" name="product_name2" class="form-control">
+                                                            <option selected="True"></option>
+                                                            {% for product in products %}
+                                                            <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                            {% endfor %}
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity<span style="color:  #b30000">*</span></label>
+                                                        <input type="text" name="quantity2" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price<span style="color:  #b30000">*</span></label>
+                                                        <input type="text" id="pup2" name="per_item_price2" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM<span style="color:  #b30000">*</span></label>
+                                                        <select name="uom2" id="uom2" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="KGS">KGS</option>
+                                                            <option value="LITRES">LITRES</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility<span style="color:  #b30000">*</span></label>
+                                                        <select class="form-control" id="solu2" name="solubility2">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging<span style="color:  #b30000">*</span></label>
+                                                        <select name="packaging2" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories<span style="color:  #b30000">*</span></label>
+                                                        <select name="categories2" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option>SPF</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show12" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide12" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff4" style="display:none">
+                                            3.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name3" name="product_name3" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity<span style="color:  #b30000">*</span></label>
+                                                        <input type="text" name="quantity3" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price<span style="color:  #b30000">*</span></label>
+                                                        <input type="text" id="pup3" name="per_item_price3" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM<span style="color:  #b30000">*</span></label>
+                                                        <select name="uom3" id="uom3" class="form-control" required>
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility<span style="color:  #b30000">*</span></label>
+                                                        <select class="form-control" id="sol3" name="solubility3">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging<span style="color:  #b30000">*</span></label>
+                                                        <select name="packaging3" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories<span style="color:  #b30000">*</span></label>
+                                                        <select name="categories3" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option>SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show13" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide13" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff5" style="display:none">
+                                            4.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name4" name="product_name4" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity4" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup4" name="per_item_price4" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom4" id="uom4" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol4" name="solubility4">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging4" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories4" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option>SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show14" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide14" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff6" style="display:none">
+                                            5.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name5" name="product_name5" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity5" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup5" name="per_item_price5" class="form-control">
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom5" id="uom5" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol5" name="solubility5">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging5" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories5" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option>SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show15" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide15" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff7" style="display:none">
+                                            6.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name6" name="product_name6" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity6" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup6" name="per_item_price6" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom6" id="uom6" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol6" name="solubility6">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging6" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories6" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option value="spf">SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show16" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide16" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff8" style="display:none">
+                                            7.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name7" name="product_name7" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity7" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup7" name="per_item_price7" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom7" id="uom7" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol7" name="solubility7">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging7" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories7" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option>SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show17" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide17" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff9" style="display:none">
+                                            8.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name8" name="product_name8" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity8" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup8" name="per_item_price8" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom8" id="uom8" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol8" name="solubility8">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging8" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories8" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option>SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show18" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide18" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff10" style="display:none">
+                                            9.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name9" name="product_name9" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity9" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup9" name="per_item_price9" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom9" id="uom9" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol9" name="solubility9">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging9" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories9" class="form-control">
+                                                            <option>----Select----</option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option>Backery Customers</option><option>Cookies</option>
+                                                            <option value="spf">SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="show19" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                                                <div class="col-lg-6 col-sx-6">
+                                                    <button type="button" id="hide19" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div id="onOff11" style="display:none">
+                                            10.
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <!-- <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <input name="product_code" value="" id="p_code" type="text" class="form-control" required/>
+                                                    </div> -->
+                                                    <div class="col-lg-4 col-md-4
+                                            col-sm-6 col-xs-6"> <label class="">Product
+                                            Name</label>
+                                                        <!-- <input name="product_name" type="text" class="form-control" required/> -->
+                                                        <select id="p_name10" name="product_name10" class="form-control">
+                                                    
+                                                    <option selected="True"></option>
+                                                     {% for product in products %}
+                                                    <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
+                                                    {% endfor %}
+                                            </select>
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Item Quantity</label>
+                                                        <input type="text" name="quantity10" class="form-control" />
+
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Unit Price</label>
+                                                        <input type="text" id="pup10" name="per_item_price10" class="form-control" />
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <select name="uom10" id="uom10" class="form-control">
+                                                    <option>----Select----</option>
+                                                    <option>N/A</option>
+                                                    <option value="KGS">KGS</option>
+                                                    <option value="LITRES">LITRES</option>
+                                                </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <select class="form-control" id="sol10" name="solubility10">
+                                                            <option>----Select----</option>
+                                                            <option>N/A</option>
+                                                            <option value="Oil Soluable">Oil Soluable</option>
+                                                            <option value="Water Soluable">Water Soluable</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Packaging</label>
+                                                        <select name="packaging10" class="form-control">
+                                                            <option selected>----Select---</option>
+                                                            <option>KILO GRAM</option>
+                                                            <option>5 KGS HDPE CAN</option>
+                                                            <option>25 KGS HDPE CAN</option>
+                                                            <option>50 KGS HDPE CAN</option>
+                                                            <option>FIBER DRUM OF 25KGS</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                        <label class="">Categories</label>
+                                                        <select name="categories10" class="form-control">
+                                                            <option></option>
+                                                            <option>Bakery</option>
+                                                            <option>Ice-Creams</option>
+                                                            <option>Confectionaries</option>
+                                                            <option>Pharma</option>
+                                                            <option>Beverages</option>
+                                                            <option >Buiscuits</option>
+                                                            <option >Backery Customers</option>
+                                                            <option >Cookies</option>
+                                                            <option >SPF</option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- 
+                                            <label class="switch">
+                                                <input type="checkbox" class="form-control" onclick=onOffFunction10()> <span class="slider round" ></span>
+                                            </label> -->
+                                        </div><br>
+                                </div>
+
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <label>FSSAI Licence</label>
+                                            <div class="file-upload-inner ts-forms">
+                                                <input type="file" name="attachment" class="b1">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <label>GST No Certificate</label>
+                                            <div class="file-upload-inner ts-forms">
+                                                <input type="file" name="attachment1" class="b1">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <label>I.E.C</label>
+                                            <div class="file-upload-inner ts-forms">
+                                                <input type="file" name="attachment2" class="b1">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <br>
+                                    <p class="pull-left" style="padding-left: 20px;"><span style="color:  #b30000">**Fields marked with '*' are manadatory.</span></p>
+
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="login-btn-inner">
+                                        <div class="column">
+                                            <div class="login-horizental cancel-wp pull-right">
+                                                <a href="/ordered/items"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                <button class="btn btn-white" type="button" onClick="this.form.reset()">Cancel</button>
+                                                <button class="btn btn-sm btn-primary login-submit-cs" id="update_lead" type="submit">Save Change</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        $("#hide11").click(function() {
+            $("#onOff3").hide();
+        });
+        $("#show11").click(function() {
+            $("#onOff3").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide12").click(function() {
+            $("#onOff4").hide();
+        });
+        $("#show12").click(function() {
+            $("#onOff4").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide13").click(function() {
+            $("#onOff5").hide();
+        });
+        $("#show13").click(function() {
+            $("#onOff5").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide14").click(function() {
+            $("#onOff6").hide();
+        });
+        $("#show14").click(function() {
+            $("#onOff6").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide15").click(function() {
+            $("#onOff7").hide();
+        });
+        $("#show15").click(function() {
+            $("#onOff7").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide16").click(function() {
+            $("#onOff8").hide();
+        });
+        $("#show16").click(function() {
+            $("#onOff8").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide17").click(function() {
+            $("#onOff9").hide();
+        });
+        $("#show17").click(function() {
+            $("#onOff9").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide18").click(function() {
+            $("#onOff10").hide();
+        });
+        $("#show18").click(function() {
+            $("#onOff10").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hide19").click(function() {
+            $("#onOff11").hide();
+        });
+        $("#show19").click(function() {
+            $("#onOff11").show();
+        });
+    });
+</script>
+
+{% endblock %}

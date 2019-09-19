@@ -1,0 +1,295 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<link rel="stylesheet" href="{% static 'assets/css/select2/select2.min.css' %}">
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Customers <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Customers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="Customers.html">Customers</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Customers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>ADD Customers</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="all-form-element-inner">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Company Name<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="text" id="first_name" class="form-control" required/> -->
+                                                        {{ form.lead_company|add_class:"form-control"|attr:"required"}} {{ form.lead_company.errors }}
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">Customer Name<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.lead_name|add_class:"form-control"|attr:"required"}} {{ form.lead_name.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+
+                                                        <label class="">Customer Code<span style="color:  #b30000">*</label> {{ form.code | add_class:" form-control"}}
+                                                        <span style="color: red">{{ form.code.errors }}</span>
+                                                        <!-- <select>
+                                                          {% for contact in contacts1 %}
+                                                          <option value="{{contact.id}}" selected="" >{{ contact }}</option>
+                                                          {% endfor %}
+                                                          </select> -->
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+
+                                                        <label class="">Contacts (off.)<span style="color:  #b30000">*</label> {{ form.contacts | add_class:" select2_demo_2 form-control"|attr:"required"}}
+                                                        <!-- <select>
+                                                          {% for contact in contacts1 %}
+                                                          <option value="{{contact.id}}" selected="" >{{ contact }}</option>
+                                                          {% endfor %}
+                                                          </select> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Designation<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="text" class="form-control" /> -->
+                                                        {{ form.designation|add_class:"form-control"|attr:"required"}} {{ form.designation.errors }}
+
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Website</label>
+                                                        <!-- <input type="text" class="form-control" /> -->
+                                                        {{ form.website|add_class:"form-control"}} {{ form.website.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Department</label>
+                                                        <!-- <input type="text" class="form-control" /> -->
+                                                        {{ form.department|add_class:"form-control"}} {{ form.department.errors }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label for="id_sattus">Factory Address<span style="color:  #b30000">*</label> {{ form.address|add_class:"form-control"|attr:"required"}} {{ form.factory_address.errors }}
+                                                        <span class="error"></span>
+                                                    </div>
+
+
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                                        <label class="">Mobile Number (p)</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.phone|add_class:"form-control"}} {{ form.phone.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                                        <label class="">Land Line</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.phone|add_class:"form-control"}} {{ form.phone.errors }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label for="id_sattus">Source<span style="color:  #b30000">*</label> {{ form.source|add_class:"form-control"|attr:"required"}} {{ form.source.errors }}
+                                                        <span class="error"></span>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="filter_col col-12">
+                                                            <div class="form-group">
+                                                                <label class="">Email Address<span style="color:  #b30000">*</label>
+                                                                <!-- <input type="email" class="form-control" required/> -->
+                                                                {{ form.email|add_class:"form-control"|attr:"required"}} {{ form.email.errors }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="">Customer Category<span style="color:  #b30000">*</label> {{ form.categories | add_class:"select2_demo_2 form-control"|attr:"required"}}
+                                                            <!-- <select>
+                                                          {% for contact in contacts1 %}
+                                                          <option value="{{contact.id}}" selected="" >{{ contact }}</option>
+                                                          {% endfor %}
+                                                          </select> -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                        <label class="">Tag</label>
+                                                        <rbl-tag-input id="tagElement"></rbl-tag-input>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+
+
+
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Street</label>
+                                                        <!-- <input type="text" class="form-control" rrequired/> -->
+                                                        {{ form.street|add_class:"form-control"}} {{ form.street.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">City<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.city|add_class:"form-control"|attr:"required"}} {{ form.city.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">State<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.state|add_class:"form-control"|attr:"required"}} {{ form.state.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Postal Code<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.postal_code|add_class:"form-control"|attr:"required"}} {{ form.postal_code.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                                        <label class="">Country<span style="color:  #b30000">*</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.country|add_class:"form-control"|attr:"required"}} {{ form.country.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <label class="">Description</label>
+                                                        <!-- <textarea rows="3" cols="30" class="form-control">
+                                                                    </textarea> -->
+                                                        {{ form.description|add_class:"form-control"|attr:"rows:3"}} {{ form.description.errors }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <label class="">GST No.<span style="color:  #b30000">*</label>
+                                                        <!-- <textarea rows="3" cols="30" class="form-control">
+                                                                    </textarea> -->
+                                                        {{ form.gst_number|add_class:"form-control"|attr:"rows:3"|attr:"required"}} {{ form.gst.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <label class="">Currency<span style="color:  #b30000">*</label>
+                                                        <!-- <textarea rows="3" cols="30" class="form-control">
+                                                                    </textarea> -->
+                                                        {{ form.currency_code|add_class:"form-control"|attr:"rows:3"|attr:"required"}} {{ form.currency.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <label class="">D.O.B</label>
+                                                        <!-- <textarea rows="3" cols="30" class="form-control">
+                                                                    </textarea> -->
+                                                        {{ form.dob1|add_class:"form-control"|attr:"rows:3"}} {{ form.dob1.errors }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                                <label>FSSAI Licence</label>
+                                                                <div class="file-upload-inner ts-forms">
+                                                                    {{ form.attachment1|add_class:"b1"|attr:"style:margin-left:0px" }} {{ form.attachment1.errors }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                                <label>GST No Certificate</label>
+                                                                <div class="file-upload-inner ts-forms">
+                                                                    {{ form.attachment2|add_class:"b1"|attr:"style:margin-left:0px" }} {{ form.attachment2.errors }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                                <label>I.E.C</label>
+                                                                <div class="file-upload-inner ts-forms">
+                                                                    {{ form.attachment|add_class:"b1"|attr:"style:margin-left:0px" }} {{ form.attachment.errors }}
+                                                                </div>
+                                                            </div>
+                                                              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"><br>
+                                                        <label class="">Description</label>
+                                                        <!-- <textarea rows="3" cols="40" class="form-control">
+                                                                </textarea> -->
+                                                        {{ form.description|add_class:"form-control"|attr:"rows:3"|attr:"cols:40"}} {{ form.description.errors }}
+                                                    </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <br>
+                                                        <p class="pull-left" style="padding-left: 20px;"><span style="color:  #b30000">**Fields marked with '*' are manadatory.</span></p>
+
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="login-btn-inner">
+                                                            <div class="column">
+                                                                <div class="login-horizental cancel-wp pull-right">
+                                                                    <a href="/customer/list"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                                    <button class="btn btn-white" type="button" onClick="this.form.reset()">Cancel</button>
+                                                                    <button class="btn btn-sm btn-primary login-submit-cs" id="update_lead" type="submit">Save Change</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}

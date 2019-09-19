@@ -1,0 +1,200 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<style type="text/css">
+    h4{
+       font: italic bold 12px/30px Georgia, serif;
+    }
+    p{
+        font-family: 12px/30px Scheherazade, serif;
+        font-size: 12px;
+    }
+</style>
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Proforma Detail</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Proforma Detail</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="button-ad-wrap shadow-reset nt-mg-b-30">
+                                <div class="alert-title">
+                                    <h2>Proforma Details :</h2>                                   
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Name: </h4> 
+                                        <p>{{performa.customer_name.lead_company}}</p>
+                                         </div>                                 
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Contact: </h4>
+                                        {% for i in performa.customer_name.contacts.all %}
+                                         <p> {{ i.phone }}</p>
+                                         {%endfor%}
+                                    </div>
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div>
+                                     <h4>Customer Address:</h4>
+                                      <p>{{performa.customer_name.get_complete_address}}</p>
+                                 </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>GST No.:</h4> 
+                                      <p>{{performa.customer_name.gst_number}}</p>
+                                     </div>     
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                     
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Total Amount:</h4>
+                                  <p>{{ performa.total_amount }}</p>
+                              </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Bank Details:</h4>
+                                  <p>{{ performa.bank_name }}</p>
+                              </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Tentative Date:</h4>
+                                  <p>{{ performa.tentative_date }}</p>
+                              </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Product Name: </h4>
+                                          <p>{{ performa.product_name.product_name }}</p>
+                                          {% if performa.product2 %}
+                                           <p>{{performa.product2}}</p>
+                                           {% endif %}
+                                            {% if performa.product3 %}
+                                           <p>{{performa.product3}}</p>
+                                           {% endif %}
+                                             {% if performa.product4 %}
+                                           <p>{{performa.product4}}</p>
+                                           {% endif %}
+                                             {% if performa.product5 %}
+                                           <p>{{performa.product5}}</p>
+                                           {% endif %}
+                                             {% if performa.product6 %}
+                                           <p>{{performa.product6}}</p>
+                                           {% endif %}
+                                             {% if performa.product7 %}
+                                           <p>{{performa.product7}}</p>
+                                           {% endif %}
+                                             {% if performa.product8 %}
+                                           <p>{{performa.product8}}</p>
+                                           {% endif %}
+                                             {% if performa.product9 %}
+                                           <p>{{performa.product9}}</p>
+                                           {% endif %}
+                                             {% if performa.product10 %}
+                                           <p>{{performa.product10}}</p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Product code: </h4>
+                                          <p>{{ performa.product_name.product_code }}</p>
+                                          {% if performa.code2 %}
+                                           <p>{{ performa.code2 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                            {% if performa.code3 %}
+                                            <p>{{ performa.code3 }}</p>
+                                            {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code4 %}
+                                           <p>{{ performa.code4 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code5 %}
+                                           <p>{{ performa.code5 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code6 %}
+                                           <p>{{ performa.code6 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code7 %}
+                                           <p>{{ performa.code7 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code8 %}
+                                           <p>{{ performa.code8 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code9 %}
+                                           <p>{{ performa.code9 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if performa.code10 %}
+                                           <p>{{ performa.code10 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+{% endblock %}

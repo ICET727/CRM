@@ -1,0 +1,179 @@
+ {% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+ <!-- modal CSS
+        ============================================ -->
+   <link rel="stylesheet" href="{% static 'assets/css/modals.css' %}">
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Opportunities</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Mobile Menu start -->
+<div class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <ul class="mobile-menu-nav">
+                            <li><a data-toggle="collapse" data-target="#Charts" href="/sales/profile">Dashboard <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#demo" href="/ordered/items">Orders <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#others" href="/lead/list">Leads <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="/contact/list">Contacts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Chartsmob" href="/opportunity/list">Opportunities <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="/case/list">Cases <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#formsmob" href="/document/list">Documents <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Appviewsmob" href="/email/list">Chatter <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard<span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Opportunities</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pull-right">
+                    <a href="/add/opportunity" class="btn btn-info">
+                        <span class="glyphicon glyphicon-plus"></span> ADD OPPORTUNITIES
+                    </a>
+                </div>
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Opportunity <span class="table-project-n">Data</span> Table</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId"  data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id">ID</th>
+                                        <th data-field="name" data-editable="false">Name</th>
+                                        <th data-field="account" data-editable="false">Customer</th>
+                                        <!-- <th data-field="currency" data-editable="false">Currency</th> -->
+                                        <th data-field="amount" data-editable="false">Amount</th>
+                                        <th data-field="stage" data-editable="false">Stage</th>
+                                        <th data-field="contacts" data-editable="false">Contacts</th>
+                                        <th data-field="attachment" data-editable="false">Attachment</th>
+                                        <th data-field="active">Active</th>
+                                        <th data-field="option">Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in opportunity %}
+                                    <tr id="{{ i.id }}">
+                                        <td >{{ i.id }}</td>
+                                        <td>{{ i.name }}</td>
+                                        <td>{{ i.lead }}</td>
+                                        <td>{{ i.amount }} {{ i.currency }}</td>
+                                        <td ><a class="Primary mg-b-10" data-toggle="modal" data-target="#PrimaryModalalert1">{{ i.stage }}</a></td>
+                                        <td>{% for j in i.contacts.values %}{{ j.title }}, {%endfor%}</td>
+                                        {% if i.attachment %}
+                                        <td><a href="/media/{{ i.attachment }}"><button class="btn btn-success btn-sm" type="button">View</button></a></td>
+                                        {% else %}
+                                        <td>File Not Exist</td>
+                                        {% endif %}
+                                        <td class="datatable-ct"><i class="fa fa-check"></i>
+                                        </td>
+                                        <td><a type="button" href="/edit/opportunity/{{i.id}}" class="glyphicon glyphicon-edit btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+<div id="PrimaryModalalert1" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close">x</i></a>
+            </div>
+            <div class="modal-body">
+                <h1>Change Stage</h1><br>
+                <div class="form-group">
+                    <div class="chosen-select-single mg-b-20">
+                        <label>Stage<span class="error">*</span></label>
+                        <select class="form-control a1" id="s1">
+                            <option>-------</option>
+                            <option value="ANALYSIS APPROVED">ANALYSIS APPROVED</option>
+                            <option value="PROPOSAL SENT">PROPOSAL SENT</option>
+                            <option value="NEGOTIATIONN/REVIEW">NEGOTIATIONN/REVIEW</option>
+                            <option value="ORDER DISPATCH">ORDER DISPATCH</option>
+                            <option value="CLOSE WON">CLOSE WON</option>
+                            <option value="CLOSE LOST">CLOSE LOST</option>
+                        </select>
+                    </div>
+                    <!-- <span class="error error_message" id="error_id_stage"></span> -->
+                </div>
+                <div class="modal-footer">
+                    <a data-dismiss="modal" href="#">Cancel</a>
+                    <a href="" id="t1">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

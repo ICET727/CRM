@@ -1,0 +1,336 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CRM -  Amar Bio-Organics India Private Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- adminpro icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/adminpro-custon-icon.css' %}">
+    <!-- meanmenu icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+    
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <!-- forms CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/form/all-type-forms.css' %}">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- modernizr JS
+        ============================================ -->
+    <!-- data-table CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-table.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-editable.css' %}">
+    <!-- charts CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/charts.css' %}">
+
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+    <style>
+        #rad-chart {
+            max-width: 650px;
+            margin: 35px auto;
+        }
+    </style>
+    <style>
+#p1 {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  resize: none;
+}
+</style>
+</head>
+
+<body class="materialdesign">
+    <div class="wrapper-pro">
+        
+        <div class="content-inner-all" style="margin-left: 0px">
+            <div class="header-top-area">
+                <div class="fixed-header-top" style="left: 0px">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 pull-right">
+                                <div allign="right">
+                                    <div class="header-right-info pull-right">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <li class="nav-item dropdown">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="adminpro-icon adminpro-chat-pro"></span><span class="indicator-ms"></span></a>
+                                                <div role="menu" class="author-message-top dropdown-menu animated flipInX">
+                                                    <div class="message-single-top">
+                                                        <h1>Message</h1>
+                                                    </div>
+                                                    <ul class="message-menu">
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/1.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>{{ user1.first_name }} {{ user1.last_name }}</h2>
+                                                                    <p>Please do this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/4.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Sulaiman din</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/3.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/2.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                    <span class="admin-name">{{ user.first_name }} {{ user.last_name }}</span>
+                                                    <span class="author-project-icon adminpro-icon adminpro-down-arrow "></span>
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                    <li><a href="/sales/profile"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>My Account</a>
+                                                    </li>
+                                                    <li><a href="/sales/profile"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>My Profile</a>
+                                                    </li>
+                                                    <li><a href="/ordered/items"><span class="adminpro-icon adminpro-money author-log-ic"></span>Total Order</a>
+                                                    </li>
+                                                    <!-- <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a> -->
+                                                    <li><a href="/log_out"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+        <div class="breadcome-area mg-b-30 small-dn">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                                    <ul class="breadcome-menu">
+                                        <li>Chatter <span class="bread-slash">/</span>
+                                        </li>
+                                        <li><span class="bread-blod">Important Mails</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+        <div class="breadcome-area des-none">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                                    <ul class="breadcome-menu">
+                                        <li>Chatter <span class="bread-slash">/</span>
+                                        </li>
+                                        <li><span class="bread-blod">Important Mails</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+        <div class="admin-dashone-data-table-area">
+            <div class="container-fluid">
+                <div class="col-lg-12">
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="/email/send"><button class="btn btn-danger pull-right" type=button> Compose Mail &nbsp&nbsp<span class="glyphicon glyphicon-forward"></span></button></a>
+                        <div class="sparkline8-list shadow-reset">
+                            <div class="sparkline8-hd">
+                                <div class="main-sparkline8-hd">
+                                    <h1>Important Mail <span class="table-project-n">Data</span> Table</h1>
+                                </div>
+                            </div>
+                            <div class="sparkline8-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                        <select class="form-control">
+                                <option value="">Export Basic</option>
+                                <option value="all">Export All</option>
+                                <option value="selected">Export Selected</option>
+                            </select>
+                                    </div>
+                                    <table id="table3" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar4">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">ID</th>
+                                                <th data-field="name">Name</th>
+                                                <th data-field="email">Title</th>
+                                                <th data-field="company">File</th>
+                                                <th data-field="complete">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for i in emails %}
+                                            <tr>
+                                                <td></td>
+                                                <td>{{ i.email_id }}</td>
+                                                <td>{{ i.sender }}</td>
+                                                <td>{{ i.Subject }}</td>
+                                                {% if i.file %}
+                                                <td><i class="fa fa-file" aria-hidden="true"></i>
+                                                </td>
+                                                {% else %}
+                                                <td><i class="fa fa-file" aria-hidden="true"></i>
+                                                </td>
+                                                {% endif %}
+                                                
+                                                <td>{{ i.date }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Data table area End-->
+<div class="footer-copyright-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-copy-right">
+                    <p>Copyright &#169; 2019 ICET IT Solutions All rights reserved
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+<script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+
+<!-- format: 'DD/MM/YYYY HH:mm',
+ -->    <!-- bootstrap JS
+        ============================================ -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    
+    
+    
+    <!-- flot JS
+        ============================================ -->
+    <!-- icheck JS
+    ============================================ -->
+    <script src="{% static 'assets/js/icheck/icheck.min.js' %}"></script>
+    <script src="{% static 'assets/js/icheck/icheck-active.js' %}"></script>
+
+    <script src="{% static 'assets/js/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.spline.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.resize.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static 'assets/js/flot/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/js/flot/flot-active.js' %}"></script>
+    <!-- data table JS
+        ============================================ -->
+    <script src="{% static 'assets/js/data-table/bootstrap-table.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/tableExport.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/data-table-active.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-editable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-editable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-resizable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/colResizable-1.5.source.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-export.js' %}"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <srcipt src="{% static 'assets/js/lead.js' %}"></srcipt>
+</body>
+</html>
+

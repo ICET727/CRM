@@ -1,0 +1,407 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CRM - Amar Bio-Organics India Private Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <scriptr src="{% static 'js/cart_product_add.js' %}">
+        </script>
+        <!-- Bootstrap CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <!-- Bootstrap CSS
+        ============================================ -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!-- adminpro icon CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/adminpro-custon-icon.css' %}">
+        <!-- meanmenu icon CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+        <!-- mCustomScrollbar CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+        <!-- animate CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+        <!-- data-table CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-table.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-editable.css' %}">
+        <!-- normalize CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+        <!-- Select2 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/select2.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/select2-bootstrap.css' %}">
+        <!-- charts C3 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/c3.min.css' %}">
+        <!-- forms CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/form/all-type-forms.css' %}">
+        <!-- style CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+
+        <!-- responsive CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <!-- charts CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/charts.css' %}">
+
+
+        <!-- modernizr JS
+        ============================================ -->
+        <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'assets/js/charts/Chart.js' %}"></script>
+        <script src="{% static 'assets/js/charts/canvasjs.js' %}"></script>
+        <script src="{% static 'assets/js/charts/c.js' %}"></script>
+
+        <script src="{% static 'assets/js/webcomponents.min.js' %}"></script>
+        <script src="{% static 'assets/js/rebel-tag-input.js' %}"></script>
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        
+        </div>
+        <div class="content-inner-all" style="margin-left: 0px;">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-11">
+                                
+                            </div>
+                            <!-- <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
+                                <div class="header-top-menu tabl-d-n">
+                                    <ul class="nav navbar-nav mai-top-nav">
+
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="" role="button" aria-expanded="false" class="nav-link dropdown-toggle"></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+                                <div allign="right">
+                                    <div class="header-right-info pull-right">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                    <span class="admin-name">{{ user.first_name }} {{ user.last_name }}</span>
+                                                    <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX" style="margin-left: -20%">
+                                                    
+                                                    <!-- <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a> -->
+                                            
+                                            <li><a href="/log_out"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                            </li>
+                                            </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu start -->
+            
+
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Dispatch Team</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Mobile Menu start -->
+
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Dispatch Team</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                    
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Order <span class="table-project-n">Data</span> Table</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                         
+                                        <th data-field="slno">Sl No.</th>
+                                        <th data-field="lead" data-editable="false">Customer</th>
+                                        <th data-field="product" data-editable="false">Product</th>
+                                        
+                                        
+                                        <th data-field="qty" data-editable="false">Quantity</th>
+                                        <th data-field="unitprice" data-editable="false">Address</th>
+                                        <th>By</th>
+                                        <th data-field="Status">Status</th>
+                                        <th data-field="Total">Total</th>
+                                        <th data-field="Dispatched">Done</th>
+                                        
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in orders %}
+                                    <tr>
+                                        <td>{{i.order_id }}</td>
+                                        <td><a href="/detail/dispatch/information/{{i.order_id }}">{{ i.order_lead.lead_company }}</a></td>
+                                        <td>{{ i.item_name }}</td>
+                                        
+                                        
+                                        <td>{{ i.item_quantity }}</td>
+                                        <td> {{ i.get_complete_address }}</td>
+                                        <td>{{ i.shipment_mode }}</td>
+                                        <td>{{ i.stage }}</td>
+                                        <td> ₹ {{ i.total_amount }}</td>
+                                        {% ifequal i.stage 'SENT FOR PRODUCTION'%}
+                                        <td><a class="fa fa-times btn btn-danger" href="/dispatch/profile/{{i.order_id}}1" aria-hidden="true" style="border-radius: 20%"></a>
+                                         </td>
+                                            {% else %}
+                                            <td><a class="fa fa-check btn btn-success" aria-hidden="true" style="border-radius: 20%"></a></td>
+                                        
+                                        {% endifequal %}
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Data table area End-->
+    
+</div>
+    </div>
+
+
+    <!-- Footer Start-->
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <footer>
+                <div class-="row">
+                    <div class="col-lg-8">
+                        <div class="container pull-left">
+                            <p>© Copyright 2019. <a href="http://www.amarorganics.com/">Amar Bio-Organics</a> India Private Limited</p>
+                        </div>
+                    </div><br>
+                    <div class="col-lg-4">
+                        <p class="pull-right">Powered By: <a href="http://icetitsolutions.com" style="color: red">ICET IT Solutions</a></p>
+                    </div>
+            </footer>
+            </div>
+        </div>
+        <!-- Footer End-->
+        <!-- Chat Box Start-->
+        <!-- <div class="chat-list-wrap">
+        <div class="chat-list-adminpro">
+            <div class="chat-button">
+                <span data-toggle="collapse" data-target="#chat" class="chat-icon-link"><i class="fa fa-comments"></i></span>
+            </div>
+            <div id="chat" class="collapse chat-box-wrap shadow-reset animated zoomInLeft">
+                <div class="chat-main-list">
+                    <div class="chat-heading">
+                        <h2>Messanger</h2>
+                    </div>
+                    <div class="chat-content chat-scrollbar">
+                        <div class="author-chat">
+                            <h3>Monica <span class="chat-date">10:15 am</span></h3>
+                            <p>Hi, what you are doing and where are you gay?</p>
+                        </div>
+                        <div class="client-chat">
+                            <h3>Mamun <span class="chat-date">10:10 am</span></h3>
+                            <p>Now working in graphic design with coding and you?</p>
+                        </div>
+                        <div class="author-chat">
+                            <h3>Monica <span class="chat-date">10:05 am</span></h3>
+                            <p>Practice in programming</p>
+                        </div>
+                        <div class="client-chat">
+                            <h3>Mamun <span class="chat-date">10:02 am</span></h3>
+                            <p>That's good man! carry on...</p>
+                        </div>
+                    </div>
+                    <div class="chat-send">
+                        <input type="text" placeholder="Type..." />
+                        <span><button type="submit">Send</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <!-- Chat Box End -->
+        <!-- jquery
+        ============================================ -->
+        <scriptr src="{% static 'assets/js/cart_product_add.js' %}">
+            </script>
+            <script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+
+            <!-- format: 'DD/MM/YYYY HH:mm',
+ -->
+            <!-- bootstrap JS
+        ============================================ -->
+            <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'assets/js/chart-pie.js' %}"></script>
+            
+            <script src="{% static 'js/order.js' %}"></script>
+            
+            <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+            <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+
+            <!-- meanmenu JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+            <!-- mCustomScrollbar JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+            <!-- sticky JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+            <!-- scrollUp JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+            <!-- counterup JS
+        ============================================ -->
+            <script src="{% static 'assets/js/counterup/jquery.counterup.min.js' %}"></script>
+            <script src="{% static 'assets/js/counterup/waypoints.min.js' %}"></script>
+            <script src="{% static 'assets/js/counterup/counterup-active.js' %}"></script>
+            <!-- peity JS
+        ============================================ -->
+            <script src="{% static 'assets/js/peity/jquery.peity.min.js' %}"></script>
+            <script src="{% static 'assets/js/peity/peity-active.js' %}"></script>
+            <script src="{% static 'assets/js/modal-active.js' %}"></script>
+            <!-- sparkline JS
+        ============================================ -->
+            <script src="{% static 'assets/js/sparkline/jquery.sparkline.min.js' %}"></script>
+            <script src="{% static 'assets/js/sparkline/sparkline-active.js' %}"></script>
+            <!-- flot JS
+        ============================================ -->
+            <!-- icheck JS
+    ============================================ -->
+            <script src="{% static 'assets/js/icheck/icheck.min.js' %}"></script>
+            <script src="{% static 'assets/js/icheck/icheck-active.js' %}"></script>
+
+            <script src="{% static 'assets/js/flot/jquery.flot.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.tooltip.min.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.spline.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.resize.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.pie.js' %}"></script>
+            <script src="{% static 'assets/js/flot/Chart.min.js' %}"></script>
+            <script src="{% static 'assets/js/flot/flot-active.js' %}"></script>
+            <!-- map JS
+        ============================================ -->
+            <script src="{% static 'assets/js/map/raphael.min.js' %}"></script>
+            <script src="{% static 'assets/js/map/jquery.mapael.js' %}"></script>
+            <script src="{% static 'assets/js/map/france_departments.js' %}"></script>
+            <script src="{% static 'assets/js/map/world_countries.js' %}"></script>
+            <script src="{% static 'assets/js/map/usa_states.js' %}"></script>
+            <script src="{% static 'assets/js/map/map-active.js' %}"></script>
+            <!-- data table JS
+        ============================================ -->
+            <script src="{% static 'assets/js/data-table/bootstrap-table.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/tableExport.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/data-table-active.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-table-editable.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-editable.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-table-resizable.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/colResizable-1.5.source.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-table-export.js' %}"></script>
+            <!-- main JS
+        ============================================ -->
+            <script src="{% static 'assets/js/main.js' %}"></script>
+        <srcipt src="{% static 'assets/js/lead.js' %}"></srcipt>
+        <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+        <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/quotation.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Contacts</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Contacts</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <div class="row">
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                    <h1>Contact<span class="table-project-n"> List</span></h1>
+                                </div>
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                    <a href="/add/contact" class="btn btn-info pull-right">
+                                        <div>
+                                            <span class="glyphicon glyphicon-plus"></span> Add Contacts </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id">ID</th>
+                                        <th data-field="first" data-editable="false"> Name</th>
+                                        <th data-field="email" data-editable="false">Email</th>
+                                        <th data-field="phone" data-editable="false">Phone</th>
+                                        <th data-field="description" data-editable="false">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in contact %}
+                                    <tr>
+
+                                        <td>{{ i.contact_id }}</td>
+                                        {% if i.first_name %}
+                                        <td>{{ i.first_name }} {{ i.last_name }}</td>
+                                        {% else %}
+                                        <td>{{ i.title }}</td>
+                                        {% endif %}
+                                        <td>{{ i.email }}</td>
+                                        <td>{{ i.phone }}</td>
+                                        {% if i.description %}
+                                        <td>{{ i.description }}</td>
+                                        {% else %}
+                                        <td>Not Available</td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<link rel="stylesheet" href="{% static 'assets/css/select2/select2.min.css' %}">
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/payment/admin">Payments</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Payments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/payment/admin">Payments</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Payments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>Add Payment Record</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="all-form-element-inner">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Invoice Id</label>
+                                                        <!-- <input type="text" id="Order_id" class="form-control" required/> -->
+                                                        {{ form.invoice_id|add_class:"form-control" }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Transaction Id</label>
+                                                        <!-- <input type="text" id="Order_id" class="form-control" required/> -->
+                                                        {{ form.transaction_id|add_class:"form-control" }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Amount</label>
+                                                        <!-- <input type="text" id="Order_id" class="form-control" required/> -->
+                                                        {{ form.pay_amount|add_class:"form-control" }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Order Name</label>
+                                                        <!-- <input type="text" id="Order_id" class="form-control" required/> -->
+                                                        {{ form.order_name|add_class:"form-control" }}
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Customer Name</label>
+                                                        <!-- <input type="text" id="lead_name" class="form-control" required/> -->
+                                                        {{ form.leads|add_class:"form-control" }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Pay Date</label>
+                                                        {{ form.payment_date|add_class:"form-control" }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                        <label>Attachment</label>
+                                                    
+                                                    {{ form.attachment|add_class:"b1"}} {{ form.attachment.errors }}
+                                                </div>
+                                                </div>
+
+                                            </div>
+                                            
+                                            
+                                    <div class="form-group-inner">
+                                        <div class="login-btn-inner">
+                                            <div class="column">
+                                                <div class="col-lg-3"></div>
+                                                <div class="col-lg-9">
+                                                    <div class="login-horizental cancel-wp pull-right">
+                                                        <a href="/payment/admin"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                        <button class="btn btn-white" type="button">Cancel</button>
+                                                        <button class="btn btn-sm btn-primary login-submit-cs" id="update_lead" type="submit">Save Change</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

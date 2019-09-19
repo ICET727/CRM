@@ -1,0 +1,629 @@
+{% load staticfiles %} 
+{% load tags %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CRM -  Amar Bio-Organics India Private Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- adminpro icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/adminpro-custon-icon.css' %}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!-- data-table CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-table.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-editable.css' %}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <!-- charts C3 CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/c3.min.css' %}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/form/all-type-forms.css' %}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- modernizr JS
+        ============================================ -->
+    <!-- charts CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/charts.css' %}">
+
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    
+    <link href="{% static 'assets/css/styles-rad.css' %}" rel="stylesheet" />
+    <!-- <script type="text/javascript" src="{% static 'channels/js/websocketbridge.js' %}"></script> -->
+
+    <style>
+        #rad-chart {
+            max-width: 650px;
+            margin: 35px auto;
+        }
+    </style>
+    <style>
+        #chart {
+            max-width: 90%;
+            margin: 35px auto;
+        }
+        
+        .toolbar {
+            margin-left: 45px;
+        }
+        
+        button {
+            background: #fff;
+            color: #222;
+            border: 1px solid #e7e7e7;
+            border-bottom: 2px solid #ddd;
+            border-radius: 2px;
+            padding: 4px 17px;
+        }
+        
+        button.active {
+            color: #fff;
+            background: #008FFB;
+            border: 1px solid blue;
+            border-bottom: 2px solid blue;
+        }
+        
+        button:focus {
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="content-inner-all" style="margin-left: 0px;">
+            <div class="header-top-area">
+                <div class="fixed-header-top" style="left: 0px">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2">
+                                
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-7 col-xs-7">
+                                <div class="header-riht-info" style="padding-top: 4%">
+                                    <ul class="nav navbar-nav mai-top-nav header-right-menu pull-left">
+                                    <h3 style="color: whitesmoke">Amar Bio Admin</h3>
+                                </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5 pull-right">
+                                <div class="header-right-info">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu pull-right">
+                                            <li class="nav-item dropdown">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="adminpro-icon adminpro-chat-pro"></span><span class="indicator-ms"></span></a>
+                                                <div role="menu" class="author-message-top dropdown-menu animated flipInX">
+                                                    <div class="message-single-top">
+                                                        <h1>Message</h1>
+                                                    </div>
+                                                    <ul class="message-menu">
+                                                        <li style="width: 307px;">
+                                                            <a href="#">
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Abhishek Kumar</h2>
+                                                                    <p id="p1"></p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li style="width: 307px;">
+                                                            <a href="#">
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Sulaiman din</h2>
+                                                                    <p></p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li style="width: 307px;">
+                                                            <a href="#">
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p></p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li style="width: 307px;">
+                                                            <a href="#">
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p></p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                </div>
+                                            </li>                             
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                    <span class="admin-name">{{ user.first_name }} {{ user.last_name }}</span>
+                                                    <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                    <li><a href="/dash-test"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>My Profile</a>
+                                                    </li>
+                                                    <li><a href="/user/create"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>Add User</a>
+                                                    </li>
+                                                    <!-- <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a>
+                                                    </li> -->
+                                                    <li><a href="/log_out"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 small-dn">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                                        <ul class="breadcome-menu">
+                                            <li>Dashboard <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Sales</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- Mobile Menu start -->
+            <!-- Mobile Menu end -->
+            <!-- Breadcome start-->
+            <div class="breadcome-area des-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Dashboard</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Sales</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- welcome Project, sale area start-->
+    <!--Changes Done-->
+    <div class="welcome-adminpro-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="income-dashone-total shadow-reset nt-mg-b-30 res-mg-t-30 ">
+                        <div class="income-title ">
+                            <div class="main-income-head ">
+                                <h2>Sales</h2>
+                                <div class="main-income-phara ">
+                                    <p>Total</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="income-dashone-pro ">
+                            <div class="income-rate-total ">
+                                <div class="price-adminpro-rate ">
+                                    {% if last_month_sales.total_amount__sum %}
+                                    <h3><span>₹</span><span class="counter ">{{last_month_sales.total_amount__sum}}</span></h3>
+                                    {% else %}
+                                    <h3><span>₹</span><span class="counter ">{{last_month_sales.total_amount__sum}}</span></h3>
+                                    {% endif %}
+                                </div>
+                                <div class="price-graph ">
+                                    <span id="sparkline1 "></span>
+                                </div>
+                            </div>
+                            <div class="income-range ">
+                                <p>Total income upto now</p>
+                                
+                            </div>
+                            <div class="clear "></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="income-dashone-total shadow-reset nt-mg-b-30 ">
+                        <div class="income-title ">
+                            <div class="main-income-head ">
+                                <h2>Orders</h2>
+                                <div class="main-income-phara order-cl ">
+                                    <p>Total</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="income-dashone-pro ">
+                            <div class="income-rate-total ">
+                                <div class="price-adminpro-rate ">
+                                    {% if last_month_orders %}
+                                    <h3><span class="counter ">{{last_month_orders}}</span></h3>
+                                    {% else %}
+                                    <h3><span class="counter ">0</span></h3>
+                                    {% endif %}
+                                </div>
+                                <div class="price-graph ">
+                                    <span id="sparkline6 "></span>
+                                </div>
+                            </div>
+                            <div class="income-range order-cl ">
+                                <p>Total Orders up to Now</p>
+                                
+                            </div>
+                            <div class="clear "></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="income-dashone-total shadow-reset nt-mg-b-30 ">
+                        <div class="income-title ">
+                            <div class="main-income-head ">
+                                <h2>Leads</h2>
+                                <div class="main-income-phara visitor-cl ">
+                                    <p>Total</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="income-dashone-pro ">
+                            <div class="income-rate-total ">
+                                <div class="price-adminpro-rate ">
+                                    {% if last_month_leads %}
+                                    <h3><span class="counter ">{{ last_month_leads }}</span></h3>
+                                    {% else %}
+                                    <h3><span class="counter ">0</span></h3>
+                                    {% endif %}
+                                </div>
+                                <div class="price-graph ">
+                                    <span id="sparkline2 "></span>
+                                </div>
+                            </div>
+                            <div class="income-range visitor-cl ">
+                                <p>Total Leads</p>
+                                
+                            </div>
+                            <div class="clear "></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2>Sales Report</h2>
+                        </div>
+                    </div>
+                    <div class="dashboard-line-chart mg-b-30" style="height: 400px;">
+                        <div id="chart" style="margin-top: -1%">
+                            <div class="toolbar">
+                                <button id="one_month">1M</button>
+                                <button id="six_months">6M</button>
+                                <button id="one_year" class="active">1Y</button>
+                            </div>
+                            <div id="timeline-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="sparkline7-list stock-price-section shadow-reset nt-mg-b-30 ">
+                        <div class="sparkline7-hd ">
+                            <div class="main-spark7-hd ">
+                                <h1>Opportunity Status Report</h1>
+
+                            </div>
+                        </div>
+                        <div class="sparkline7-graph ">
+                            <div class="income-dashone-pro dashboard-line-chart mg-b-30" style="height: 330px;">
+                                <div id="donchart" class="" style="margin-left: -7%;">
+                                    <apexchart type=donut height=250 :options="chartOptions " :series="series " />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                        <div class="income-dashone-total shadow-reset ">
+                            <div class="income-title ">
+                                <div class="main-income-head ">
+                                    <h2>Leads Generated</h2>
+                                </div>
+                            </div>
+                            <div class="income-dashone-pro" style="height: 500px;">
+                                <div id="rad-chart" class=" " style="margin-left: -1%; margin-top: -1%;">
+                                    <apexchart type=radialBar height=350 :options="chartOptions " :series="series " />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Till This Point-->
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                        <div class="welcome-wrapper shadow-reset res-mg-t mg-b-30 "><a href=""><button class="btn-info pull-right"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <div class="welcome-adminpro-title ">
+                                <h1>Today's Tasks</h1>
+                                <p>You have 100 messages and 10 notifications.</p>
+                            </div>
+                            <div class="adminpro-message-list ">
+                                <ul class="message-list-menu ">
+                                    <li><span class="message-serial message-cl-one ">1</span> <span class="message-info ">Please contact me</span> <span class="message-time ">09:00 pm</span>
+                                    </li>
+                                    <li><span class="message-serial message-cl-two ">2</span> <span class="message-info ">Sign a contract</span> <span class="message-time ">10:00 pm</span>
+                                    </li>
+                                    <li><span class="message-serial message-cl-three ">3</span> <span class="message-info ">Please delevary project</span> <span class="message-time ">05:00 pm</span>
+                                    </li>
+                                    <li><span class="message-serial message-cl-four ">4</span> <span class="message-info ">Open new shop</span> <span class="message-time ">04:00 pm</span>
+                                    </li>
+                                    <li><span class="message-serial message-cl-two ">2</span> <span class="message-info ">Sign a contract</span> <span class="message-time ">10:00 pm</span>
+                                    </li>
+                                    <li><span class="message-serial message-cl-five ">5</span> <span class="message-info ">Improtant Notification here</span> <span class="message-time ">09:00 pm</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nt-mg-b-30">
+                        <div class="sparkline7-list stock-price-section shadow-reset nt-mg-b-3" style="height: 50%;">
+                            <div class="sparkline7-hd ">
+                                <div class="main-spark7-hd ">
+                                    <h1>Sample Order Feedback</h1>
+
+                                </div>
+                            </div>
+                            <div class="sparkline7-graph ">
+                                <div class="dashone-bar-small dashone-bar ">
+                                    <span class="bar_dashboard ">5,3,9,6,5,9,7,3,5,2,4,7,3,2,7,9,6,4,5</span>
+                                    <p>{{ total_feedbacks }}</p>
+                                </div>
+                                <div class="dashone-bar-heading ">
+                                    <h2>List of all Sample Feedback!</h2>
+                                    <a href="/feedback/list">Check feedbacks!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+             <div class="stockprice-feed-project-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                            <div class="admin-dashone-data-table-area">
+                                    <div class="sparkline8-list shadow-reset">
+                                        <div class="sparkline8-hd">
+                                            <div class="main-sparkline8-hd">
+                                                <h1>Sales Members List</h1>
+                                                <div class="sparkline8-outline-icon">
+                                                    <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                                    <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sparkline8-graph">
+                                            <div class="datatable-dashv1-list custom-datatable-overright">
+                                                <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-toggle="true" data-resizable="true" data-cookie="true">
+                                                    <thead>
+                                                        <tr>
+                                                            <th data-field="id">ID</th>
+                                                            <th data-field="name" data-editable="false">Full Name</th>
+                                                            <th data-field="designation" data-editable="false">Designation</th>
+                                                            <th data-field="phone" data-editable="false">Phone</th>
+                                                            <th data-field="leads" data-editable="false">Email Id</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for i in sales %}
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td><a href="member/detail/{{i.username }}">{{ i.first_name }} {{ i.last_name }}</a></td>
+                                                            <td>{{ i.username|no_value }}</td>
+                                                            <td>{{ i.username|phone_value }}</td>
+                                                            <td>{{ i.username }}</td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- meetings , feed area start-->
+                                <
+                            </div>
+                        </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                        <div class="welcome-wrapper shadow-reset res-mg-t mg-b-30 "><a href=""><button class="btn-info pull-right"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <div class="welcome-adminpro-title ">
+                                <h1>Meeting Scedule</h1>
+                                <p>You have upcoming meetings.</p><hr><hr>
+                            </div>
+                            <div class="adminpro-message-list " id="test">                                   
+                                
+                            </div>
+                        </div>
+                    </div>
+            <!-- meetings, feed area end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div><br>
+   <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <footer>
+                <div class-="row">
+                    <div class="col-lg-8">
+        <div class="container pull-left">
+            <p>© Copyright 2019. <a href="http://www.amarorganics.com/">Amar Bio-Organics</a> India Private Limited</p>
+        </div>
+    </div><br>
+    <div class="col-lg-4">
+    <p class="pull-right">Powered By: <a href="http://icetitsolutions.com" style="color: red">ICET IT Solutions</a></p>
+        </div>
+    </footer>
+        </div>
+    </div>
+    <!-- Footer End-->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+    
+   
+    <!-- jquery
+		============================================ -->
+    <script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/chart-pie.js' %}"></script>
+     <script type="text/javascript" src="{% static 'assets/js/area-apex.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/charts/donut-chart.js' %}">
+    </script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+    <!-- counterup JS
+		============================================ -->
+    <script src="{% static 'assets/js/counterup/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/counterup/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/counterup/counterup-active.js' %}"></script>
+    <!-- peity JS
+		============================================ -->
+    <script src="{% static 'assets/js/peity/jquery.peity.min.js' %}"></script>
+    <script src="{% static 'assets/js/peity/peity-active.js' %}"></script>
+    <!-- sparkline JS
+		============================================ -->
+    <script src="{% static 'assets/js/sparkline/jquery.sparkline.min.js' %}"></script>
+    <script src="{% static 'assets/js/sparkline/sparkline-active.js' %}"></script>
+    <!-- flot JS
+		============================================ -->
+    <script src="{% static 'assets/js/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.spline.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.resize.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static 'assets/js/flot/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/js/flot/flot-active.js' %}"></script>
+
+    <!-- data table JS
+		============================================ -->
+    <script src="{% static 'assets/js/data-table/bootstrap-table.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/tableExport.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/data-table-active.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-editable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-editable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-resizable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/colResizable-1.5.source.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-export.js' %}"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'channels/js/websocketbridge.js' %}" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const webSocketBridge = new channels.WebSocketBridge();
+
+            // webSocketBridge.connect('/ws/')
+            //          webSocketBridge.listen(function(action, stream){
+            //              console.log("RESPONSE:", action)
+            //          })
+            //           console.log("Hello")
+            // const nl = document.querySelector('#p1');
+            // webSocketBridge.connect('/notifications/');
+            // console.log(webSocketBridge.connect('/notifications/'))
+            webSocketBridge.connect('/notifications/')
+            webSocketBridge.listen(function(action, stream) {
+                console.log("RESPONSE:", action)
+                if (action.event = "New Case") {
+                    // var el = document.createElement("li");
+                    // el.innerHTML = 'New case <b>${action.sales_person}</b>';
+                    // nl.appendChild(el);
+
+                    alert('New case ' + action.sales_person);
+                }
+            })
+            document.ws = webSocketBridge;
+        })
+    </script>
+</body>
+
+</html>

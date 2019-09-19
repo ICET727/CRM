@@ -1,0 +1,14 @@
+RUN YOUR PROJECT ON SERVER IP
+
+
+1. install apache2
+2. run your project using nohup 
+3. make a file->
+4. sudo vi /etc/apache2/sites-available/alpha.conf
+5. copy this to in this file
+<VirtualHost *:80>
+    ErrorLog ${APACHE_LOG_DIR}/getlook.error.log
+    CustomLog ${APACHE_LOG_DIR}/getlook.access.log combined
+    ProxyPreserveHost on
+    ProxyPass / http://localhost:8000/
+</VirtualHost>

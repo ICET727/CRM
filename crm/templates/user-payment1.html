@@ -1,0 +1,109 @@
+ {% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Payments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard<span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Payments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="/user/add/payment" class="btn btn-warning pull-right">
+                    <span class="glyphicon glyphicon-plus"></span> Add payment Record
+                </a>
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Payment <span class="table-project-n">Records</span></h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-show-export="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="order id">Order ID</th>
+                                        <th data-field="transaction id">Transaction ID</th>
+                                        <th data-field="lead name" data-editable="false">Lead Name</th>
+                                        <th data-field="sales member" data-editable="false">Sales Member</th>
+                                        <th data-field="product name" data-editable="false">Product Name</th>
+                                        <th data-field="product code" data-editable="false">Product Code</th>
+                                        <th data-field="order quantity" data-editable="false">Order Qty.</th>
+                                        <!-- <th data-field="email" data-editable="false">Email</th> -->
+                                        <th data-field="unit price" data-editable="false">Unit Price</th>
+                                        <!-- <th data-field="address" data-editable="false">Address</th> -->
+                                        <th data-field="total price">Total Price</th>
+                                        <th data-field="attachment">Attachment</th>
+                                        <th data-field="status">Status</th>
+                                        <th data-field="option">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in lead %}
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><i class="fa fa-check" aria-hidden="true"></i>&nbsp <i class="fa fa-close" aria-hidden="true"></i></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+
+{% endblock %}

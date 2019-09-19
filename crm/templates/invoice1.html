@@ -1,0 +1,112 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quotation - Amar Bio Organics India Pvt. Ltd.</title>
+    <link rel="stylesheet" src="{% static 'assets/css/style-invoice.css' %}" media="all" />
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <header class="clearfix">
+      <div id="logo">
+        <img src="{% static 'assets/img/logo.png' %}">
+      </div>
+      <div id="company">
+        <h2 class="name">Amar Bio Organics India Pvt. Ltd.</h2>
+        <div><p>No.501, 5th Floor, Gowra Grand, Behind Gowra Plaza,<br>
+        1-8-384 & 385, S.P. road, Begumpet, Secunderabad-500003</p></div>
+        <div>040-27843086/3091</div>
+        <div><a href="mailto:company@example.com">company@example.com</a></div>
+      </div>
+      </div>
+    </header>
+    <main>
+      <div id="details" class="clearfix">
+        <div id="client">
+          <div class="to">INVOICE TO:</div>
+          <h2 class="name">User Name</h2>
+          <div class="address">796 Silver Harbour, TX 79273, US</div>
+          <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
+        </div>
+        <div id="invoice">
+          <h1>INVOICE Number</h1>
+          <div class="date">Date of Invoice: 01/06/2014</div>
+          <div class="date">Due Date: 30/06/2014</div>
+        </div>
+      </div>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="no">#Sl. No.</th>
+            <th class="desc">Product Name</th>
+            <th class="unit">Product Code</th>
+            <th class="qty">Price Per 1kg/ltr</th>
+            <th class="qty">Price Per 15kg/ltr</th>
+            <th class="qty">Price Per 25kg/ltr</th>
+            <th class="qty">Price Per 50kg/ltr</th>
+            <th class="total">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no">01</td>
+            <td class="desc"><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">30</td>
+            <td class="total">$1,200.00</td>
+          </tr>
+          <tr>
+            <td class="no">02</td>
+            <td class="desc"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
+            <td class="unit">$40.00</td>
+            <td class="qty">80</td>
+            <td class="total">$3,200.00</td>
+          </tr>
+        </tbody><br>
+        <tfoot>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">SUBTOTAL</td>
+            <td>$5,200.00</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">TAX 25%</td>
+            <td>$1,300.00</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">GRAND TOTAL</td>
+            <td>$6,500.00</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div id="notices">
+        <div>Terms & Conditions:</div>
+        <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="notice">
+         <p>IGST: <br>
+          Freight: <br>
+          Delivery: <br>
+          Payment terms: <br>          
+          Lead term: 
+        </p>
+      </div><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><input class="form-control">
+          </div><br></div>
+        </div>
+      </div>
+    </div>
+    </main>
+    <footer>
+      <div id="thanks">Thank you!</div>
+      <p><b>Amar Bio Organics India Pvt. Ltd.</b><br>
+        Please Call @ : 040-27843086/3091<br>
+        No.501, 5th Floor, Gowra Grand, Behind Gowra Plaza,<br>
+        1-8-384 & 385, S.P. road, Begumpet, Secunderabad-500003</p>
+    </footer>
+     <script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

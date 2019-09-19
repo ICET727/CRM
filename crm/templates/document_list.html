@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Documents</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Documents</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <div class="row">
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                    <h1>Document<span class="table-project-n"> List</span></h1>
+                                </div>
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                    <a href="/document/create" class="btn btn-info pull-right">
+                                        <div>
+                                            <span class="glyphicon glyphicon-plus"></span> Add Document </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id">ID</th>
+                                        <th data-field="user" data-editable="false">Title</th>
+                                        <th data-field="name" data-editable="false">Date</th>
+                                        <th data-field="file" data-editable="false">File</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in docs %}
+                                    <tr>
+                                        <td>{{ i.document_id }}</td>
+                                        <td>{{ i.name }}</td>
+                                        <td>{{ i.date }}</td>
+                                        {% if i.file %}
+                                        <td><a href="/media/{{ i.file }}"><button class="btn btn-success btn-sm" type="button">View</button></a></td>
+                                        {% else %}
+                                        <td>File Not Exist</td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+{% endblock %}

@@ -1,0 +1,167 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'assets1/images/favicon.png' %}">
+    <title>Select Products- Amar Bio Organics Pvt. Ltd.</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'assets1/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/css/thanks.css' %}" rel="stylesheet">
+    <style type="text/css">
+        .footer {
+            position: sticky;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header " style="height: 80px">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                <a class="navbar-brand" href="#page-top"><img src="{% static 'assets1/images/amar.png' %}" alt="Amar Bio Organics"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="" href="/select/order"><span class="glyphicon glyphicon-chevron-left"> Back</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="space"></div>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <h2><u>Select <b>Products</b></h2></u>
+                        <div class="col-sm-6 col-lg-12">
+                            <button type="button" class="btn btn-success add-new pull-right"><i class="fa fa-plus"></i> Add New</button>
+                        </div>
+                </div>
+            </div>
+            <form action="">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>H.S.N. Code</th>
+                                <th>Solubility</th>
+                                <th>Packaging</th>
+                                <th>Units</th>
+                                <th>Priority Level</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="dropdown">
+                                        <select id="myInput " class="browser-default custom-select form-control" required>
+                                            <option selected>Open this select menu</option>
+                                            {% for product in products %}
+                                                    
+                                                    <option value="one">{{ product.product_name }}</option>
+                                                    >
+                                            {% endfor %}
+                                                  </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>{{ hsn }}</p>
+                                </td>
+                                <td>
+                                    <div class="dropdown ">
+                                        <select class=" browser-default custom-select form-control ">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="p1 ">N/A</option>
+                                                    <option value="p1 ">Water Soluble</option>
+                                                    <option value="p2 ">Oil Soluble</option>
+                                                  </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dropdown ">
+                                        <select class=" browser-default custom-select form-control " required>
+                                                    <option selected>Open this select menu</option>
+                                                    {% for i in products %}
+                                                    <option value="pa1 ">{{ i.packaging }}</option>
+                                                    {% endfor %}
+                                                  </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="form-control" id="myQty" type="number" min="0" value="" defauft="0" required>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <select id="priority " class="browser-default custom-select form-control" required>
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="prior1">Normal</option>
+                                                    <option value="prior2">Fast</option>
+                                                    <option value="prior3">Urgent</option>
+                                                  </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a class="add " title="Add " data-toggle="tooltip "><i class="material-icons ">&#xE03B;</i></a>
+                                    <a class="delete " title="Delete " data-toggle="tooltip "><i class="material-icons ">&#xE872;</i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <a href="thanks.html "><button class="btn btn--radius-2 btn-warning sp pull-right " type="button">Place Order <i class="fa fa-angle-double-right "></i></button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Table Ends-->
+    <!-- Footer-->
+    <footer class="space footer ">
+        <div class="container text-center ">
+            <p>© Copyright 2019. <a href="http://www.amarorganics.com/ ">Amar Bio-Organics</a> India Private Limited</p>
+        </div>
+    </footer>
+    <!-- Footer Ends-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js "></script>
+    <script src="{% static 'assets1/js/cart.js' %}"></script>
+</body>
+
+</html>

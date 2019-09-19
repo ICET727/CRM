@@ -1,0 +1,456 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CRM - Amar Bio-Organics India Private Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <scriptr src="{% static 'js/cart_product_add.js' %}">
+        </script>
+        <!-- Bootstrap CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <!-- Bootstrap CSS
+        ============================================ -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!-- adminpro icon CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/adminpro-custon-icon.css' %}">
+        <!-- meanmenu icon CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+        <!-- mCustomScrollbar CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+        <!-- animate CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+        <!-- data-table CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-table.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-editable.css' %}">
+        <!-- normalize CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+        <!-- Select2 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/select2.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/select2-bootstrap.css' %}">
+        <!-- charts C3 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/c3.min.css' %}">
+        <!-- forms CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/form/all-type-forms.css' %}">
+        <!-- style CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+
+        <!-- responsive CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <!-- charts CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/charts.css' %}">
+
+
+        <!-- modernizr JS
+        ============================================ -->
+        <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+        <script src="{% static 'assets/js/charts/Chart.js' %}"></script>
+        <script src="{% static 'assets/js/charts/canvasjs.js' %}"></script>
+        <script src="{% static 'assets/js/charts/c.js' %}"></script>
+
+        <script src="{% static 'assets/js/webcomponents.min.js' %}"></script>
+        <script src="{% static 'assets/js/rebel-tag-input.js' %}"></script>
+
+<style>
+
+        .vertical-menu {
+ overflow-y: auto;
+ height: 515px;
+}
+/* width */
+::-webkit-scrollbar {
+ width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+ background: #000;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: #000;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #a15;
+}
+    </style>
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <!-- <a href="#"><img src="{% static 'assets/img/a.jpg' %}" alt="" />
+                    </a> -->
+                    <h3>{{ user.first_name }}</h3>
+                    <p>{{ profile.designation }}</p>
+                    <strong>CRM</strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap" style="height: 560px;">
+                   <div class="vertical-menu">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro d-flex ml-auto" style="overflow-y: auto;">
+                        <li class="nav-item"><a href="/sales/profile" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-chart-line" aria-hidden="true"></i> <span class="mini-dn">Dashboard</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/contact/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-user-circle" aria-hidden="true"></i> <span class="mini-dn">Contacts</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/customer/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-user" aria-hidden="true"></i> <span class="mini-dn">Customers</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/ordered/items" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-shopping-cart"></i> <span class="mini-dn">Commercial Order</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/sample/items" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-shopping-basket"></i> <span class="mini-dn">Sample Order</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/case/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-table"></i> <span class="mini-dn">Cases</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/document/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-edit"></i> <span class="mini-dn">Documents</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/porforma_quotation/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-list"></i> <span class="mini-dn">Proforma & Quotaion</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/user/payment/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-money-bill-alt"></i> <span class="mini-dn">Payment Tracking</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+
+                        <li class="nav-item"><a href="/product/brief" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa fa-plus-square" aria-hidden="true"></i> <span class="mini-dn">Product Request</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/email/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-envelope" aria-hidden="true"></i> <span class="mini-dn">Email</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/form/feedback" class="nav-link dropdown-toggle" style="padding-top: 12px;padding-bottom: 10px;"><i class="fa  fa-file-alt" aria-hidden="true"></i> <span class="mini-dn">Register Feedback</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="content-inner-all">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-11">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                            </div>
+                            <!-- <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
+                                <div class="header-top-menu tabl-d-n">
+                                    <ul class="nav navbar-nav mai-top-nav">
+
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="" role="button" aria-expanded="false" class="nav-link dropdown-toggle"></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+                                <div allign="right">
+                                    <div class="header-right-info pull-right">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <li class="nav-item dropdown">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="fa fa-tasks"></span><span class="indicator-ms"></span></a>
+                                                <div role="menu" class="author-message-top dropdown-menu animated flipInX" style="margin-left: -240%">
+                                                    <div class="message-single-top">
+                                                        <h1>Message</h1>
+                                                    </div>
+                                                    <!-- <ul class="message-menu">
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/1.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>{{ user1.first_name }} {{ user1.last_name }}</h2>
+                                                                    <p>Please do this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/4.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Sulaiman din</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/3.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/2.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul> -->
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+
+                                                    <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX" style="margin-left: -215%">
+
+                                                    <li><a href="/sales/profile"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>My Profile</a>
+                                                    </li>
+                                                    <li><a href="/ordered/items"><span class="adminpro-icon adminpro-money author-log-ic"></span>Total Order</a>
+                                                    </li>
+                                                    <!-- <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a> -->
+                                            </li>
+                                            <li><a href="/log_out"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                            </li>
+                                            </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="mobile-menu-nav">
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="/sales/profile">Dashboard <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="/contact/list">Contacts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#others" href="/customer/list">Customers <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="/ordered/items">Commercial Orders <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="/sample/items">Sample Orders <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="/cases/list">Cases <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#formsmob" href="/document/list">Documents <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#formsmob" href="/porforma_quotation/list">Poforma Quotations <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Others" href="/user/payment/list">Payment Tracking<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="/product/brief">Product Request <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="/email/list">Email <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+
+                                    </ul>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu end -->
+            {% block content %} {% endblock %}
+            <!-- stockprice, feed area end-->
+        </div>
+    </div>
+
+
+    <!-- Footer Start-->
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <footer>
+                <div class-="row">
+                    <div class="col-lg-8">
+                        <div class="container pull-left">
+                            <p>© Copyright 2019. <a href="http://www.amarorganics.com/" target="blank">Amar Bio-Organics</a> India Private Limited</p>
+                        </div>
+                    </div><br>
+                    <div class="col-lg-4">
+                        <p class="pull-right">Powered By: <a href="http://icetsolutions.com" style="color: red" target="blank">ICET IT Solutions</a></p>
+                    </div>
+            </footer>
+            </div>
+        </div>
+        <!-- Footer End-->
+        <!-- Chat Box Start-->
+        <!-- <div class="chat-list-wrap">
+        <div class="chat-list-adminpro">
+            <div class="chat-button">
+                <span data-toggle="collapse" data-target="#chat" class="chat-icon-link"><i class="fa fa-comments"></i></span>
+            </div>
+            <div id="chat" class="collapse chat-box-wrap shadow-reset animated zoomInLeft">
+                <div class="chat-main-list">
+                    <div class="chat-heading">
+                        <h2>Messanger</h2>
+                    </div>
+                    <div class="chat-content chat-scrollbar">
+                        <div class="author-chat">
+                            <h3>Monica <span class="chat-date">10:15 am</span></h3>
+                            <p>Hi, what you are doing and where are you gay?</p>
+                        </div>
+                        <div class="client-chat">
+                            <h3>Mamun <span class="chat-date">10:10 am</span></h3>
+                            <p>Now working in graphic design with coding and you?</p>
+                        </div>
+                        <div class="author-chat">
+                            <h3>Monica <span class="chat-date">10:05 am</span></h3>
+                            <p>Practice in programming</p>
+                        </div>
+                        <div class="client-chat">
+                            <h3>Mamun <span class="chat-date">10:02 am</span></h3>
+                            <p>That's good man! carry on...</p>
+                        </div>
+                    </div>
+                    <div class="chat-send">
+                        <input type="text" placeholder="Type..." />
+                        <span><button type="submit">Send</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <!-- Chat Box End -->
+        <!-- jquery
+        ============================================ -->
+        <scriptr src="{% static 'assets/js/cart_product_add.js' %}">
+            </script>
+            <script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+            <srcipt src="{% static 'js/payment.js' %}"></srcipt>
+
+            <!-- format: 'DD/MM/YYYY HH:mm',
+ -->
+            <!-- bootstrap JS
+        ============================================ -->
+            <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'assets/js/chart-pie.js' %}"></script>
+
+            <script src="{% static 'js/order.js' %}"></script>
+
+
+            <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+            <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+
+            <!-- meanmenu JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+            <!-- mCustomScrollbar JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+            <!-- sticky JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+            <!-- scrollUp JS
+        ============================================ -->
+            <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+            <!-- counterup JS
+        ============================================ -->
+            <script src="{% static 'assets/js/counterup/jquery.counterup.min.js' %}"></script>
+            <script src="{% static 'assets/js/counterup/waypoints.min.js' %}"></script>
+            <script src="{% static 'assets/js/counterup/counterup-active.js' %}"></script>
+            <!-- peity JS
+        ============================================ -->
+            <script src="{% static 'assets/js/peity/jquery.peity.min.js' %}"></script>
+            <script src="{% static 'assets/js/peity/peity-active.js' %}"></script>
+            <script src="{% static 'assets/js/modal-active.js' %}"></script>
+            <!-- sparkline JS
+        ============================================ -->
+            <script src="{% static 'assets/js/sparkline/jquery.sparkline.min.js' %}"></script>
+            <script src="{% static 'assets/js/sparkline/sparkline-active.js' %}"></script>
+            <!-- flot JS
+        ============================================ -->
+            <!-- icheck JS
+    ============================================ -->
+            <script src="{% static 'assets/js/icheck/icheck.min.js' %}"></script>
+            <script src="{% static 'assets/js/icheck/icheck-active.js' %}"></script>
+
+            <script src="{% static 'assets/js/flot/jquery.flot.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.tooltip.min.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.spline.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.resize.js' %}"></script>
+            <script src="{% static 'assets/js/flot/jquery.flot.pie.js' %}"></script>
+            <script src="{% static 'assets/js/flot/Chart.min.js' %}"></script>
+            <script src="{% static 'assets/js/flot/flot-active.js' %}"></script>
+            <!-- map JS
+        ============================================ -->
+            <script src="{% static 'assets/js/map/raphael.min.js' %}"></script>
+            <script src="{% static 'assets/js/map/jquery.mapael.js' %}"></script>
+            <script src="{% static 'assets/js/map/france_departments.js' %}"></script>
+            <script src="{% static 'assets/js/map/world_countries.js' %}"></script>
+            <script src="{% static 'assets/js/map/usa_states.js' %}"></script>
+            <script src="{% static 'assets/js/map/map-active.js' %}"></script>
+            <!-- data table JS
+        ============================================ -->
+            <script src="{% static 'assets/js/data-table/bootstrap-table.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/tableExport.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/data-table-active.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-table-editable.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-editable.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-table-resizable.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/colResizable-1.5.source.js' %}"></script>
+            <script src="{% static 'assets/js/data-table/bootstrap-table-export.js' %}"></script>
+            <!-- main JS
+        ============================================ -->
+            <script src="{% static 'assets/js/main.js' %}"></script>
+            <srcipt src="{% static 'assets/js/lead.js' %}"></srcipt>
+
+            <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+            <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/quotation.js' %}"></script>
+
+</body>
+
+</html>

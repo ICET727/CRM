@@ -1,0 +1,194 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<style type="text/css">
+    h4{
+       font: italic bold 12px/30px Georgia, serif;
+    }
+    p{
+        font-family: 12px/30px Scheherazade, serif;
+        font-size: 12px;
+    }
+</style>
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Sample Detail</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Sample Detail</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="button-ad-wrap shadow-reset nt-mg-b-30">
+                                <div class="alert-title">
+                                    <h2>Sample Details :</h2>                                   
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Name: </h4> 
+                                        <p>{{orders.sample_lead.lead_company}}</p>
+                                         </div>                                 
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Contact: </h4>
+                                        {% for i in orders.sample_lead.contacts.all %}
+                                         <p> {{ i.phone }}</p>
+                                         {%endfor%}
+                                    </div>
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div>
+                                     <h4>Customer Address:</h4>
+                                      <p>{{orders.sample_lead.get_complete_address}}</p>
+                                 </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>GST No.:</h4> 
+                                      <p>{{orders.gst_number}}</p>
+                                     </div>     
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                     
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Base Amount:</h4>
+                                  <p>{{ orders.total_amount }}</p>
+                              </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Order Date:</h4>
+                                  <p>{{ orders.sample_date }}</p>
+                              </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Product Name: </h4>
+                                          <p>{{ orders.sample_name.product_name }}</p>
+                                          {% if orders.sample_2 %}
+                                           <p>{{orders.sample_2}}</p>
+                                           {% endif %}
+                                            {% if orders.sample_3 %}
+                                           <p>{{orders.sample_3}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_4 %}
+                                           <p>{{orders.sample_4}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_5 %}
+                                           <p>{{orders.sample_5}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_6 %}
+                                           <p>{{orders.sample_6}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_7 %}
+                                           <p>{{orders.sample_7}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_8 %}
+                                           <p>{{orders.sample_8}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_9 %}
+                                           <p>{{orders.sample_9}}</p>
+                                           {% endif %}
+                                             {% if orders.sample_10 %}
+                                           <p>{{orders.sample_10}}</p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Product code: </h4>
+                                          <p>{{ orders.sample_name.product_code }}</p>
+                                          {% ifequal orders.code2 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code2 }}</p>
+                                           {% endifequal %}
+                                            {% ifequal orders.code3 '0' %}
+                                            <p></p>
+                                            {% else %}
+                                           <p>{{ orders.code3 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code4 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code4 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code5 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code5 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code6 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code6 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code7 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code7 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code8 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code8 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code9 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code9 }}</p>
+                                           {% endifequal %}
+                                           {% ifequal orders.code10 '0' %}
+                                           <p></p>
+                                           {% else %}
+                                           <p>{{ orders.code10 }}</p>
+                                           {% endifequal %}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+{% endblock %}

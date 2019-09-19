@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Line Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="../../../Chart.min.js"></script>
+    <script src="../../utils.js"></script>
+    <script src="../../financial.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    Chart Type:
+    <select id="type" class="pull-right">
+			<option value="line">Line</option>
+			<option value="bar">Bar</option>
+		</select>
+    <button id="update">update</button><br>
+    <div style="width:600px">
+        <canvas id="chart1"></canvas>
+    </div>
+</body>
+
+</html>

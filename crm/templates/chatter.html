@@ -1,0 +1,171 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<style>
+    #p1 {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        margin-top: 10px;
+        font-size: 16px;
+        resize: none;
+    }
+</style>
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/sales/profile">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Chatter</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Chatter</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<div class="inbox-mailbox-area mg-b-40">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="inbox-email-menu-list compose-b-mg-30 shadow-reset">
+                            <div class="compose-email">
+                                <a href="/email/list">Mail Box</a>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li>
+                                    <h4 class="Inbox-category-ad"><i class="fa fa-folder-o" aria-hidden="true"></i> Folder</h4>
+                                </li>
+                                </li>
+                                <li><a href="/email/list"><span class="inbox-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span> Send Mail</a>
+                                </li>
+                                <li><a href="/email/list"><span class="inbox-icon"><i class="fa fa-certificate" aria-hidden="true"></i></span> Important</a>
+                                </li>
+                                <!-- <li><a href="/item/list" style="color: #ffffff"><button class="btn btn-warning"><i class="fa fa-tasks" aria-hidden="true"></i> &nbspSend Order Request</a></button>
+                                </li>
+                                <li><a href="/feedback" style="color: #ffffff"><button class="btn btn-danger"><i class="fa fa-list-alt" aria-hidden="true"></i> &nbspSend Feedback Form</a></button>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="tab-content">
+                            <div id="composemail" class="tab-pane fade in animated zoomInDown shadow-reset custom-inbox-message active">
+                                <div class="view-mail-wrap">
+                                    <div class="mail-title">
+                                        <h2>Compose Mail</h2>
+                                    </div>
+                                    <form method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        <div class="compose-email-to">
+                                                            <span>To :</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        <div class="compose-multiple-email">
+                                                            <!-- <input type="email" name="recipient_email" id="recipient_email" class="form-control"> -->
+                                                            {{ form.sender|add_class:"form-control"|attr:"id:recipient_email" }} {{ form.sender.errors }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        <div class="compose-email-to compose-subject-title">
+                                                            <span>Subject :</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10">
+                                                        <div class="compose-multiple-email compose-subject-email">
+                                                            <!-- <input type="text" /> 
+                                                            -->
+                                                            {{ form.Subject }} {{ form.Subject.errors }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="compose-email-to compose-subject-title">
+                                                    <span class="pull-left" style="padding-left: 25px;">Body :</span>
+                                                </div>
+                                                <!-- <textarea style="width: 100%;height: 150px; padding: 12px 20px; font-size: 16px;"></textarea> -->
+                                                {{ form.Body|attr:"id:p1" }} {{ form.Body.errors }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="compose-email-to compose-subject-title">
+                                                    <span class="pull-left" style="padding-left: 25px;">Attachment:</span>
+                                                </div><br>
+                                                <div id="dropzone1">
+                                                    <!-- <form action="/upload" class="dropzone dropzone-custom needsclick" id="demo1-upload">
+                                                        <div class="dz-message needsclick download-custom">
+                                                            <span class="adminpro-icon adminpro-cloud-computing-down download-icon"></span>
+                                                            <h2>Drop files here or click to upload.</h2>
+                                                            <p><span class="note needsclick">(The Maximum file size you can send is 25mb.)</span>
+                                                            </p>
+                                                        </div>
+                                                    </form> -->
+                                                    {{ form.file|add_class:"dropzone dropzone-custom needsclick b2"|attr:"id:demo1-upload"}} {{ form.file.errors }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="view-mail-reply-list">
+                                                    <ul class="view-mail-forword">
+                                                        <li><button type="submit" class="btn-info"><i class="fa fa-reply"></i> Send</button>
+                                                        </li>
+                                                        <li><button type="button" class="btn-danger compose-discard-bt"><i class="fa fa-times"></i> Discard</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br> {% endblock %}

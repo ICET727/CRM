@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Orders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Profile <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Orders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                        
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <div class="row">
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                            <h1>Orders<span class="table-project-n"> List</span></h1>
+                        </div>
+                        <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                            <a href="/add/order" class="btn btn-info pull-right">
+                            <div >
+                            <span class="glyphicon glyphicon-plus"></span> Add Orders   </div>
+                        </a>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="slno">Sl No.</th>                                   
+                                        <th data-field="lead" data-editable="false">Customer</th>
+                                        <th data-field="product" data-editable="false">Product Name</th>
+                                        
+                                        <th data-field="unitprice" data-editable="false">Unit Price</th>
+                                        <th data-editable="false">Quantity</th>
+                                        <th >Packaging</th>
+                                        <th>Shipment Mode</th>
+                                        <th data-field="Status">Status</th>
+                                        <th >Total Amount</th>
+                                        <th data-field="Dispatched">Send For Production</th>
+                                        <th data-field="Delivered">Delivered</th>
+                                        <th>Create Performa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in order %}
+                                    <tr>
+                                        <td>{{i.order_id }}</td>
+                                        <td ><a href="/detail/order/{{i.order_id}}">{{ i.order_lead }}</a></td>
+                                        <td>{{ i.product_name }}</td>
+                                         
+                                        <td>  {{ i.per_item_price }} {{ i.order_lead.currency_code }}</td>
+                                        <td>{{ i.item_quantity }}</td>
+                                        <td> {{ i.packaging }}</td>
+                                        
+                                        <td>{{ i.shipment_mode }}</td>
+                                            <td>{{ i.stage }}</td>
+                                        <td>   {{ i.total_amount }} {{ i.order_lead.currency_code }}  </td>
+                                        {% ifequal i.stage 'APPROVED'%}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true" href="/ordered/items/{{i.order_id}}3" style="border-radius: 20%"></a></td>
+
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'SENT FOR PRODUCTION'%}
+                                        <td><a class="fa fa-check btn btn-success" aria-hidden="true"  style="border-radius: 20%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'DELIVERED'%}
+                                        <td><a class="fa fa-check btn btn-success" aria-hidden="true"  style="border-radius: 20%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'DISPATCHED'%}
+                                        <td><a class="fa fa-check btn btn-success" aria-hidden="true"  style="border-radius: 20%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'APPROVAL' %}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true"  style="border-radius: 20%"></a></td>
+
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'REJECTED' %}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true"  style="border-radius: 20%"></a></td>
+
+                                        {% endifequal %}
+                                        
+                                         
+                                        
+                                        {% ifequal i.stage 'APPROVED'%}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true"  style="border-radius: 20%"></a></td>
+
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'SENT FOR PRODUCTION'%}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true"  style="border-radius: 20%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'DELIVERED'%}
+                                        <td><a class="fa fa-check btn btn-success" aria-hidden="true"  style="border-radius: 20%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'DISPATCHED'%}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true" href="/ordered/items/{{i.order_id}}0" style="border-radius: 20%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'APPROVAL' %}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true"  style="border-radius: 20%"></a></td>
+
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'REJECTED' %}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true"  style="border-radius: 20%"></a></td>
+
+                                        {% endifequal %}
+                                    {% ifequal i.stage 'APPROVED'%}
+                                        <td><a type="button" href="/proforma/form/{{ i.order_id }}" class=" glyphicon glyphicon-chevron-right btn pull-right btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'SENT FOR PRODUCTION'%}
+                                        <td><a type="button" href="/proforma/form/{{ i.order_id }}" class=" glyphicon glyphicon-chevron-right btn pull-right btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'DELIVERED'%}
+                                        <td><a type="button" href="/proforma/form/{{ i.order_id }}" class=" glyphicon glyphicon-chevron-right btn pull-right btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'DISPATCHED'%}
+                                        <td><a type="button" href="/proforma/form/{{ i.order_id }}" class=" glyphicon glyphicon-chevron-right btn pull-right btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'APPROVAL' %}
+                                        <td><a type="button" class="    glyphicon glyphicon-chevron-right btn pull-right btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+
+                                        {% endifequal %}
+                                        {% ifequal i.stage 'REJECTED' %}
+                                       <td><a type="button" class=" glyphicon glyphicon-chevron-right btn pull-right btn-info" aria-hidden="true" style="border-radius: 40%"></a></td>
+
+                                        {% endifequal %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+{% endblock %}

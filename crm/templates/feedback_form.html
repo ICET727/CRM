@@ -1,0 +1,272 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6  pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Feedback</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Feedback</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>ADD Feedback</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form method="POST" action="{% url 'crm:feedback' %}">
+                                        {% csrf_token %}
+                                        <div class="all-form-element-inner">
+                                            <h1>Sample Feedback</h1><br>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                                                    <label>Your Name</label>
+                                                    <!-- <input name="name" type="text" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required> -->
+                                                    <select class="form-control" id="feed1" name="customer_name">
+                                                        <option></option>
+                                                        {% for lead in leads %}
+                                                        <option value="{{lead.lead_id}}">{{ lead }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                                                    <label>Email</label>
+                                                    <input type="text" name="email" id="feedemail" placeholder="abhishek@mail.com" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6">
+                                                    <label>Contact</label>
+                                                    <input type="phone" name="phone" id="feedphone" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                    <label>1st Sample Name</label>
+                                                    <select class="form-control" name="sample_1" id="feedsample1">
+                                                        <option></option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                    <label>Your Review/Comment</label>
+                                                    <textarea name="review1" placeholder="Type here" class=" form-control " onfocus="this.value='' ; " onblur="if (this.value=='' ) {this.value='Type here' ;} "></textarea>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row ">
+                                                <div class="col-lg-6 col-sx-6 ">
+                                                    <button type="button" id="showf1" class="btn btn-success "><i class="fa fa-plus " aria-hidden="true "> Add More Samples Feedback</i></button></div>
+                                            </div>
+                                            <hr>
+                                            <div id="onOfff1" style="display:none ">
+                                                <div class="col-lg-6 col-sx-6 "></div>
+                                                <div class="col-lg-6 col-sx-6 ">
+                                                    <button type="button" id="hidef1" class="btn btn-danger pull-right"><i class="fa fa-trash " aria-hidden="true ">  </i></button></div>
+                                                <div class="row ">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>2nd Sample Name</label>
+                                                        <input class="form-control " id="s2" name="sample_2">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review2" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}"></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>3rd Sample Name</label>
+                                                        <input class="form-control" id="s3" name="sample_3">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review3" placeholder="Type here" class=" form-control " onfocus="this.value='' ; " onblur="if (this.value=='' ) {this.value='Type here' ;} "></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row ">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>4th Sample Name</label>
+                                                        <input class="form-control" name="sample_4" id="s4">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review4" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}"></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>5th Sample Name</label>
+                                                        <input class="form-control" name="sample_5" id="s5">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review5" placeholder="Type here" class=" form-control " onfocus="this.value='' ; " onblur="if (this.value=='' ) {this.value='Type here' ;} "></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row ">
+                                                    <div class="col-lg-6 col-sx-6 ">
+                                                        <button type="button" id="showf2" class="btn btn-success "><i class="fa fa-plus " aria-hidden="true "> Add More Samples Feedback</i></button></div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            <div id="onOfff2" style="display: none">
+                                                <div class="col-lg-6 col-sx-6 "></div>
+                                                <div class="col-lg-6 col-sx-6 ">
+                                                    <button type="button" id="hidef2" class="btn btn-danger pull-right "><i class="fa fa-trash " aria-hidden="true ">  </i></button></div>
+                                                <div class="row ">
+
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>6th Sample Name</label>
+                                                        <input class="form-control " name="sample_6" id="s6">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review6" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}"></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>7th Sample Name</label>
+                                                        <input class="form-control" name="sample_7" id="s7" >
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review7" placeholder="Type here" class=" form-control " onfocus="this.value='' ; " onblur="if (this.value=='' ) {this.value='Type here' ;} "></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row ">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>8th Sample Name</label>
+                                                        <input class="form-control " id="s8" name="sample_8" >
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review8" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}"></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>9th Sample Name</label>
+                                                        <input class="form-control" name="sample_9" id="s9">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review9" placeholder="Type here" class=" form-control " onfocus="this.value='' ; " onblur="if (this.value=='' ) {this.value='Type here' ;} "></textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row ">
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>10h Sample Name</label>
+                                                        <input class="form-control" name="sample_10" id="s10" >
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6 ">
+                                                        <label>Your Review/Comment</label>
+                                                        <textarea name="review10" placeholder="Type here" class="form-control" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}"></textarea>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                    <label>Sample Letter No.</label>
+                                                    <input class="form-control" name="sample_letter" required>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                                                    <label>Description</label>
+                                                    <textarea name="description" placeholder="Type here" class=" form-control " onfocus="this.value='' ; " onblur="if (this.value=='' ) {this.value='Type here' ;} "></textarea>
+                                                </div>
+                                            </div><br><br>
+
+                                            <input type="submit" class="btn btn-info pull-right " style="background-color: #111329 " value="Submit Feedback ">
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basic Form End-->
+</div>
+<script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %} "></script>
+<script>
+    $(document).ready(function() {
+        $("#hidef1 ").click(function() {
+            $("#onOfff1 ").hide();
+        });
+        $("#showf1 ").click(function() {
+            $("#onOfff1 ").show();
+        });
+    });
+    $(document).ready(function() {
+        $("#hidef2 ").click(function() {
+            $("#onOfff2 ").hide();
+        });
+        $("#showf2 ").click(function() {
+            $("#onOfff2 ").show();
+        });
+    });
+</script>
+
+{% endblock %}

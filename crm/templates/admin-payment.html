@@ -1,0 +1,122 @@
+ {% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Payments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard<span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Payments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                        
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <div class="row">
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                            <h1>Payment<span class="table-project-n"> Records</span></h1>
+                        </div>
+                       <!--  <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                            <a href="/add/payment" class="btn btn-warning pull-right">
+                            <div >
+                            <span class="glyphicon glyphicon-plus"></span> Add Payment</div>
+                        </a>
+                    </div> -->
+                </div>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-show-export="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="order id">Order ID</th>
+                                        <th data-field="transaction id">Transaction ID</th>
+                                        <th data-field="lead name" data-editable="false">Lead Name</th>
+                                        <th data-field="sales member" data-editable="false">Sales Member</th>
+                                        <th>Product Name</th>
+                                        <th data-field="product code" data-editable="false">Product Code</th>
+                                        <th data-field="order quantity" data-editable="false">Order Qty.</th>
+                                        <!-- <th data-field="email" data-editable="false">Email</th> -->
+                                        <th data-field="order date" data-editable="false">Order Date</th>
+                                        <!-- <th data-field="address" data-editable="false">Address</th> -->
+                                        <th data-field="total price">Total Price</th>
+                                        <th> Balance Remaining</th>
+                                        
+                                        <th data-field="option">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for pay in payments %}
+                                    <tr>
+                                        <td>{{ pay.order_name.id }}</td>
+                                        <td>{{ pay.transaction_id }}</td>
+                                        <td>{{ pay.leads }}</td>
+                                        <td>{{ pay.created_by }}</td>
+                                        <td>{{ pay.order_name }}</td>
+                                        <td>{{ pay.order_name.product_name.product_code }}</td>
+                                        <td>{{ pay.order_name.item_quantity }}</td>
+                                        <td>{{ pay.payment_date }}
+                                        <td>{{ pay.total_amount }}</td>
+                                        <td>{{ pay.due_amount }}</td>
+                                        {% if pay.status %}<td><a class="fa fa-check btn btn-success" href="/payment/admin/{{pay.payment_id}}1" aria-hidden="true" style="border-radius: 20%"></a></td>
+                                        {% else %}
+                                        <td><a class="fa fa-times btn btn-danger" aria-hidden="true" href="/payment/admin/{{pay.payment_id}}0" style="border-radius: 20%"></a> </td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+
+{% endblock %}

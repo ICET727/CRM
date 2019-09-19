@@ -1,0 +1,195 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Orders & Samples</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard<span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Orders & Samples</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bre ---->
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="adminpro-accordion-area">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="admin-pro-accordion-wrap mg-b-15 shadow-reset">                   
+                    <div class="panel-group adminpro-custon-design" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading accordion-head" style="background-color: #5499C7">
+                                <h4 style="color: black">
+                                    <b>Order Requests</b> <i class="fa fa-angle-double-right"></i><a><span data-toggle="collapse" type="button" data-parent="#accordion" href="#collapse1" class="pull-right glyphicon glyphicon-chevron-down"  style='font-size:20px; color:black'></span></a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse panel-ic collapse ">
+                                <div class="panel-body admin-panel-content animated bounce">
+                                    <!-- Leads table area Start-->
+                                    <div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Order <span class="table-project-n">Lists</span></h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-show-export="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th data-field="lead name" data-editable="false">Customer Name</th>
+                                        
+                                        <th data-field="product code" data-editable="false">Amount</th>
+                                        <th data-field="order quantity" data-editable="false">Packaging</th>
+                                        <th>Product Name</th>
+                                        <th>Shipment Priority</th>
+                                        <th data-field="unit price" data-editable="false">Stage</th>
+                                        <th data-field="option">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in order %}
+                                    <tr>
+                                        <td><a href="/detail/order/information/{{i.order_id}}">{{ i.order_lead }}</a></td>
+                                        
+                                        <td>{{ i.total_amount }}</td>
+                                        <td>{{ i.packaging }}</td>
+                                        <td>{{ i.product_name }}</td>
+                                        <td>{{ i.shipment_priority }}</td>
+                                        <td>{{ i.stage }}</td>
+                                        {% ifequal i.stage 'APPROVAL' %}
+                                        <td><a class="fa fa-check btn btn-success" href="/order/confirmation/{{i.order_id}}1" aria-hidden="true" style="border-radius: 20%"></a>&nbsp <a class="fa fa-times btn btn-danger" aria-hidden="true" href="/order/confirmation/{{i.order_id}}0" style="border-radius: 20%"></a> </td>
+                                        {% endifequal %}
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <!-- Leads table area End-->
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading accordion-head" style="background-color:#45B39D ">
+                                <h4 style="color: black">
+                                   <b> Sample Requests</b>  <i class="fa fa-angle-double-right"></i><a><span data-toggle="collapse" type="button" data-parent="#accordion" href="#collapse2" class="pull-right glyphicon glyphicon-chevron-down " style='font-size:20px; color:black'></span></a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse panel-ic collapse">
+                                <div class="panel-body admin-panel-content animated bounce">
+                                    <!-- Opportunity table area Start-->
+                                   <div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Sample <span class="table-project-n">List</span></h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-show-export="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th data-field="lead name" data-editable="false">Customer Name</th>
+                                        
+                                        <th data-field="product code" data-editable="false">Amount</th>
+                                        <th data-field="order quantity" data-editable="false">Packaging</th>
+                                        <th>Product Name</th>
+                                        <th>Shipment Priority</th>
+                                        <th data-field="unit price" data-editable="false">Stage</th>
+                                        <th data-field="option">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in sample %}
+                                    <tr>
+                                        <td><a href="/detail/sample/information/{{i.id}}">{{ i.sample_lead }}</a></td>
+                                        
+                                        <td>{{ i.total_amount }}</td>
+                                        <td>{{ i.packaging }}</td>
+                                        <td>{{ i.sample_name }}</td>
+                                        <td>{{ i.shipment_priority }}</td>
+                                        <td>{{ i.stage }}</td>
+                                        {% ifequal i.stage 'APPROVAL' %}
+                                        <td><a class="fa fa-check btn btn-success" href="/order/confirmation/{{i.id}}3" aria-hidden="true" style="border-radius: 20%"></a>&nbsp <a class="fa fa-times btn btn-danger" aria-hidden="true" href="/order/confirmation/{{i.id}}4" style="border-radius: 20%"></a> </td>
+                                        {% endifequal %}
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <!-- Opportunity table area End-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- accordion End-->
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,1313 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+{% if user.is_authenticated %}
+  		<!doctype html>
+			<html lang="en">
+			<head>
+	    	<!-- Required meta tags -->
+	    	<meta charset="utf-8">
+	    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="shortcut icon" href="http://mongo.flitlance.com/workwise/assets/images/logo.png">
+
+	    <title>WorkWise get started</title>
+	</head>
+	<body>
+	    <div class="row header">
+	    	<div class="col-md-2">
+	    		<div id="back-cv" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-basics" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-industary" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-role" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-works" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-location" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-university" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-core" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-avaliablity" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-achievement" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-experiance" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-school" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-digital" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    		<div id="back-video" class="upload">
+	    			<a class="back">
+		    			<i class="fas fa-arrow-left"></i>
+		    			<span style="font-size: 20px">Back</span>
+	    			</a>
+	    		</div>
+	    	</div>
+			<div class="col-md-10" style="text-align: center;">
+				<img src="http://mongo.flitlance.com/workwise/assets/images/logo.png">
+			</div>
+	    </div>
+	    <div class="row what">
+	    	<div class="col-md-3 sidemenu">
+	    		<div class="row options" id="cv-name">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fas fa-cloud"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Upload CV</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-basics">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon"">
+	    						<i class="fa fa-list"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>The Basics</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-industary">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-industry"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Industries</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-role">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-users"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Roles</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-works">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-briefcase"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Works</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-location">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-globe"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Location</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-university">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-university"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>University</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-core">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-certificate"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Core Strengths</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-avaliablity">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-calendar"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Avaliablity</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-achievement">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-trophy"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Achievements</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>    		
+	    		<div class="row options" id="cv-experiance">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-universal-access"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Experience</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-school">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-address-book"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>School</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-digital">
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fa fa-desktop"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Digital Skills</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row options" id="cv-video" >
+	    			<div class="col-md-12">
+	    				<div class="row">
+	    					<div class="col-md-2 menuicon">
+	    						<i class="fab fa-youtube"></i>
+	    					</div>
+	    					<div class="col-md-8 menutext">
+	    						<span><b>Video Introduction</b></span>
+	    					</div>
+	    					<div class="col-md-2 done upload-cv-done">
+	    						<i class="fas fa-check"></i>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div class="col-md-9" style="padding-left: 50px">
+	    		<div class="row default data" >
+	    			<div class="col-md-6 data1"style="padding: 29% 0px;text-align: center;">
+	    				<button class="btn btn-circle btn-success do-this" style="font-size: 17px;">LET'S DO THIS</button>
+	    			</div>
+	    			<div class="col-md-6 data2" style="padding: 20% 3%">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Hi {{ user.username }}, I'm Nestor!</h5>
+						Welcome to workwise! I'm here to help you go from employed to getting paid. Excited?! Me too!
+	    			</div>
+	    		</div>
+	    	<form method="POST">
+	    		<div class="row upload data" id="cv">
+	    			<div class="col-md-6 data1" style="padding: 29% 0px;text-align: center;">
+	    				<label for="cv1" class="upload1">Upload&nbsp;&nbsp;<i class="fas fa-cloud-upload-alt"></i></label>
+	    				<input type="file" id="cv1" value="hiii" style="display: none;">
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>University</h5>
+						Do you already have a nice CV for me to look at?
+						<div style="float: right;margin-top: 180px;">
+							<button class="btn next-1">SKIP <i class="fas fa-angle-double-right"></i></button>
+							<button class="btn btn-success next-1">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="basics">
+	    			<div class="col-md-6 data1" style="text-align: center;">
+	    				<h5>About you</h5>
+	    				<img id="user-photo" style="height: 100px;width: 100px;border-radius: 50%;" src="https://image.freepik.com/free-icon/male-user-profile-picture_318-37825.jpg"><br>
+	    				<label for="photo" class="upload1">Upload&nbsp;&nbsp;<i class="fas fa-cloud-upload-alt"></i></label>
+	    				<input type="file" id="photo" value="hiii">
+	    				<div style="display: inline-flex;text-align: left;margin-top: 10px;">
+		    				<div class="col-md-6" style="padding: 0px;">
+		    					<span style="font-size: 13px;">First name<span style="color: red;">*</span></span><br>
+		    					{{ user_form.first_name |add_class:"required"|attr:"placeholder:first name"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    					<!-- <input class="required" style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="First Name" name="fname" required> -->
+		    				</div>
+		    				<div class="col-md-6">
+		    					<span style="font-size: 13px;">Last name<span style="color: red;">*</span></span><br>
+		    					{{ user_form.last_name |add_class:"required"|attr:"placeholder:last name"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    					<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" class="required" type="text" placeholder="Last Name" name="lname" required> -->
+		    				</div>
+	    				</div>
+	    				<div style="display: inline-flex;text-align: left;margin-top: 10px;width: 100%">
+		    				<div class="col-md-6" style="padding: 0px;">
+		    					<span style="font-size: 13px;">Date of birth<span style="color: red;">*</span></span><br>
+		    					{{ profile_form.profile_dob |add_class:"required"|attr:"placeholder:YYYY/MM/DD"|attr:"type:date"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    					<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="date" placeholder="DD/MM/YYYY" name="dob" required  class="required"> -->
+		    				</div>
+		    				<div class="col-md-6">
+		    					<span style="font-size: 13px;">Gender</span><br>
+		    						{% if user.profile.profile_gender == 'Male' %}
+		    							
+		    							<select name="sex" ng-model="usermeta.gender" class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
+										<option value="{{ user.profile.profile_gender }}">{{ user.profile.profile_gender }}</option>
+										</select>
+									{% elif user.profile.profile_gender == 'Female' %}
+		    							<span style="font-size: 13px;">Gender</span><br>
+		    							<select name="sex" ng-model="usermeta.gender" class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
+										<option value="{{ user.profile.profile_gender }}">{{ user.profile.profile_gender }}</option>
+										</select>
+									{% else %}
+										{{ profile_form.profile_gender|add_class:"form-control ng-pristine ng-valid ng-not-empty ng-touched"|attr:"style:width:150px" }}
+										
+									{% endif %}
+									<!-- <option value="">Select</option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option> -->
+									
+		    				</div>
+	    				</div>
+	    				<h5 style="padding:30px;">Do you have a driving licence?<span style="color: red;">*</span></h5>
+	    				<div style="display: inline-flex;" id="licence1">
+	    					<div class="form-check" style="padding: 0px;">
+								<input style="display: none;" class="form-check-input choice" type="radio" name="exampleRadios0" id="exampleRadios1" value="NOT YET LEARNED" checked>
+								<input style="display: none;" class="form-check-input choice" type="radio" name="exampleRadios0" id="exampleRadios2" value="CURRENTLY LEARNING">
+								<input style="display: none;" class="form-check-input choice" type="radio" name="exampleRadios0" id="exampleRadios3" value="FULL LICENCE">
+								<label class="form-check-label p pclick" for="exampleRadios1">
+									NOT YET LEARNED
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;">
+								<label class="form-check-label p" for="exampleRadios2">
+									CURRENTLY LEARNING
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;">
+								<label class="form-check-label p" for="exampleRadios3">
+									FULL LICENCE
+								</label>
+								{{ profile_form.profile_licence |add_class:"licence"|attr:"style:width:150px;display:none"}}
+							</div>
+	    				</div>
+	    				<h5 style="padding: 30px;">Contact Info</h5>
+	    				<div style="text-align: left;">
+		    				<span style="color: red;">*</span></span><br>
+		    				{{ profile_form.profile_mobile |add_class:"required"|attr:"placeholder:Mobile no"|attr:"type:date"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    				<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" type="text" class="required" placeholder="Mobile no" name="mno" required><br>
+		    				<span style="color: red;">*</span></span><br>
+		    				{{ profile_form.profile_address |add_class:"required"|attr:"placeholder:Address"|attr:"type:date"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    				 <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Address" name="add" class="required" required> --><br>
+		    				{{ profile_form.profile_address2 |attr:"placeholder:Address 2"|attr:"type:date"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px;margin-bottom: 30px"}}
+		    				<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" type="text" placeholder="Address line 2" name="add-line2"> --><br>
+		    				<span style="color: red;">*</span></span><br>
+		    				{{ profile_form.profile_city |add_class:"required"|attr:"placeholder:City"|attr:"type:date"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px;margin-bottom: 30px"}}
+		    				<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" type="text" placeholder="City" name="city" class="required" required> --><br>
+		    				<span style="color: red;">*</span></span><br>
+		    				{{ profile_form.profile_postcode |add_class:"required"|attr:"placeholder:Postcode"|attr:"type:date"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px;margin-bottom: 30px"}}
+		    				<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" class="required" type="text" placeholder="Postcode" name="pin" required> -->
+	    				</div>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>The basics</h5>
+						<h6 style="font-weight: normal;">So tell me about yourself?</h6>
+						<div style="float: right;margin-top: 180px;">
+							<button type="submit" class="btn btn-success next2">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		{% csrf_token %}
+	    		<div class="row upload data" id="industary">
+	    			<div class="col-md-6 data1">
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ACCOUNTANCY, BANKING & FINANCE" id="defaultCheck1" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ADMIN & HR" id="defaultCheck2" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ANIMAL & PLANT RESOURCES" id="defaultCheck3" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ANY INDUSTRY" id="defaultCheck4" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="BUSINESS, CONSULTANCY & MANAG" id="defaultCheck5" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="CHARITY & VOLUNTARY WORK" id="defaultCheck6" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="CREATIVE ARTS & DESIGN" id="defaultCheck7" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ENERGY & UTILITIES" id="defaultCheck8" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ENGINEERING & MANUFACTURING" id="defaultCheck9" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="ENVIRONMENT & AGRICULTURE" id="defaultCheck10" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="INSURANCE & PENSIONS" id="defaultCheck11" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="LAW" id="defaultCheck12" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="PUBLISHING & JOURNALISM" id="defaultCheck13" style="display:  none;">								
+								<input class="form-check-input choice" type="checkbox" name="industary" value="RECRUITMENT & HR" id="defaultCheck14" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="RETAIL" id="defaultCheck15" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="SALES" id="defaultCheck16" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="SCIENCE & PHARMACEUTICALS" id="defaultCheck17" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="SOCIAL CARE" id="defaultCheck18" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="SPORTS" id="defaultCheck19" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="STARTUPS" id="defaultCheck20" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="TRANSPORT & LOGISTICS" id="defaultCheck21" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="TEACHING & EDUCATION" id="defaultCheck22" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="" id="defaultCheck23" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="" id="defaultCheck24" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="" id="defaultCheck25" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="" id="defaultCheck26" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="" id="defaultCheck27" style="display:  none;">
+								<input class="form-check-input choice" type="checkbox" name="industary" value="TEACHING & EDUCATION" id="defaultCheck28" style="display:  none;">
+								<label class="form-check-label industary_name" for="defaultCheck1">
+								  	ACCOUNTANCY, BANKING & FINANCE
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck2">
+								  	ADMIN & HR
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck3">
+								  	ANIMAL & PLANT RESOURCES
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck4">
+								  	ANY INDUSTRY
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck5">
+								  	BUSINESS, CONSULTANCY & MANAG
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck6">
+								  	CHARITY & VOLUNTARY WORK
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck7">
+								  	CREATIVE ARTS & DESIGN
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck8">
+								  	ENERGY & UTILITIES
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck9">
+								  	ENGINEERING & MANUFACTURING
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck10">
+								  	ENVIRONMENT & AGRICULTURE
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck11">
+								  	INSURANCE & PENSIONS
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck12">
+								  	LAW
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck13">
+								  	LAW ENFORCEMENT & SECURITY
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck14">
+								  	LEISURE & TOURISM
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck15">
+								  	MARKETING, ADVERTISING & PR
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck16">
+								  	MEDIA & INTERNET
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck17">
+								  	PERFORMING ARTS
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck18">
+								  	PROPERTY & CONSTRUCTION
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck19">
+								  	PUBLISHING & JOURNALISM
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck20">
+								  	RECRUITMENT & HR
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck21">
+								  	RETAIL
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck22">
+								  	SALES
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck23">
+								  	SCIENCE & PHARMACEUTICALS
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck24">
+								  	SOCIAL CARE
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck25">
+								  	SPORTS
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck26">
+								  	STARTUPS
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck27">
+								  	TRANSPORT & LOGISTICS
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck28">
+								  	TEACHING & EDUCATION
+								</label>
+								{{ profile_form.profile_industries |add_class:"textarea"|attr:"placeholder:Mobile no"|attr:"value:hiii"|attr:"style:padding-top:5px;width:93%;display:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+							</div>
+	    				</div>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Choose some industries</h5>
+						<h6 style="font-weight: normal;">What areas do you want to work in? I'll show you relevant jobs letter.</h6>
+						<div style="float: right;margin-top: 160px;">
+							<button class="btn btn-success next-3">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="role">
+	    			<div class="col-md-6 data1" style="text-align: center;">
+	    				<h5 style="padding: 10px;">Customer Facing</h5>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<input class="form-check-input choice" type="checkbox" value="BUSINESS DEVELOPMENT" id="defaultCheck29" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="ACCOUNT MANAGER" id="defaultCheck30" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="SALES MANAGER" id="defaultCheck31" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="CUSTOMER SUCCESS" id="defaultCheck32" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="RECRUITMENT" id="defaultCheck33" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="LEAD GENERATION" id="defaultCheck34" style="display:  none;height: 25px;width: 131px;">
+								<label class="form-check-label industary_name" for="defaultCheck29">
+								  	BUSINESS DEVELOPMENT  
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck30">
+								  	ACCOUNT MANAGER
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck31">
+								  	SALES MANAGER  
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck32">
+								  	CUSTOMER SUCCESS
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck33">
+								  	RECRUITMENT  
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck34">
+								  	LEAD GENERATION 
+								</label>
+								{{ profile_form.profile_roles|add_class:"textarea1"|attr:"placeholder:Mobile no"|attr:"value:hiii"|attr:"style:padding-top:5px;width:93%;display:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+							</div>
+	    				</div>
+	    				<h5 style="padding: 10px;">Operations</h5>
+						<h5 style="padding: 10px;">Tech</h5>
+						<h5 style="padding: 10px;">Marketing</h5>
+						<h5 style="padding: 10px;">Design</h5>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Select some roles</h5>
+						<h6 style="font-weight: normal;">What position can you see yourself working in?</h6>
+						<div style="float: right;margin-top: 180px;">
+							<button type="submit" class="btn btn-success next-4">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    	</form>
+	    		<div class="row upload data" id="works" style="text-align: center;">
+	    			<div class="col-md-6 data1">
+	    				<h5 style="margin-top: 10px">Cover letter tweet</h5>
+	    				{{ profile_form.profile_about|attr:"rows:5"|attr:"cols:40"|attr:"style:width:100%;background-color: #eee"}}
+	    				<!-- <textarea rows="5" style="width: 100%;background-color: #eee"></textarea> -->
+	    				<h5 style="margin-top: 20px;">Type of works<span style="color: red;">*</span></h5>
+	    				<h6 style="font-weight: normal;">Select type of works</h6>
+	    				<div style="display: inline-flex;" id="work1">
+	    					<div class="form-check" style="padding: 0px;">
+								<input style="display: none;" class="form-check-input choice" type="radio" name="exampleRadios1" id="exampleRadios4" value="GRADUATE JOB" checked>
+								<input style="display: none;" class="form-check-input choice" type="radio" name="exampleRadios1" id="exampleRadios5" value="INTERNSHIP">
+								<input style="display: none;" class="form-check-input choice" type="radio" name="exampleRadios1" id="exampleRadios6" value="YEAR IN INDUSTRY">
+								<label class="form-check-label p pclick" for="exampleRadios4">
+									GRADUATE JOB
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;">
+								
+								<label class="form-check-label p" for="exampleRadios5">
+									INTERNSHIP
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;">
+								<label class="form-check-label p" for="exampleRadios6">
+									YEAR IN INDUSTRY
+								</label>
+								{{ profile_form.profile_work|add_class:"work"|attr:"value:hii"|attr:"style:width:150px;display:none"}}
+							</div>
+	    				</div>
+	    				<h5 style="margin-top: 20px;">Salary expectation</h5>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="col-md-6">
+		    					Salary from<br>
+		    					{{ profile_form.profile_salary_start|attr:"style:padding-top:2px;width:93%;border-bottom:1px solid #ced4da;font-size 19px" }}
+			    				<!-- <select name="salary_from" ng-model="usermeta.salary.from" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">
+									<option value="">From</option>
+									
+									<option value="10000">Rs.10000</option>
+									<option value="15000">Rs.15000</option>
+									<option value="25000">Rs.25000</option>
+									<option value="30000">Rs.30000</option>
+									<option value="40000">Rs.40000</option>
+									<option value="50000">Rs.50000</option>
+									<option value="60000">Rs.60000</option>
+									<option value="60000">Rs.70000</option>
+									<option value="60000">Rs.80000</option>
+									<option value="60000">Rs.90000</option>
+									<option value="60000">Rs.100000</option>
+								</select> -->
+							</div>
+							<div class="col-md-6">
+								Salary to(per year)<br>
+								{{ profile_form.profile_salary_start|attr:"style:padding-top:2px;width:93%;border-bottom:1px solid #ced4da;font-size 19px" }}
+								<!-- <select name="salary_to" ng-model="usermeta.salary.to" class="form-control ng-pristine ng-valid ng-not-empty ng-touched">
+									
+									
+									<option value="10000">Rs.10000</option>
+									<option value="15000">Rs.15000</option>
+									<option value="25000">Rs.25000</option>
+									<option value="30000">Rs.30000</option>
+									<option value="40000">Rs.40000</option>
+									<option value="50000">Rs.50000</option>
+									<option value="60000">Rs.60000</option>
+									<option value="60000">Rs.70000</option>
+									<option value="60000">Rs.80000</option>
+									<option value="60000">Rs.90000</option>
+									<option value="60000">Rs.100000</option>
+								</select> -->
+							</div>
+	    				</div>
+	    				<br>
+						<input style="margin-top: 35px" class="form-check-input" type="checkbox" value="" id="defaultChec1">
+					  	<label style="margin-top: 27px" class="form-check-label" for="defaultChec1">
+					    Willing to accept expenses only payment
+					  	</label>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90">
+	    				<h5>Sell yourself<h6 style="font-weight: normal;">Tell me about yourself. Why are you awesome? What you want to do with your life?<br>(Briefly describe what you're currently doing and what kind of job you're looking for.)</h6></h5>
+						<div style="float: right;margin-top: 120px;">
+							<button class="btn btn-success next-5">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="location">
+	    			<div class="col-md-6 data1">
+	    				<h5>Remote<span style="color: red;left-margin: 10px;">*</span></h5>
+	    				<div style="display: inline-flex;">
+		    				<div class="form-check remote_yes">
+							  <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios11" value="option1" checked>
+							  <label class="form-check-label" for="exampleRadios11">
+							    Yes
+							  </label>
+							</div>
+							<div class="form-check remote_no"  style="margin-left: 115px;">
+							  <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios12" value="option2">
+							  <label class="form-check-label" for="exampleRadios12">
+							    No
+							  </label>
+							</div>
+						</div>
+						<div class="preference">
+							<div class="inner">
+								<h5 style="margin-top: 25px;">Enter your prefrences<span style="color: red;">*</span></h5>
+								<input style="padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" class="required" type="text" placeholder="First preference" name="first_preference"><br>
+								<input style="padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" class="required" type="text" placeholder="Second preference"name="second_preference"><br>
+								<input style="padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" class="required" type="text" placeholder="Third preference" name="third_preference"><br>
+								<input style="padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" class="required" type="text" placeholder="Fourth preference"name="fourth_preference"><br>
+								<input style="padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;margin-bottom: 30px;" class="required" type="text" placeholder="Fifth preference" name="fifth_preference">
+
+								{{ profile_form.profile_job_location|add_class:"location"|attr:"value:hii"|attr:"style:width:150px;display:none" }}
+							</div>
+						</div>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Where in the india<br><span style="font-weight: normal;font-size: 16px;">Can you see yourself working?</span></h5>
+						<div style="float: right;margin-top: 180px;">
+							<button class="btn btn-success next-6">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="university">
+	    			<div class="col-md-6 data1">
+		    			<div class="onadd">
+		    				<h5 style="padding: 12px 0px;">Degree</h5>
+		    				<span style="padding-top:  0px;font-size: 13px;">Course title<span style="color: red;">*</span></span><br>
+		    				{{ degree_form.degree_title|add_class:"required"|attr:"placeholder:Enter Course title"|attr:"style:padding-top:5px;width:93%;margin-bottom: 20px;border: none;border-bottom:1px solid #ced4da;font-size 19px" }}
+		    				<!-- <input class="required" style="margin-bottom: 20px;padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter Course title" name="fname"> -->
+		    				<span style="font-size: 13px;">University<span style="color: red;">*</span></span><br>
+		    				{{ degree_form.degree_university|add_class:"form-control ng-pristine ng-valid ng-empty ng-touched required-d"|attr:"style:margin-bottom: 20px"}}
+		    				<!-- <select name="university" ng-model="usermeta.degree.university" class="form-control ng-pristine ng-valid ng-empty ng-touched required-d" style="margin-bottom: 20px;">
+								<option value="">Select</option>
+								<option value="first">First</option>
+							</select> -->
+							<div style="display: inline-flex;text-align: left;margin-top: 10px;width: 100%">
+			    				<div class="col-md-6" style="width: 39%;padding: 0px;/* margin: 10px; */">
+			    					<span style="font-size: 13px;">Course qualification<span style="color: red;">*</span></span><br>
+			    					{{ degree_form.degree_course|add_class:"form-control ng-pristine ng-valid ng-empty ng-touched required-d"|attr:"style:width: 150px"}}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="form-control ng-pristine ng-valid ng-empty ng-touched required-d" style="width: 200px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+			    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;">
+			    					<span style="font-size: 13px;">Grade</span><br>
+			    					{{ degree_form.degree_grade|add_class:"form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"ng-model=usermeta.degree.university"|attr:"style:width: 150px"}}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 205px;">
+										<option value="">Select</option>
+									</select> -->
+			    				</div>
+			    			</div>
+			    			<div style="display: inline-flex;text-align: center;margin: 15px 0px; left-margin:20px;width: 100%;" id="study1">
+								<div class="form-check">
+								  <input class="form-check-input studing choice" type="radio" name="exampleRadios2" checked id="exampleRadios7" value="still studing">
+								  <label class="form-check-label" for="exampleRadios7">
+								    Still studing
+								  </label>
+								</div>
+								<div class="form-check graduate choice" style="margin-left: 110px;">
+								  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios8" value="option2">
+								  <label class="form-check-label" for="exampleRadios8">
+								    Graduate
+								  </label>
+								</div>
+								{{ degree_form.degree_type|add_class:"text1"|attr:"value:hii"|attr:"style:width: 150px;display:none"}}
+							</div>
+							<div style="display: inline-flex;text-align: left;margin-top: 10px;width: 100%">
+			    				<div class="col-md-6 study" style="padding: 0px;">
+			    					<div class="studing-select">
+				    					<span style="font-size: 13px;">Year of study<span style="color: red;">*</span></span><br>
+				    					{{ degree_form.degree_year|add_class:"orm-control ng-pristine ng-valid ng-empty ng-touched required-d"|attr:"style:width: 150px"}}
+				    					<!-- <select name="university" ng-model="usermeta.degree.university" class="form-control ng-pristine ng-valid ng-empty ng-touched required-d" style="width: 200px;">
+											<option value="">Select</option>
+											<option value="first">First</option>
+										</select> -->
+									</div>
+			    				</div>
+			    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+			    					<span style="font-size: 13px;">Graduation year<span style="color: red;">*</span></span><br>
+			    					{{ degree_form.degree_duration|add_class:"orm-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:width: 150px"}}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 205px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+		    				</div>
+		    			</div>
+	    				<div style="text-align: center;margin-top: 31px;">
+	    					<button class="btn btn-primary add-degree">+ Add Degree</button>
+	    				</div>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>University<br><span style="font-weight: normal;font-size: 16px;">Do you even study?</span></h5>
+						
+						<div style="float: right;margin-top: 180px;">
+							<button class="btn btn-success next-7">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="core">
+	    			<div class="col-md-6 data1">
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<input class="form-check-input choice" type="checkbox" value="FLEXIBILITY" id="defaultCheck35" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="ANALYTICAL" id="defaultCheck36" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="CONFIDENCE" id="defaultCheck37" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="VERBAL COMMUNICATION" id="defaultCheck38" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="CREATIVITY" id="defaultCheck39" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="DRIVE" id="defaultCheck40" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="DECISION MAKING" id="defaultCheck41" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="ATTENTION TO DETAIL" id="defaultCheck42" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="LEADERSHIP" id="defaultCheck43" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="ORGANISED" id="defaultCheck44" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="TEAM PLAYER" id="defaultCheck45" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="WRITTEN COMMUNICATION" id="defaultCheck46" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="QUICK LEARNER" id="defaultCheck47" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="NUMERICAL ANALYSIS" id="defaultCheck48" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="HONESTY" id="defaultCheck49" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="ENTHUSIASTIC" id="defaultCheck50" style="display:  none;height: 25px;width: 131px;">
+								<input class="form-check-input choice" type="checkbox" value="COMMERCIAL AWARENESS" id="defaultCheck51" style="display:  none;height: 25px;width: 131px;">
+								<label class="form-check-label industary_name" for="defaultCheck35">
+								  	FLEXIBILITY
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck36">
+								  	ANALYTICAL
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck37">
+								  	CONFIDENCE
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck38">
+								  	VERBAL COMMUNICATION
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck39">
+								  	CREATIVITY
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck40">
+								  	DRIVE
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck41">
+								  	DECISION MAKING
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck42">
+								  	ATTENTION TO DETAIL
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck43">
+								  	LEADERSHIP
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck44">
+								  	ORGANISED
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck45">
+								  	TEAM PLAYER
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck46">
+								  	WRITTEN COMMUNICATION
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck47">
+								  	QUICK LEARNER
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck48">
+								  	NUMERICAL ANALYSIS
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck49">
+								  	HONESTY
+								</label>
+							</div>
+							<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck50">
+								  	ENTHUSIASTIC
+								</label>
+							</div>
+	    				</div>
+	    				<div style="display: inline-flex;width: 100%">
+	    					<div class="form-check" style="padding: 0px;width: 50%">
+								<label class="form-check-label industary_name" for="defaultCheck51">
+								  	COMMERCIAL AWARENESS
+								</label>
+								{{ profile_form.profile_strength|add_class:"textarea2"|attr:"value:hiii"|attr:"style:padding-top:5px;width:93%;display:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+							</div>
+	    				</div>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Core strengths</h5>
+						Which 5 strengths best describe you? This will help us find employers aligned with your values.
+						<div style="float: right;margin-top: 175px;">
+							<button class="btn btn-success next-8">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="avaliablity">
+	    			<div class="col-md-6 data1">
+	    				<div class="onadd">
+		    				<h5 style="margin-top: 20px;">Availability</h5>
+		    				<div style="display: inline-flex;text-align: center;margin: 17px 0px;width: 100%;">
+			    				<div class="form-check" style="padding-right: 32px;">
+								  	<input class="form-check-input no" type="radio" name="exampleRadios" id="exampleRadios9" value="option1" checked="" style="margin-top: 8px;">
+								  	<label class="form-check-label" for="exampleRadios9" style="font-size:  13px;">
+								    I have specific commitments
+								  	</label>
+								</div>
+								<div class="form-check">
+								  	<input class="form-check-input yes" type="radio" name="exampleRadios" id="exampleRadios10" value="option2" style="margin-top: 8px;">
+								  	<label class="form-check-label" for="exampleRadios10" style="font-size: 13px;">
+								    Yes I'm available now
+								  	</label>
+								</div>
+							</div>
+							<div style="display: inline-flex;text-align: left;margin-top: 10px;width: 100%" class="avail">
+			    				<div class="col-md-6 one" style="padding: 0px;">
+			    					<span style="font-size: 13px;">From<span style="color: red;">*</span></span><br>
+			    					{{ availability_form.availability_from|add_class:"required"|attr:"placeholder:YYYY/MM/DD"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+			    					<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="date" placeholder="DD/MM/YYYY" name="fname" class="required"> -->
+			    				</div>
+			    				<div class="col-md-6 two" style="padding:  0px;margin-left:  5px;width: 200px;">
+			    					<span style="font-size: 13px;">To<span style="color: red;">*</span></span><br>
+			    					{{ availability_form.availability_to|add_class:"required"|attr:"placeholder:YYYY/MM/DD"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+			    					<!-- <input style="padding-top: 5px;width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="date" placeholder="DD/MM/YYYY" name="fname" class="required"> -->
+			    				</div>
+		    				</div>
+	    				</div>
+	    				<div style="text-align: center;margin-top: 31px;">
+	    					<button class="btn btn-primary add-ava">+ Add Availability</button>
+	    				</div>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>When can you start work?<br><span style="font-size: 16px;font-weight: normal;">Set your availability so we can match you with relevant jobs. You can add a range or leave your availability open-ended.</span></h5>
+						
+						<div style="float: right;margin-top: 130px;">
+							<button class="btn btn-success next-9">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="achievement">
+	    			<div class="col-md-6 data1">
+	    				<div style="text-align: center;">
+	    					<h5>Achievements</h5>
+	    				</div>
+	    				<div class="onadd">
+		    			</div>
+		    			<button style="text-align: center;margin-top: 31px;margin-left: 32%;" class="btn btn-primary add-achive">+ Add Achievement</button>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>What have you achieved?<br><span style="font-size: 16px;font-weight: normal;">Sports team captain, society president, musical mastermind or nobel laureate?</span></h5>
+						<div style="float: right;margin-top: 155px;">
+							<button class="btn btn-success next-10">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="experiance">
+	    			<div class="col-md-6 data1"">
+	    				<h5 style="padding: 12px 0px;">Experience</h5>
+	    				<span style="padding-top:  0px;font-size: 13px;">Company name<span style="color: red;">*</span></span><br>
+	    				{{ experience_form.experience_company|add_class:"required"|attr:"placeholder:Enter Company"|attr:"style:padding-top:5px;width:100%;margin-bottom:13px;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+	    				<!-- <input style="margin-bottom: 13px;padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter Company" name="fname" class="required"> -->
+	    				<span style="padding-top:  0px;font-size: 13px;">Role<span style="color: red;">*</span></span><br>
+	    				{{ experience_form.experience_role|add_class:"required"|attr:"placeholder:Enter role"|attr:"style:padding-top:5px;width:100%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+	    				<!-- <input  style="/* margin-bottom: 20px; */padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter role" name="fname" class="required"> -->
+	    				<div style="display: inline-flex;text-align: left;margin: 13px 0px;width: 100%;" class="upload">
+		    				<div class="col-md-6" style="padding: 0px;">
+		    					<span style="font-size: 13px;">Start Date<span style="color: red;">*</span></span><br>
+		    					{{ experience_form.experience_start|add_class:"required"|attr:"placeholder:YYYY/MM/DD"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    					<!-- <input  style="padding-top: 5px;padding-bottom:10px; width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="date" placeholder="DD/MM/YYYY" name="fname" class="required"> -->
+		    				</div>
+		    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+		    					<span style="font-size: 13px;">End Date<span style="color: red;">*</span></span><br>
+		    					{{ experience_form.experience_end|add_class:"required"|attr:"placeholder:YYYY/MM/DD"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    					<!-- <input  style="padding-top: 5px;padding-bottom:10px;width: 98%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="date" placeholder="DD/MM/YYYY" name="fname" class="required"> -->
+		    				</div>
+	    				</div>
+	    				<span style="padding-top:  0px;font-size: 13px;">Location<span style="color: red;">*</span></span><br>
+	    				{{ experience_form.experience_location|add_class:"required"|attr:"placeholder:Enter location"|attr:"style:padding-top:5px;width:93%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+	    				<!-- <input  style="/* margin-bottom: 20px; */padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter location" name="fname" class="required"> -->
+	    				<div style="display: inline-flex;text-align: left;margin: 14px 0px;width: 100%;">
+		    				<div class="col-md-6" style="padding: 0px;">
+		    					<span style="font-size: 13px;">Industry<span style="color: red;">*</span></span><br>
+		    					{{ experience_form.experience_industry|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:padding-top:5px;width:150px"}}
+		    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 200px;">
+									<option value="">Select</option>
+									<option value="first">First</option>
+								</select> -->
+		    				</div>
+		    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+		    					<span style="font-size: 13px;">Work type<span style="color: red;">*</span></span><br>
+		    					{{ experience_form.experience_work|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:padding-top:5px;width:150px"}}
+		    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 205px;">
+									<option value="">Select</option>
+									<option value="first">First</option>
+								</select> -->
+		    				</div>
+	    				</div>
+	    				<!-- <span style="font-size: 13px;">Work type<span style="color: red;">*</span></span><br> -->
+						<!-- <select name="university" ng-model="usermeta.degree.university" class="form-control required-d ng-pristine ng-valid ng-empty ng-touched" style="width: 100%;margin-bottom: 14px;">
+							<option value="">Select</option>
+							<option value="first">First</option>
+						</select> -->
+						<span style="font-size: 13px;">Description<span style="color: red;">*</span></span><br>
+						{{ experience_form.experience_description|attr:"id:message1"|attr:"rows:5"|attr:"style:width:100%;background-color: #eee"}}
+	    				<!-- <textarea rows="5" id="message1" style="width: 100%;background-color: #eee"></textarea> -->
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Professional experience<br><span style="font-size: 16px;font-weight: normal;">Employers want to know about your professional experience to see whether you have skills that will help their business grow! Mention work experience, internships, summer jobs, charity work, or anything that makes you stand out.</span></h5>
+						<div style="float: right;margin-top: 85px;">
+							<button class="btn btn-success next-11">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="school">
+	    			<div class="col-md-6 data1">
+	    				<div class="onadd">
+		    				<h5 style="padding: 12px 0px;">School</h5>
+		    				<span style="padding-top:  0px;font-size: 13px;">Name<span style="color: red;">*</span></span><br>
+		    				{{ school_form.school_name|add_class:"required"|attr:"placeholder:Enter school name"|attr:"style:padding-top:5px;width:100%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+		    				<!-- <input  style="margin-bottom: 13px;padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter school name" name="fname" class="required"> -->
+		    				<div style="display: inline-flex;text-align: left;margin: 13px 0px;width: 100%;" class="upload">
+			    				<div class="col-md-6" style="padding: 0px;">
+			    					<span style="font-size: 13px;">City<span style="color: red;">*</span></span><br>
+			    					{{ school_form.school_city|add_class:"required"|attr:"placeholder:Enter city"|attr:"style:padding-top:5px;width:100%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+			    					<!-- <input  style="padding-top: 5px;padding-bottom:10px; width: 93%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter city" name="fname" class="required"> -->
+			    				</div>
+			    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+			    					<span style="font-size: 13px;">State<span style="color: red;">*</span></span><br>
+			    					{{ school_form.school_state|add_class:"required"|attr:"style:padding-top:5px;width:100%;border:none;border-bottom:1px solid #ced4da;font-size 19px"}}
+			    					<!-- <input  style="padding-top: 5px;padding-bottom:10px;width: 98%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Enter state" name="fname" class="required"> -->
+			    				</div>
+		    				</div>
+		    				<div style="display: inline-flex;text-align: left;margin: 14px 0px;width: 100%;">
+			    				<div class="col-md-6" style="padding: 0px;">
+			    					<span style="font-size: 13px;">From<span style="color: red;">*</span></span><br>
+			    					{{ school_form.school_from|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:width: 150px"}}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 200px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+			    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+			    					<span style="font-size: 13px;">To<span style="color: red;">*</span></span><br>
+			    					{{ school_form.school_to|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:width: 150px"}}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 205px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+		    				</div>
+		    				<span style="padding-top:  0px;font-size: 13px;">Subjects<span style="color: red;">*</span></span><br>
+		    				{{ school_form.school_subjects|add_class:"required"|attr:"placeholder:Name name"|attr:"style:margin-bottom: 13px;padding-top: 5px;border-bottom: 1px solid #ced4da;font-size: 19px;width: 200px" }}
+		    				<!-- <input style="margin-bottom: 13px;padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Name" name="fname" class="required"> -->
+		    				<!-- <br><input style="margin-bottom: 13px;padding-top: 5px;width: 100%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" placeholder="Name" name="fname" class="required"> -->
+		    			</div>
+	    				<button style="text-align: center;margin-top: 31px;margin-left: 36%;" class="btn btn-primary add-school">+ Add School</button>
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>School<br><span style="font-size: 16px;font-weight: normal;">Ah, simpler times...</span></h5>
+						<div style="float: right;margin-top: 180px;">
+							<button class="btn btn-success next-12">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="digital">
+	    			<div class="col-md-6 data1">
+	    				<div class="onadd-1">
+		    				<h5 style="padding: 12px 0px;">Social media</h5>
+		    				<div style="display: inline-flex;text-align: left;margin: 13px 0px;width: 100%;">
+			    				<div class="col-md-6" style="padding: 0px;">
+			    					<span style="font-size: 13px;">Services<span style="color: red;">*</span></span><br>
+			    					{{ social_form.social_service|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:width: 150px" }}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 200px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+			    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+			    					<span style="font-size: 13px;">Link/Username<span style="color: red;">*</span></span><br>
+			    					{{ social_form.social_url|add_class:"required"|attr:"style:padding-top: 5px;padding-bottom:10px;width: 98%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px" }}
+			    					<!-- <input style="padding-top: 5px;padding-bottom:10px;width: 98%;border: none;border-bottom: 1px solid #ced4da;font-size: 19px;" type="text" name="fname" class="required"> -->
+			    				</div>
+		    				</div>
+		    			</div>
+	    				<div style="text-align: center;">
+	    					<button style="text-align: center;margin-top: 31px;" class="btn btn-primary add-services">+ Add Service</button>
+	    				</div>
+	    				<div class="onadd-2">
+		    				<h5 style="padding: 12px 0px;">Computer skills</h5>
+		    				<div style="display: inline-flex;text-align: left;margin: 14px 0px;width: 100%;">
+			    				<div class="col-md-6" style="padding: 0px;">
+			    					<span style="font-size: 13px;">Skill<span style="color: red;">*</span></span><br>
+			    					{{ computer_form.computer_skill|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:width: 150px" }}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 200px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+			    				<div class="col-md-6" style="padding:  0px;margin-left:  5px;width: 200px;">
+			    					<span style="font-size: 13px;">Level<span style="color: red;">*</span></span><br>
+			    					{{ computer_form.computer_level|add_class:"required-d form-control ng-pristine ng-valid ng-empty ng-touched"|attr:"style:width: 150px" }}
+			    					<!-- <select name="university" ng-model="usermeta.degree.university" class="required-d form-control ng-pristine ng-valid ng-empty ng-touched" style="width: 205px;">
+										<option value="">Select</option>
+										<option value="first">First</option>
+									</select> -->
+			    				</div>
+		    				</div>    			
+	    				</div>	
+	    				<button style="text-align: center;margin-top: 31px;margin-left: 39%;" class="btn btn-primary add-skill">+ Add Skill</button>	
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Digital skills<br><span style="font-size: 16px;font-weight: normal;">Tweet real good or nifty with SQL? Tell us about it! Employers love tech skills.</span></h5>
+						<div style="float: right;margin-top: 155px;">
+							<button class="btn btn-success next-13">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    		<div class="row upload data" id="video">
+	    			<div class="col-md-6 data1" style="text-align: center;">
+	    				<h5 style="margin-top: 20px;">Video Introduction</h5>
+	    				<h6 style="font-weight: normal;">Add a short video cover letter to your profile.</h6>
+	    				<input type="file" name="">
+	    			</div>
+	    			<div class="col-md-6 data2">
+	    				<img style="border: 1px solid #f2f2f2;border-radius: 107px;" src="http://mongo.flitlance.com/workwise/assets/images/avatar-1.png" height="90" width="90"><br>
+	    				<h5>Want a job? Adding a video is how to do it!<br><span style="font-size: 16px;font-weight: normal;">Tell us your name<br>What you've done and want to do<br>When you're free<br>Smile<br>Wear clothes</span></h5>
+						<div style="float: right;margin-top: 60px;">
+							<button class="btn btn-success next">NEXT <i class="fas fa-angle-double-right"></i></button>
+						</div>
+					</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <footer>
+			<div style="padding: 30px 150px">
+				<a href="{% url 'logout' %}">logout</a>
+				<span style="float: right;line-height: 15px;">&nbsp; &copy;Copyright 2018</span>
+				<img src="http://mongo.flitlance.com/workwise/assets/images/logo2.png" alt="" style="float: right;">
+			</div>
+		</footer>
+
+	    <!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+	    
+	</body>
+</html>
+	
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+{% endblock %}

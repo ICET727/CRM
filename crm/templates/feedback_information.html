@@ -1,0 +1,216 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<style type="text/css">
+    h4{
+       font: italic bold 12px/30px Georgia, serif;
+    }
+    p{
+        font-family: 12px/30px Scheherazade, serif;
+        font-size: 12px;
+    }
+</style>
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">lead</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">lead</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="button-ad-wrap shadow-reset nt-mg-b-30">
+                                <div class="alert-title">
+                                    <h2>lead Details :</h2>                                   
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Name: </h4> 
+                                        <p>{{feedback.customer_name.lead_company}}</p>
+                                         </div>                                 
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Contact: </h4>
+                                         <p> {{ feedback.contact }}</p>
+                                         
+                                    </div>
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div>
+                                     <h4>Customer Address:</h4>
+                                      <p>{{feedback.customer_name.get_complete_address}}</p>
+                                 </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>GST No.:</h4> 
+                                      <p>{{feedback.customer_name.gst_number}}</p>
+                                     </div>     
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                     
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>lead Designation</h4>
+                                  <p>{{ feedback.customer_name.designation }}</p>
+                              </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Landline</h4>
+                                     {% if feedback.customer_name.landline %}
+                                  <p>{{ feedback.customer_name.landline }}</p>
+                                  {% else %}
+                                  <p></p>
+                                  {% endif %}
+                              </div>
+                                </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                            <h4>Factory Address</h4>
+                                            <p>{{ feedback.customer_name.address }}</p>
+                                        </div>
+                                    </div>
+                                
+                                <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                            <h4>Currency</h4>
+                                            <p>{{ feedback.customer_name.currency_code }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Sample Name: </h4>
+                                          <p>{{ feedback.sample1_name }}</p>
+                                          {% if feedback.sample2_name %}
+                                           <p>{{feedback.sample2_name}}</p>
+                                           {% endif %}
+                                            {% if feedback.sample3_name %}
+                                           <p>{{feedback.sample3_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample4_name %}
+                                           <p>{{feedback.sample4_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample5_name %}
+                                           <p>{{feedback.sample5_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample6_name %}
+                                           <p>{{feedback.sample6_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample7_name %}
+                                           <p>{{feedback.sample7_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample8_name %}
+                                           <p>{{feedback.sample8_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample9_name %}
+                                           <p>{{feedback.sample9_name}}</p>
+                                           {% endif %}
+                                             {% if feedback.sample10_name %}
+                                           <p>{{feedback.sample10_name}}</p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Sample Comment: </h4>
+                                          <p>{{ feedback.comment1 }}</p>
+                                          {% if feedback.comment2 %}
+                                           <p>{{ feedback.comment2 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                          {% if feedback.comment3 %}
+                                          <p>{{ feedback.comment3 }}</p>
+                                          {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment4 %}
+                                           <p>{{ feedback.comment4 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment5 %}
+                                           <p>{{ feedback.comment5 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment6 %}
+                                           <p>{{ feedback.comment6 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment7 %}
+                                           <p>{{ feedback.comment7 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment8 %}
+                                           <p>{{ feedback.comment8 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment9 %}
+                                           <p>{{ feedback.comment9 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+
+                                           {% if feedback.comment10 %}
+                                           <p>{{ feedback.comment10 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                
+                            </div>
+{% endblock %}

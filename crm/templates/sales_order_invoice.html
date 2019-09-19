@@ -1,0 +1,146 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>CRM - Amar Bio-Organics India Private Limited</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicon
+    ============================================ -->
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+<style type="text/css">
+<!--
+span.cls_003{font-family:"Cambria Bold",serif;font-size:12.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_003{font-family:"Cambria Bold",serif;font-size:12.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_004{font-family:"Agency FB Bold",serif;font-size:8.4px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:"Agency FB Bold",serif;font-size:8.4px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_002{font-family:"Calibri",serif;font-size:7.7px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:"Calibri",serif;font-size:7.7px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:"Calibri Bold",serif;font-size:9.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_006{font-family:"Calibri Bold",serif;font-size:9.9px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:5.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:5.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_008{font-family:"Calibri Bold",serif;font-size:7.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_008{font-family:"Calibri Bold",serif;font-size:7.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="bb0724f4-ceb5-11e9-9d71-0cc47a792c0a_id_bb0724f4-ceb5-11e9-9d71-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="{% static 'images/sales-order.jpg' %}" width=612 height=792></div>
+<div style="position:absolute;left:196.25px;top:35.88px" class="cls_003"><span class="cls_003">SALES  ORDER  ACKNOWLEDGEMENT</span></div>
+<div style="position:absolute;left:17.90px;top:92.78px" class="cls_004"><span class="cls_004">Amar Bio Organics India Pvt Ltd.</span></div>
+<div style="position:absolute;left:391.99px;top:94.34px" class="cls_005"><span class="cls_005">Order No. & Date</span></div>
+<div style="position:absolute;left:474.10px;top:94.34px" class="cls_005"><span class="cls_005">{{ data.order_id }} , Dt: {{ data.order_date }}</span></div>
+<div style="position:absolute;left:17.78px;top:103.82px" class="cls_005"><span class="cls_005">501, 5th Floor, Gowra Grand, Behind Gowra Plaza, 1-8-384 & 385,</span></div>
+<div style="position:absolute;left:391.99px;top:103.82px" class="cls_002"><span class="cls_002">Mode of Transport</span></div>
+<div style="position:absolute;left:491.99px;top:103.82px" class="cls_005"><span class="cls_005">{{ data.shipment_mode }}</span></div>
+<div style="position:absolute;left:17.78px;top:114.02px" class="cls_005"><span class="cls_005">Begumpet, Secunderabad - 500003, Telangana, India. Phone : 040-27846275 / 27846750 / 27843091</span></div>
+<div style="position:absolute;left:391.99px;top:114.74px" class="cls_005"><span class="cls_005">Name of Transporter</span></div>
+<div style="position:absolute;left:17.78px;top:124.22px" class="cls_005"><span class="cls_005">GST NO :</span></div>
+<div style="position:absolute;left:391.99px;top:124.94px" class="cls_005"><span class="cls_005">Buyer's Ref.</span></div>
+<div style="position:absolute;left:17.78px;top:134.42px" class="cls_005"><span class="cls_005">Ship To : -</span></div>
+<div style="position:absolute;left:17.78px;top:145.82px" class="cls_005"><span class="cls_005">{{ data.order_lead.lead_company }}</span></div>
+<div style="position:absolute;left:457.90px;top:144.38px" class="cls_006"><span class="cls_006">Bank   Details : -</span></div>
+<div style="position:absolute;left:17.78px;top:157.34px" class="cls_005"><span class="cls_005">{{ data.address }}, {{ data.street }}, {{ data.city }}</span></div>
+<div style="position:absolute;left:391.99px;top:158.06px" class="cls_005"><span class="cls_005">Bankers Name</span></div>
+<div style="position:absolute;left:474.10px;top:158.06px" class="cls_005"><span class="cls_005">Andhra Bank</span></div>
+<div style="position:absolute;left:17.78px;top:167.54px" class="cls_005"><span class="cls_005">{{ data.state }}, {{ data.postal_code }}, {{ data.ship_country }}</span></div>
+<div style="position:absolute;left:391.99px;top:168.26px" class="cls_005"><span class="cls_005">Address</span></div>
+<div style="position:absolute;left:474.10px;top:168.26px" class="cls_005"><span class="cls_005">R.P Road, Secunderabad.</span></div>
+<div style="position:absolute;left:17.78px;top:177.74px" class="cls_005"><span class="cls_005">Tel: </span></div>
+<div style="position:absolute;left:38.16px;top:177.74px" class="cls_005"><span class="cls_005">-{{ data.order_lead.phone }}</span></div>
+<div style="position:absolute;left:391.99px;top:178.46px" class="cls_005"><span class="cls_005">Account No.</span></div>
+<div style="position:absolute;left:474.10px;top:178.46px" class="cls_005"><span class="cls_005">050513100000885</span></div>
+<div style="position:absolute;left:17.78px;top:187.94px" class="cls_005"><span class="cls_005">GST NO. :{{ data.gst_number }}</span></div>
+<div style="position:absolute;left:391.99px;top:188.66px" class="cls_005"><span class="cls_005">RTGS No.</span></div>
+<div style="position:absolute;left:474.10px;top:188.66px" class="cls_005"><span class="cls_005">ANDB0000505</span></div>
+<div style="position:absolute;left:17.78px;top:198.86px" class="cls_005"><span class="cls_005">Invoice To : -</span></div>
+<div style="position:absolute;left:391.99px;top:198.86px" class="cls_005"><span class="cls_005">Pack Size</span></div>
+<div style="position:absolute;left:491.99px;top:198.86px" class="cls_005"><span class="cls_005">{{ data.packaging }}</span></div>
+<div style="position:absolute;left:17.78px;top:208.34px" class="cls_005"><span class="cls_005">{{ data.order_lead.lead_company }}</span></div>
+<div style="position:absolute;left:391.99px;top:209.06px" class="cls_005"><span class="cls_005">Date of Despatch</span></div>
+<div style="position:absolute;left:474.10px;top:209.06px" class="cls_005"><span class="cls_005">09-03-19</span></div>
+<div style="position:absolute;left:17.78px;top:218.54px" class="cls_005"><span class="cls_005">{{ data.address }}</span></div>
+<div style="position:absolute;left:391.99px;top:218.54px" class="cls_005"><span class="cls_005">Promised Date</span></div>
+<div style="position:absolute;left:474.10px;top:219.26px" class="cls_005"><span class="cls_005">09-03-19</span></div>
+<div style="position:absolute;left:17.78px;top:228.74px" class="cls_005"><span class="cls_005">{{ data.state }}, {{ data.postal_code }}, {{ data.ship_country }}</span></div>
+<div style="position:absolute;left:391.99px;top:228.74px" class="cls_005"><span class="cls_005">Currency</span></div>
+<div style="position:absolute;left:474.10px;top:229.46px" class="cls_005"><span class="cls_005">INR</span></div>
+<div style="position:absolute;left:17.78px;top:238.94px" class="cls_005"><span class="cls_005">Tel: </span></div>
+<div style="position:absolute;left:38.16px;top:238.94px" class="cls_005"><span class="cls_005">{{ data.land_line }}</span></div>
+<div style="position:absolute;left:391.99px;top:238.94px" class="cls_005"><span class="cls_005">Payment Terms</span></div>
+<div style="position:absolute;left:474.10px;top:239.66px" class="cls_005"><span class="cls_005">30days from the date of Invoice</span></div>
+<div style="position:absolute;left:17.78px;top:249.17px" class="cls_005"><span class="cls_005">GST NO. :{{ data.gst_number }}</span></div>
+<div style="position:absolute;left:54.50px;top:269.69px" class="cls_007"><span class="cls_007">Description of Goods</span></div>
+<div style="position:absolute;left:156.77px;top:269.69px" class="cls_007"><span class="cls_007">HSN Code</span></div>
+
+<div style="position:absolute;left:202.01px;top:269.69px" class="cls_007"><span class="cls_007">Quantity</span></div>
+<div style="position:absolute;left:242.69px;top:269.69px" class="cls_009"><span class="cls_009">UOM</span></div>
+<div style="position:absolute;left:270.53px;top:269.69px" class="cls_007"><span class="cls_007">Rate</span></div>
+<div style="position:absolute;left:299.23px;top:269.69px" class="cls_007"><span class="cls_007">Dics</span></div>
+<div style="position:absolute;left:345.79px;top:269.57px" class="cls_008"><span class="cls_008">SGST</span></div>
+<div style="position:absolute;left:420.07px;top:269.57px" class="cls_008"><span class="cls_008">CGST</span></div>
+<div style="position:absolute;left:495.58px;top:269.57px" class="cls_008"><span class="cls_008">IGST</span></div>
+<div style="position:absolute;left:553.30px;top:269.69px" class="cls_007"><span class="cls_007">Amount</span></div>
+<div style="position:absolute;left:302.23px;top:278.57px" class="cls_007"><span class="cls_007">%</span></div>
+<div style="position:absolute;left:317.47px;top:280.37px" class="cls_007"><span class="cls_007">Rate</span></div>
+<div style="position:absolute;left:341.71px;top:280.37px" class="cls_007"><span class="cls_007">Amount</span></div>
+<div style="position:absolute;left:396.19px;top:280.37px" class="cls_007"><span class="cls_007">Rate</span></div>
+<div style="position:absolute;left:428.47px;top:280.37px" class="cls_007"><span class="cls_007">Amount</span></div>
+<div style="position:absolute;left:470.74px;top:280.37px" class="cls_007"><span class="cls_007">Rate</span></div>
+<div style="position:absolute;left:503.02px;top:280.37px" class="cls_007"><span class="cls_007">Amount</span></div>
+<div style="position:absolute;left:17.78px;top:300.17px" class="cls_005"><span class="cls_005">{{ data.product_code.product_name }}</span></div>
+<div style="position:absolute;left:155.45px;top:300.65px" class="cls_005"><span class="cls_005">3302</span></div>
+<div style="position:absolute;left:211.61px;top:300.65px" class="cls_005"><span class="cls_005">{{ data.item_quantity }}</span></div>
+<div style="position:absolute;left:241.69px;top:300.17px" class="cls_005"><span class="cls_005">{{ data.uom }}</span></div>
+<div style="position:absolute;left:272.33px;top:300.65px" class="cls_005"><span class="cls_005">{{ data.per_item_price }}</span></div>
+<div style="position:absolute;left:466.42px;top:300.89px" class="cls_005"><span class="cls_005">18.00%</span></div>
+<div style="position:absolute;left:513.70px;top:300.89px" class="cls_005"><span class="cls_005">{{ data.total_amount }}</span></div>
+<div style="position:absolute;left:560.50px;top:300.89px" class="cls_005"><span class="cls_005">17,700.00</span></div>
+<div style="position:absolute;left:17.78px;top:310.37px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:155.45px;top:310.85px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:211.61px;top:310.85px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:246.17px;top:310.37px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:272.33px;top:310.85px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:466.42px;top:311.09px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:513.70px;top:311.09px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:560.50px;top:311.09px" class="cls_005"><span class="cls_005"></span></div>
+<div style="position:absolute;left:17.78px;top:442.99px" class="cls_005"><span class="cls_005">FREIGHT</span></div>
+<div style="position:absolute;left:274.49px;top:443.47px" class="cls_005"><span class="cls_005">300.00</span></div>
+<div style="position:absolute;left:515.38px;top:442.99px" class="cls_002"><span class="cls_002">18.00%</span></div>
+<div style="position:absolute;left:567.34px;top:442.99px" class="cls_002"><span class="cls_002">354.00</span></div>
+<div style="position:absolute;left:416.23px;top:473.59px" class="cls_002"><span class="cls_002">0</span></div>
+<div style="position:absolute;left:557.74px;top:473.59px" class="cls_002"><span class="cls_002">28,334.00</span></div>
+<div style="position:absolute;left:416.23px;top:514.39px" class="cls_002"><span class="cls_002">Grand Total : (INR)</span></div>
+<div style="position:absolute;left:557.74px;top:514.39px" class="cls_002"><span class="cls_002">31,034.00</span></div>
+<div style="position:absolute;left:22.70px;top:525.31px" class="cls_005"><span class="cls_005">Amount in Words</span></div>
+<div style="position:absolute;left:79.22px;top:525.31px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:83.18px;top:524.59px" class="cls_005"><span class="cls_005">THIRTY-ONE THOUSAND  THIRTY-FOUR ONLY</span></div>
+<div style="position:absolute;left:17.78px;top:534.91px" class="cls_007"><span class="cls_007">Declaration and Terms & Conditions : -</span></div>
+<div style="position:absolute;left:17.78px;top:544.99px" class="cls_005"><span class="cls_005">1.Payment to be made in favour of M/s. AMAR BIO ORGANICS INDIA PVT. LTD. Account payee only, by at per cheque / DD payble at Secunderabad only.</span></div>
+<div style="position:absolute;left:17.78px;top:555.07px" class="cls_005"><span class="cls_005">2.Certified that the particulars given above are true and correct and the amount indicated represents the price actually changed and that there is no flow of additional consideration directly or indirectly from</span></div>
+<div style="position:absolute;left:17.78px;top:563.95px" class="cls_005"><span class="cls_005">the buyer.</span></div>
+<div style="position:absolute;left:17.78px;top:572.35px" class="cls_005"><span class="cls_005">3. Interest @ 24% per annum will be charged if payment is not made on or before the due date. Please note any complaint</span></div>
+<div style="position:absolute;left:17.78px;top:582.58px" class="cls_005"><span class="cls_005">4.Unless specifically agreed upon at the time of ordering , goods are insured by us on your account.</span></div>
+<div style="position:absolute;left:17.78px;top:592.78px" class="cls_005"><span class="cls_005">5.Complaints (quality / quantity) are to be lodged with us within 24 hours from receipt of the material at your godown /  arrival of goods.</span></div>
+<div style="position:absolute;left:17.78px;top:602.98px" class="cls_005"><span class="cls_005">6. All disputes are subject to Secunderabad juridiction only.</span></div>
+<div style="position:absolute;left:17.78px;top:613.42px" class="cls_005"><span class="cls_005">7.Please arrange to send 'C' forms, Road Permits & Payments to following address only. Address : - </span><span class="cls_007">501, 5th Floor, Gowra Grand, Behind Gowra Plaza, 1-8-384 & 385, Begumpet, Secunderabad -</span></div>
+<div style="position:absolute;left:17.78px;top:622.54px" class="cls_007"><span class="cls_007">500003, Telangana, India. Phone: 040-27846275 / 27846750 / 27843091, Fax No: 040-27816817.</span></div>
+<div style="position:absolute;left:474.82px;top:634.66px" class="cls_002"><span class="cls_002">For Amar Bio Organics India Pvt. Ltd.</span></div>
+<div style="position:absolute;left:521.14px;top:695.86px" class="cls_002"><span class="cls_002">Authorised Signatory</span></div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quotation - Amar Bio Organics India Pvt. Ltd.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/css/util-invo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/css/main-invo.css' %}">
+    <!--===============================================================================================-->
+    <style>
+        p {
+            text-align: justify;
+            text-justify: inter-word;
+            padding: 3px;
+        }
+        
+        span {
+            border: 0.5px #aaaaaa;
+            padding: 5px;
+        }
+        
+        hr {
+            margin: 0px;
+        }
+        
+        #header {
+            height: 30px;
+            width: 100%;
+            margin: 20px 0;
+            background: #222;
+            text-align: center;
+            color: white;
+            font: bold 15px Helvetica, Sans-Serif;
+            text-decoration: uppercase;
+            letter-spacing: 20px;
+            padding: 8px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap-table100" id="border">
+        <div class="table100" border="1"><br>
+            <hr>
+            <p id="header">PROFORMA INVOICE</p>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <p id="address"><strong>Customer Address:- </strong><br> Name: {{ data.customer_name }}<span style="font-size: 14px;"></span></span><br> Address: {{ data.customer_name.get_complete_address }}<span style="font-size: 12px;"></span><br></span>
+                        Contact: {{ data.customer_contact }}<span style="font-size: 14px;"></span></p>
+                    </span>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img id="image" src="{% static 'images/login.png' %}" alt="logo" />
+                </div>
+            </div>
+
+        </div>
+
+        <div style="clear:both"></div>
+
+        <div id="customer">
+            <!-- <p id="customer-title"> -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <table>
+                        <tr>
+                            <td class="meta-head">PO REF</td>
+                            <td>:</td>
+                            <td>
+                                <p>000123</p>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td class="meta-head">PO Date</td>
+                            <td>:</td>
+                            <td>
+                                <p id="date">December 15, 2009</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-head">Dispatch</td>
+                            <td>:</td>
+                            <td>
+                                <div class="due">$875.00</div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-lg-4">
+                    <table>
+                        <tr>
+                            <td class="meta-head"></td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+
+                            <td class="meta-head">GST No.</td>
+                            <td>:</td>
+                            <td>{{ data.gst_number }} </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-head">PAN No.</td>
+                            <td>:</td>
+                            <td>{{ data.pan_number }}</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-lg-4">
+                    <table>
+                        <tr>
+                            <td class="meta-head">Proforma Invoice No.</td>
+                            <td>:</td>
+                            <td>
+                                <p>#<span>{{ data.id}}</span></p>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td class="meta-head">Delivery Terms</td>
+                            <td>:</td>
+                            <td>
+                                <p>{{ data.delivere_terms }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-head">Freight</td>
+                            <td>:</td>
+                            <td>
+                                <div class="due">{{ data.freight }}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="meta-head">Payment Terms</td>
+                            <td>:</td>
+                            <td>
+                                <div class="due">{{ data.payment_terms }}</div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <!-- </p> -->
+        </div>
+
+        <!-- <div class="container-table100"> -->
+        <br>
+        <table border="1">
+            <thead>
+                <tr class="table100-head">
+                    <th class="column2">#Sl. No.</th>
+                    <th class="column6">Product Details</th>
+                    <th class="column2">QTY</th>
+                    <th class="column1">RATE</th>
+                    <th class="column1">HSN Code</th>
+                    <th class="column1">Amount</th>
+                    <th class="column1">Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="column6">1</td>
+                    <td class="column2">{{ data.product_name.product_name }}</td>
+                    <td class="column6">{{data.quantity}}</td>
+                    <td class="column1">{{data.per_item_price}}</td>
+                    <td class="column1">{{data.product_name.HSN_Number}}</td>
+                    <td class="column1">{{amount1}}</td>
+                    <td class="column1">{{data.remarks}}</td>
+                </tr>
+                {% if data.product2 %}
+                <tr>
+                    <td class="column6">1</td>
+                    <td class="column2">{{ data.product2 }}</td>
+                    <td class="column6">{{data.quantity2}}</td>
+                    <td class="column1">{{data.per_item_price2}}</td>
+                    <td class="column1">{{data.product_name.HSN_Number}}</td>
+                    <td class="column1">{{amount2}}</td>
+                    <td class="column1">{{data.remarks}}</td>
+                </tr>
+                {% endif %}
+                
+                {% if data.product3 %}
+                <tr>
+                    <td class="column6">1</td>
+                    <td class="column2">{{ data.product3 }}</td>
+                    <td class="column6">{{data.quantity3}}</td>
+                    <td class="column1">{{data.per_item_price3}}</td>
+                    <td class="column1">{{data.product_name.HSN_Number}}</td>
+                    <td class="column1">{{amount3}}</td>
+                    <td class="column1">{{data.remarks}}</td>
+                </tr>
+                {% endif %}
+                {% if data.product4 %}
+                <tr>
+                    <td class="column6">1</td>
+                    <td class="column2">{{ data.product4 }}</td>
+                    <td class="column6">{{data.quantity4}}</td>
+                    <td class="column1">{{data.per_item_price4}}</td>
+                    <td class="column1">{{data.product_name.HSN_Number}}</td>
+                    <td class="column1">{{amount4}}</td>
+                    <td class="column1">{{data.remarks}}</td>
+                </tr>
+                {% endif %}
+                {% if data.product5 %}
+                <tr>
+                    <td class="column6">1</td>
+                    <td class="column2">{{ data.product5 }}</td>
+                    <td class="column6">{{data.quantity5}}</td>
+                    <td class="column1">{{data.per_item_price5}}</td>
+                    <td class="column1">{{data.product_name.HSN_Number}}</td>
+                    <td class="column1">{{amount5}}</td>
+                    <td class="column1">{{data.remarks}}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td colspan="4" class="blank"> </td>
+                    <td colspan="1" class="total-line">Freight</td>
+                    <td>{{ data.freight }}</td>
+                    <td class="total-value">
+                        <div id="subtotal"></div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td colspan="4" class="blank"> </td>
+                    <td colspan="1" class="total-line">Basic</td>
+                    <td>{{ amount }}</td>
+                    <td class="total-value">
+                        <div id="total"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="blank"> </td>
+                    <td colspan="1" class="total-line">IGST</td>
+                    <td>{{ data.igsst_cost }}</td>
+                    <td class="total-value">
+                        <p id="paid"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="blank"> </td>
+                    <td colspan="1" class="total-line balance">Total</td>
+                    <td>{{ data.total_amount }}</td>
+                    <td class="total-value balance">
+                        <div class="due"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table><br><br>
+
+        <footer>
+            <h4>Declaration and Terms & Conditions:</h4><br>
+            <hr>
+            <p>1.<span>Payment to be made in favour of M/s. AMAR BIO ORGANICS INDIA PVT LTD account payee only, by at par cheque / DD payable at secunderabad only.</p></span>
+                <hr>
+                <p>2.<span>Certified that the particulars given above are true and correct and the amount indicated represents
+                    the price actually charged and that.</span></p>
+                <hr>
+                <p>3.<span>Interest @ 24% per annum will be charged if payment is not made on or before the due date. Please note any complaint regarding goods received must be made within 24 hours of delivery.</span></p>
+                <hr>
+                <p>4.<span>Unless specifically agreed upon at the time of ordering, goods are insured by us on your account.</span></p>
+                <hr>
+                <p>5.<span>Complaints (quality / quantity ) are to be lodged with us with in 24hrs from receipt of the material at your godown / arrival of goods.</span></p>
+                <hr>
+                <p>6.<span>All disputes are subject to Secunderabad jurisdiction.</span></p>
+                <hr>
+        </footer><br>
+        <footer>
+            <p>
+                <h4>Thanking you,</h4><br> <strong>Yours faithfully,<br> from AMAR BIO ORGANICS (INDIA) PVT.LTD</strong><br>
+            </p>
+        </footer>
+    </div><br><br>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'sets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+ {% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Notifications</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard<span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Notifications</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<!-- <div class="admin-dashone-data-table-area"> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>
+                                <span style="color: brown">Order </span><span>Notifications &nbsp</span><span class="table-project-n">Records</span> </h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph" style="border-bottom-width: 14px; margin-bottom: 10px;">
+                        <!--- this sections needs to be repeated-->
+                        {% for i in orders %}
+                        <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                            <p >Order received from {{ i.order_lead }}</p><span class="pull-right">{{ i.created_on }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>
+                                <span style="color: brown">Case </span><span>Notifications &nbsp</span><span class="table-project-n">Records</span> </h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">                        
+                        {% for i in orders %}
+                        <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                            <p>Order received from {{ i.order_lead }}</p><span class="pull-right">{{ i.created_on }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+
+{% endblock %}

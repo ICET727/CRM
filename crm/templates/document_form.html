@@ -1,0 +1,130 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="breadcome-heading">
+                                <form role="search" class="">
+                                    <input type="text" placeholder="Search..." class="form-control">
+                                    <a href=""><i class="fa fa-search"></i></a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">Documents</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Document</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="breadcome-heading">
+                                <form role="search" class="">
+                                    <input type="text" placeholder="Search..." class="form-control">
+                                    <a href=""><i class="fa fa-search"></i></a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <ul class="breadcome-menu">
+                                <li><a href="#">Documents</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Document</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>ADD DOCUMENT</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="all-form-element-inner">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="form-group pull-right-pro">
+                                                            <label for="id_firstname">Title<span style="color:  #b30000">*</span></label> {{ form.name|add_class:'form-control'|attr:"id:title" }}
+                                                            <!-- <input type="text" id="title" class="form-control" name="title" value="" placeholder="Document title"> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                        <label class="login2">Attachment<span style="color:  #b30000">*</span></label> {{ form.file|add_class:"b1"|add_class:"pull-right"|attr:"id:prepend-big-btn" }}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <br>
+                                                <p class="pull-left" style="padding-left: 20px;"><span style="color:  #b30000">**Fields marked with '*' are manadatory.</span></p>
+
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="login-btn-inner">
+                                                    <div class="column">
+                                                        <div class="login-horizental cancel-wp pull-right">
+                                                            <a href="/document/list"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                            <button class="btn btn-white" type="button" onClick="this.form.reset()">Cancel</button>
+                                                            <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Basic Form End-->
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+<br><br>
+<br><br><br>
+<div class="back" align="center">
+<div class="container ">
+  <h1 align="center">Email Settings</h1><hr><br>
+  <form method="POST" action="" id="myForm1" onload="myFunction()">
+    {% csrf_token %}
+    <label>Enter Your Mail-ID</label>
+    <div class="input-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <span class="input-group-addon">       
+      <i class="glyphicon glyphicon-user"> </i></span>
+      <input id="email" type="email" class="form-control" placeholder="Email" name="email" required>
+    </div><br><br>
+    <label>Enter Associated Password</label>
+    <div class="input-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" placeholder="Password" name="password"required>
+    </div>
+    <br>
+   <br>
+    <button class="btn-lg btn-info" type="submit">Submit</button>
+  </form>
+  <br>
+</div>
+</div>
+<script>
+function myFunction() {
+ document.getElementById("myForm").reset();
+}
+</script>
+<br>
+<br>
+{% endblock %}

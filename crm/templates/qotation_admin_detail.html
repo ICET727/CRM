@@ -1,0 +1,194 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<style type="text/css">
+    h4{
+       font: italic bold 12px/30px Georgia, serif;
+    }
+    p{
+        font-family: 12px/30px Scheherazade, serif;
+        font-size: 12px;
+    }
+</style>
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Quotation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Quotation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="button-ad-wrap shadow-reset nt-mg-b-30">
+                                <div class="alert-title">
+                                    <h2>Quotation Details :</h2>                                   
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Name: </h4> 
+                                        <p>{{quotation.customer_name.lead_company}}</p>
+                                         </div>                                 
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Contact: </h4>
+                                        {% for i in quotation.customer_name.contacts.all %}
+                                         <p> {{ i.phone }}</p>
+                                         {%endfor%}
+                                    </div>
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div>
+                                     <h4>Customer Address:</h4>
+                                      <p>{{quotation.customer_name.get_complete_address}}</p>
+                                 </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>GST No.:</h4> 
+                                      <p>{{quotation.customer_name.gst_number}}</p>
+                                     </div>     
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                     
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Quotation Amount:</h4>
+                                  <p>{{ quotation.total_amount }}</p>
+                              </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Order Date:</h4>
+                                  <p>{{ quotation.date }}</p>
+                              </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Product Name: </h4>
+                                          <p>{{ quotation.product_name.product_name }}</p>
+                                          {% if quotation.product2 %}
+                                           <p>{{quotation.product2}}</p>
+                                           {% endif %}
+                                            {% if quotation.product3 %}
+                                           <p>{{quotation.product3}}</p>
+                                           {% endif %}
+                                             {% if quotation.product4 %}
+                                           <p>{{quotation.product4}}</p>
+                                           {% endif %}
+                                             {% if quotation.product5 %}
+                                           <p>{{quotation.product5}}</p>
+                                           {% endif %}
+                                             {% if quotation.product6 %}
+                                           <p>{{quotation.product6}}</p>
+                                           {% endif %}
+                                             {% if quotation.product7 %}
+                                           <p>{{quotation.product7}}</p>
+                                           {% endif %}
+                                             {% if quotation.product8 %}
+                                           <p>{{quotation.product8}}</p>
+                                           {% endif %}
+                                             {% if quotation.product9 %}
+                                           <p>{{quotation.product9}}</p>
+                                           {% endif %}
+                                             {% if quotation.product10 %}
+                                           <p>{{quotation.product10}}</p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>Product code: </h4>
+                                          <p>{{ quotation.product_name.product_code }}</p>
+                                          {% if quotation.code2 %}
+                                           <p>{{ quotation.code2 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                            {% if quotation.code3 %}
+                                            <p>{{ quotation.code3 }}</p>
+                                            {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code4 %}
+                                           <p>{{ quotation.code4 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code5 %}
+                                           <p>{{ quotation.code5 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code6 %}
+                                           <p>{{ quotation.code6 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code7 %}
+                                           <p>{{ quotation.code7 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code8 %}
+                                           <p>{{ quotation.code8 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code9 %}
+                                           <p>{{ quotation.code9 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                           {% if quotation.code10 %}
+                                           <p>{{ quotation.code10 }}</p>
+                                           {% else %}
+                                           <p></p>
+                                           {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+{% endblock %}

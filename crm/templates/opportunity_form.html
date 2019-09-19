@@ -1,0 +1,222 @@
+{% extends 'base.html' %} 
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'assets/css/select2/select2.min.css' %}">
+            <!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="opportunity.html">Opporunities</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add opportunity</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Breadcome End-->
+            <!-- Mobile Menu start -->
+<div class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <ul class="mobile-menu-nav">
+                            <li><a data-toggle="collapse" data-target="#Charts" href="/sales/profile">Dashboard <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#demo" href="/ordered/items">Orders <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#others" href="/lead/list">Leads <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="/contact/list">Contacts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Chartsmob" href="/opportunity/list">Opportunities <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="/cases/list">Cases <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#formsmob" href="/document/list">Documents <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#Appviewsmob" href="/email/list">Chatter <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Mobile Menu end -->
+            <!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="opportunity.html">Opportunities</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Opportunity</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Breadcome End-->
+            <!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>ADD OPPORTUNITY</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="all-form-element-inner">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Company Name<span class="error">*</span></label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.name|add_class:"form-control"|attr:'maxlength:30'}}
+                                                        {{ form.name.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Source<span class="error">*</span></label>
+                                                            {{ form.lead_source|add_class:"form-control"}}
+                                                            {{ form.lead_source.errors }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                        <div class="filter_col col-12">
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail1">Customer<span class="error">*</span></label>
+
+                                                                {{ form.lead|add_class:"form-control"}}
+                                                                {{ form.lead.errors }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Contacts<span class="error">*</span></label>
+                                                        {{ form.contacts|add_class:"select2_demo_2 form-control"}}
+                                                        {{ form.contacts.errors }}
+                                                        <span class="error error_message" id="error_id_contacts"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="">Probability %</label>
+                                                    <!-- <input type="number" class="form-control" required/> -->
+                                                    {{ form.probability|add_class:"form-control"}}
+                                                    {{ form.probability.errors }}
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Amount<span class="error">*</span></label>
+                                                        <!-- <input type="number" class="form-control" required/> -->
+                                                        {{ form.amount|add_class:"form-control"}}
+                                                        {{ form.amount.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Currency</label>
+                                                            {{ form.currency|add_class:"form-control"}}
+                                                            {{ form.currency.errors }}
+                                                            <span class="error error_message" id="error_id_currency"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                        <label class="">Description</label>
+                                                        <!-- <textarea rows="3" cols="40" class="form-control"> -->
+                                                        {{ form.description|add_class:"form-control"|attr:"rows:3"}}
+                                                        {{ form.description.errors }}
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1" class="required">Stage<span class="error">*</span></label>
+                                                        {{ form.stage|add_class:"form-control"}}
+                                                        {{ form.stage.errors|add_class:"error error_message" }}
+                                                        <!-- <span class="error error_message" id="error_id_stage"></span> -->
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                    <label class="">Due Date<span class="error">*</span></label>
+                                                    <input type="date" class="form-control" required/>
+                                                </div> -->
+                                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                    <label class="login2 pull-right pull-right-pro">Attachment</label>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="file-upload-inner ts-forms">
+                                                        {{ form.attachment|add_class:"b1"|attr:"style:margin-left:-8px"}}
+                                                        {{ form.attachment.errors }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="login-btn-inner">
+                                                    <div class="column">
+                                                        <div class="col-lg-3"></div>
+                                                        <div class="col-lg-9">
+                                                            <div class="login-horizental cancel-wp pull-right">
+                                                                <a href="/opportunity/list"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                                <button class="btn btn-white" type="submit">Cancel</button>
+                                                                <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}

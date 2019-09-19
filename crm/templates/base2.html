@@ -1,0 +1,471 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CRM - Amar Bio-Organics India Private Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- adminpro icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/adminpro-custon-icon.css' %}">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!-- modal CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/modals.css' %}">
+    <!-- data-table CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-table.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-editable.css' %}">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <!-- charts C3 CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/c3.min.css' %}">
+    <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/form/all-type-forms.css' %}">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- modernizr JS
+        ============================================ -->
+     <!-- Select2 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/select2.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/select2-bootstrap.css' %}">
+    <!-- charts CSS
+		============================================ -->
+    <link rel="stylesheet" href="{% static 'assets/css/charts.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Lobibox.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/notifications.css' %}">
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+    <link href="{% static 'assets/css/styles-rad.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'assets/css/alerts.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- <script type="text/javascript" src="{% static 'channels/js/websocketbridge.js' %}"></script -->
+
+    <style>
+        #rad-chart {
+            max-width: 650px;
+            margin: 35px auto;
+        }
+        .topcorner {
+           position: absolute;
+           top: 30px;
+           right: 30px;
+           z-index: 9999;
+       }
+    </style>
+    <style>
+        #chart {
+            max-width: 90%;
+            margin: 35px auto;
+        }
+        
+        .toolbar {
+            margin-left: 45px;
+        }
+        
+        button {
+            background: #fff;
+            color: #222;
+            border: 1px solid #e7e7e7;
+            border-bottom: 2px solid #ddd;
+            border-radius: 2px;
+            padding: 4px 17px;
+        }
+        
+        button.active {
+            color: #fff;
+            background: #008FFB;
+            border: 1px solid blue;
+            border-bottom: 2px solid blue;
+        }
+        
+        button:focus {
+            outline: 0;
+        }
+
+        .vertical-menu {
+ overflow-y: auto;
+ height: 515px;
+}
+/* width */
+::-webkit-scrollbar {
+ width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+ background: #000;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: #000;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #a15;
+}
+    </style>
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <!-- <a href="#"><img src="{% static 'assets/img/a.jpg' %}" alt="" />
+                    </a> -->
+                    <h3>Mr. {{ user.first_name }}</h3>
+                    <p>{{ profile.designation }}</p>
+                    <strong>CRM</strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap" style="height: 560px;">
+                   <div class="vertical-menu">
+                   <ul class="nav navbar-nav left-sidebar-menu-pro d-flex ml-auto"style="overflow-y: auto;">
+                       <li class="nav-item"><a href="/dash-test" class="nav-link dropdown-toggle"><i class="fa  fa-chart-line" aria-hidden="true"></i> <span class="mini-dn">Dashboard</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/order/confirmation" class="nav-link dropdown-toggle"><i class="fa  fa-exclamation-circle"></i> <span class="mini-dn">Pending Order</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/feedback/list" class="nav-link dropdown-toggle"><i class="fa  fa-file-alt"></i> <span class="mini-dn">Samples Feedback</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/sales/persons" class="nav-link dropdown-toggle"><i class="fa  fa-sitemap"></i> <span class="mini-dn">Sales Members</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/contact/admin" class="nav-link dropdown-toggle"><i class="fa  fa-user-circle" aria-hidden="true"></i> <span class="mini-dn">Contacts</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/customer/admin" class="nav-link dropdown-toggle"><i class="fa  fa-users" aria-hidden="true"></i> <span class="mini-dn">Customers</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/opportunity/admin" class="nav-link dropdown-toggle"><i class="fa fas fa-cart-plus" aria-hidden="true"></i> <span class="mini-dn">Customer Orders</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/proforma_quotation/list" class="nav-link dropdown-toggle"><i class="fa fa-list"></i> <span class="mini-dn">Proforma&Quotation</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/case/admin" class="nav-link dropdown-toggle"><i class="fa fa-table"></i> <span class="mini-dn">Cases</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                       <li class="nav-item"><a href="/document/admin" class="nav-link dropdown-toggle"><i class="fa  fa-edit"></i> <span class="mini-dn">Documents</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+
+                        <li class="nav-item"><a href="/payment/admin" class="nav-link dropdown-toggle"><i class="fa  fa-money-bill-alt"></i> <span class="mini-dn">Payment Tracking</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                                               </li>
+                                               
+                        <li class="nav-item"><a href="/add/product" class="nav-link dropdown-toggle"><i class="fa fa-plus" aria-hidden="true"></i> <span class="mini-dn">Add Product</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                       </li>
+                   </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="content-inner-all">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-11">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                                <i class="fa fa-bars"></i>
+                                            </button>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+                                <div allign="right">
+                                    <div class="header-right-info pull-right">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <li class="nav-item dropdown">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="fa fa-tasks"></span><span class="indicator-ms"></span></a>
+                                                <div role="menu" class="author-message-top dropdown-menu animated flipInX" style="margin-left: -250%">
+                                                    <div class="message-single-top">
+                                                        <h1>Notifications</h1>
+                                                    </div>
+                                                    <ul class="message-menu" id="md">
+                                                        <hr> 
+                                                    <div class="col-lg-12">  
+                                                    <p><b><a href="/get/notification" style="color: #ffffdf; margin-left: 20px; ">See All Notifications</a></b></p>
+                                                </div>  
+                                                    <ul class="message-menu" id="md">
+                                                        <hr>
+                                                        <div class="col-lg-12">
+                                                            <p><b><a href="/get/notification" style="color: #ffffdf; margin-left: 20px; position: absolute; bottom: 0;">See All Notifications</a></b></p>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                    
+                                                    <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX" style="margin-left: -120%">
+                                                    <li><a href="/dash-test"><span class="adminpro-icon adminpro-home-admin author-log-ic"></span>My Account</a>
+                                                    </li>
+                                                   <li><a href="/mail/settings"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>Mail Settings</a>
+                                                   </li>
+                                                    <li><a href="/user/create"><span class="adminpro-icon adminpro-money author-log-ic"></span>Add User</a>
+                                                    </li>
+                                                    <!-- <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a> -->
+                                            </li>
+                                            <li><a href="/log_out"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                            
+                                            </li>
+                                            </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                   <ul class="mobile-menu-nav">
+                                       <li><a href="/dash-test">Dashboard <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/order/confirmation">Pending Orders <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/feedback/list">Samples Feedback<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/sales/persons">Sales Member<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/customer/admin">Customers<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/contact/admin">Contacts<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/opportunity/admin">Customer Orders<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/case/admin">Cases<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/proforma_quotation/list">Proforma & Quotaions<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/document/admin">Documents<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                       <li><a href="/add/product">Add Products<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                       </li>
+                                   </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu end -->
+
+            {% block content %} {% endblock %}
+            <!-- stockprice, feed area end-->
+        </div>
+    </div><br><br><br>
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <footer>
+                <div class-="row">
+                    <div class="col-lg-8">
+                        <div class="container pull-left">
+                            <p>© Copyright 2019. <a href="http://www.amarorganics.com/" target="blank">Amar Bio-Organics</a> India Private Limited</p>
+                        </div>
+                    </div><br>
+                    <div class="col-lg-4">
+                        <p class="pull-right">Powered By: <a href="http://www.icetsolutions.com" style="color: red" target="blank">ICET IT Solutions</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+        <!-- Footer End-->
+    
+    <!-- jquery
+        ============================================ -->
+    <script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+    <script src="{% static 'assets/js/chart-pie.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'assets/js/irregular-data-series.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/area-apex1.js' %}"></script>
+    <script src="{% static 'js/target.js' %}"></script>
+    <script src="{% static 'assets/js/charts/donut-chart.js' %}"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="{% static 'assets/js/counterup/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/counterup/waypoints.min.js' %}"></script>
+    <!-- rounded-counter JS
+        ============================================ -->
+    <script src="{% static 'assets/js/rounded-counter/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/rounded-counter/jquery.knob.js' %}"></script>
+    <script src="{% static 'assets/js/rounded-counter/jquery.appear.js' %}"></script>
+    <script src="{% static 'assets/js/rounded-counter/knob-active.js' %}"></script>
+    <!-- peity JS
+        ============================================ -->
+    <script src="{% static 'assets/js/peity/jquery.peity.min.js' %}"></script>
+    <script src="{% static 'assets/js/peity/peity-active.js' %}"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="{% static 'assets/js/sparkline/jquery.sparkline.min.js' %}"></script>
+    <script src="{% static 'assets/js/sparkline/sparkline-active.js' %}"></script>
+    <!-- flot JS
+        ============================================ -->
+    <!-- <script src="{% static 'assets/js/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static 'assets/js/flot/jquery.flot.resize.js' %}"></script>
+    <script src="{% static 'assets/js/flot/widget-flot-chart-active.js' %}"></script> -->
+    <!--  editable JS
+        ============================================ -->
+    <script src="{% static 'assets/js/jquery.mockjax.js' %}"></script>
+    <script src="{% static 'assets/js/mock-active.js' %}"></script>
+    <script src="{% static 'assets/js/select2.js' %}"></script>
+    <script src="{% static 'assets/js/moment.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-datetimepicker.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-editable.js' %}"></script>
+    <script src="{% static 'assets/js/xediable-active.js' %}"></script>
+
+    <!-- data table JS
+            ============================================ -->
+    <script src="{% static 'assets/js/data-table/bootstrap-table.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/tableExport.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/data-table-active.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-editable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-editable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-resizable.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/colResizable-1.5.source.js' %}"></script>
+    <script src="{% static 'assets/js/data-table/bootstrap-table-export.js' %}"></script>
+    <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+        <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'channels/js/websocketbridge.js' %}" type="text/javascript"></script>
+    <script>
+        var c = 1;
+        var name = document.getElementById("norder");
+        var cname = document.getElementById("cperson");
+        document.addEventListener('DOMContentLoaded', function() {
+            const webSocketBridge = new channels.WebSocketBridge();
+            
+            // webSocketBridge.connect('/ws/')
+            // webSocketBridge.listen(function(action, stream){
+            //     console.log("RESPONSE:", action);
+            //     localStorage.setItem("meeting_name", action.name);
+            //     localStorage.setItem("meeting_time", action.time);
+            //     var p = localStorage.getItem("meeting_name");
+            //     console.log(action.name);
+            //     if (action.name){
+                    
+            //         for (var i = 0; i < p.length; i++) {
+            //             a = '<span class="message-date"></span><h2>'+ p[i].name+'</h2><p>'+ localStorage.getItem("meeting_time") +'</p>';
+                        
+            //         };
+            //         $( ".inner" ).prepend( a );
+            //     }
+                
+            // });
+            
+            // var c = 0;
+            webSocketBridge.connect('/notifications/')
+            webSocketBridge.listen(function(action, stream) {
+                
+                if (action.event == "Case") {
+                    alert('Case Alert');
+                    console.log(action);
+                    localStorage.setItem("case_person", action.sales_person);
+                    localStorage.setItem("case_date", action.case_date);
+                    localStorage.setItem("case_customer", action.customer);
+
+                    
+                }
+                if (action.event == "Order"){
+                    alert("New Order Received");
+                    console.log("RESPONSE:", action);
+                    localStorage.setItem("sales_person", action.sales_person);
+                    localStorage.setItem("amount", action.total_amount);
+                    localStorage.setItem("customer", action.customer);
+                    localStorage.setItem("date", action.date);
+                }
+            })
+            document.ws = webSocketBridge;
+        })
+        // var p = localStorage.getItem("sales_person");
+        // var c = "Order received from "+localStorage.getItem("customer");
+        // cperson.innerHTML = localStorage.getItem("case_person");
+        // cdata.innerHTML = "Case register from "+ localStorage.getItem("case_customer");
+        var a ;
+        var b ;
+        if (localStorage.getItem("sales_person")){
+            a = '<li><a href="#"><div class="message-img">'
+            a = a+'</div>'
+            a = a+'<div class="message-content">'
+            a = a+ '<span class="message-date">'+localStorage.getItem("case_date")+'</span>'
+            a = a+'<h2>'+ localStorage.getItem("case_person") +'</h2>'
+            a = a+ '<p>Case register from '+localStorage.getItem("case_customer")+'</p>'
+            a = a+ '</div></a></li>';
+            $( "#md" ).prepend(a);
+        }
+        if (localStorage.getItem("case_person")){
+            b = '<li><a href="#"><div class="message-img">'
+            b = b+'</div>'
+            b = b+'<div class="message-content">'
+            b = b+ '<span class="message-date">'+localStorage.getItem("date")+'</span>'
+            b = b+'<h2>'+ localStorage.getItem("sales_person") +'</h2>'
+            b = b+ '<p>Order received from '+localStorage.getItem("customer")+'</p>'
+            b = b+ '</div></a></li>';
+            $( "#md" ).prepend(b);
+        }
+
+        
+
+    </script>
+    <script src="{% static 'js/task.js' %}"></script>
+   <script src="{% static 'js/meeting.js' %}"></script>
+</body>
+</html>

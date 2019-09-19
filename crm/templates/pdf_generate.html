@@ -1,0 +1,367 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quotation - Amar Bio Organics India Pvt. Ltd.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/css/util-invo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'sets/css/main-invo.css' %}">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <!-- <div class="container-table100"> -->
+    <div class="wrap-table100" id="border">
+        <div class="table100" border="1"><br>
+            <header>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="logo ">
+                            <img src="{% static 'sets/images/login.png' %}">
+                        </div>
+                        <h3 style="margin-left: 42%"><u>QUOTATION</u>:</h3>
+                        <p class="pull-right">Quotation ID: {{ data.customer_code }}<span></span></p>
+                    </div>
+                </div>
+            </header>
+            <hr>
+            <br>
+
+            <div class="col-lg-6">
+                <div>To <span></span> {{ data.customer_name.lead_company }} ,</div><br>
+                <p>Address: {{ data.customer_name.get_complete_address }}<span></span><br> Name:
+                {{ data.customer_name.lead_company }} <span></span><br> Dear Mam/Sir,<br> Please find herewith attached quotation given below</p><br>
+            </div><br>
+            <table border="0">
+                <thead>
+                    <tr class="table100-head">
+                        <th class="column6">#Sl. No.</th>
+                        <th class="column2">Product Name</th>
+                        <th class="column6">Product Code</th>
+                        <th class="column1">Price Per<br> 1kg/ltr packing</th>
+                        
+                        <th class="column1">Price Per<br> 5kg/ltr packing</th>
+                        
+                        
+                        <th class="column1">Price Per<br> 25kg/ltr packing</th>
+                        
+                        <th class="column1">Price Per<br> 50kg/ltr packing</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="column6">1</td>
+                        <td class="column2">{{data.product_name}}</td>
+                        <td class="column6">{{data.product_code}}</td>
+                        <td class="column1">{{data.price_per_1kg}}</td>
+                        {% if data.price_per_5kg %}
+                        <td class="column1">{{data.price_per_5kg}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg %}
+                        <td class="column1">{{data.price_per_25kg}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg %}
+                        <td class="column1">{{data.price_per_50kg}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% if data.product2 %}
+                    <tr></tr>
+                    <tr>
+                        <td class="column6">2</td>
+                        <td class="column2">{{data.product2}}</td>
+                        <td class="column6">{{data.code2}}</td>
+                        {% if data.price_per_1kg2 %}
+                        <td class="column1">{{data.price_per_1kg2}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg2 %}
+                        <td class="column1">{{data.price_per_5kg2}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg2 %}
+                        <td class="column1">{{data.price_per_25kg2}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg2 %}
+                        <td class="column1">{{data.price_per_50kg2}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product3 %}
+                    <tr>
+                        <td class="column6">3</td>
+                        <td class="column2">{{data.product3}}</td>
+                        <td class="column6">{{data.code3}}</td>
+                        {% if data.price_per_1kg3 %}
+                        <td class="column1">{{data.price_per_1kg3}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg3 %}
+                        <td class="column1">{{data.price_per_5kg3}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg3 %}
+                        <td class="column1">{{data.price_per_25kg3}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg3 %}
+                        <td class="column1">{{data.price_per_50kg3}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product4 %}
+                    <tr>
+                        <td class="column6">4</td>
+                        <td class="column2">{{data.product4}}</td>
+                        <td class="column6">{{data.code4}}</td>
+                        {% if data.price_per_1kg4 %}
+                        <td class="column1">{{data.price_per_1kg4}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg4 %}
+                        <td class="column1">{{data.price_per_5kg4}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg4 %}
+                        <td class="column1">{{data.price_per_25kg4}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg4 %}
+                        <td class="column1">{{data.price_per_50kg4}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product5 %}
+                    <tr>
+                        <td class="column6">5</td>
+                        <td class="column2">{{data.product5}}</td>
+                        <td class="column6">{{data.code5}}</td>
+                        {% if data.price_per_1kg5 %}
+                        <td class="column1">{{data.price_per_1kg5}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg5 %}
+                        <td class="column1">{{data.price_per_5kg5}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg5 %}
+                        <td class="column1">{{data.price_per_25kg5}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg5 %}
+                        <td class="column1">{{data.price_per_50kg5}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product6 %}
+                    <tr>
+                        <td class="column6">6</td>
+                        <td class="column2">{{data.product6}}</td>
+                        <td class="column6">{{data.code6}}</td>
+                        {% if data.price_per_1kg6 %}
+                        <td class="column1">{{data.price_per_1kg6}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg6 %}
+                        <td class="column1">{{data.price_per_5kg6}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg6 %}
+                        <td class="column1">{{data.price_per_25kg6}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg6 %}
+                        <td class="column1">{{data.price_per_50kg6}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product7 %}
+                    <tr>
+                        <td class="column6">7</td>
+                        <td class="column2">{{data.product7}}</td>
+                        <td class="column6">{{data.code7}}</td>
+                        {% if data.price_per_1kg7 %}
+                        <td class="column1">{{data.price_per_1kg7}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg7 %}
+                        <td class="column1">{{data.price_per_5kg7}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg7 %}
+                        <td class="column1">{{data.price_per_25kg7}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg7 %}
+                        <td class="column1">{{data.price_per_50kg7}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product8 %}
+                    <tr>
+                        <td class="column6">8</td>
+                        <td class="column2">{{data.product8}}</td>
+                        <td class="column6">{{data.code8}}</td>
+                        {% if data.price_per_1kg8 %}
+                        <td class="column1">{{data.price_per_1kg8}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg8 %}
+                        <td class="column1">{{data.price_per_5kg8}}</td>
+                        {% else %}
+                        <td>--</td>
+                         {% endif %}
+                        {% if data.price_per_25kg8 %}
+                        <td class="column1">{{data.price_per_25kg8}}</td>
+                        {% else %}
+                        <td>--</td>
+                         {% endif %}
+                        {% if data.price_per_50kg8 %}
+                        <td class="column1">{{data.price_per_50kg8}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% if data.product9 %}
+                    <tr>
+                        <td class="column6">7</td>
+                        <td class="column2">{{data.product9}}</td>
+                        <td class="column6">{{data.code9}}</td>
+                        {% if data.price_per_1kg9 %}
+                        <td class="column1">{{data.price_per_1kg9}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_5kg9 %}
+                        <td class="column1">{{data.price_per_5kg9}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_25kg9 %}
+                        <td class="column1">{{data.price_per_25kg9}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                        {% if data.price_per_50kg9 %}
+                        <td class="column1">{{data.price_per_50kg9}}</td>
+                        {% else %}
+                        <td>--</td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    
+                </tbody>
+            </table><br><br>
+            <div id="notices">
+                <div><strong><u> Terms & Conditions:</u></strong> </div><br>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="notice">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>IGST</td>
+                                        <td>:</td>
+                                        <td>18%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Freight</td>
+                                        <td>:</td>
+                                        <td>{{data.freight}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery</td>
+                                        <td>:</td>
+                                        <td>{{data.delivery_term}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payment terms</td>
+                                        <td>:</td>
+                                        <td>{{data.payment_term}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lead term</td>
+                                        <td>:</td>
+                                        <td>{{data.lead_term}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><br></div>
+            </div>
+        </div><br><br>
+        <footer>
+            <div id="thanks">Thank you!</div><br>
+            <p><b>From: Amar Bio Organics India Pvt. Ltd.</b><br> &nbspPlease Call @ : 040-27843086/3091<br> &nbspNo.501, 5th Floor, Gowra Grand, Behind Gowra Plaza,<br> &nbsp1-8-384 & 385, S.P. road, Begumpet, Secunderabad-500003</p>
+        </footer>
+    </div><br><br>
+    </div>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'sets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'sets/js/main.js' %}"></script>
+
+</body>
+
+</html>

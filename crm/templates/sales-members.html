@@ -1,0 +1,99 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %}{% load tags %} {% block content %}
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Sales Members</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Sales Members</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="contact-clients-area mg-b-40">
+    <div class="container-fluid">
+        <div class="row">
+            {% for person in persons %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="contact-client-single shadow-reset ct-client-b-mg-30 ct-client-b-mg-30-n contact-client-v2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="contact-client-img contact-img-v2">
+                                {% if person.username|image %}
+                                <a href=""><img src="/media/{{ person.username|image }}" style="max-width: 46%" alt="" /></a>
+                                {% else %}
+                                <a href=""><img src="{% static 'assets/img/ab.jpg' %}" style="max-width: 30%" alt="" />
+                                </a>
+                                {% endif %}
+                                {% if person.first_name %}
+                                <h2><a class="contact-client-name" href="/member/detail/{{person.username}}">{{ person.first_name}} {{ person.last_name }}</a></h2>
+                                {% else %}
+                                <h2><a class="contact-client-name" href="/member/detail/{{person.username}}">{{ person.username}} </a></h2>
+                                {% endif %}
+                                {% if person.username|no_value %}
+                                <h1><a id="group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" >{{ person.username|no_value }}</a></h1>
+                                {% else %}
+                                <h1><a id="group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" >No Data</a></h1>
+                                {% endif %}
+                            </div>
+                            <div class="contact-client-address">
+                                <h4> Amar Bio-Organics India Pvt. Ltd.</h4>
+                                <p>Target Achieved: </p>
+                                <p>Leads: {{ person.username|lead }}</p>
+                                <p>Closed Won: {{ person.username|won }}</p>
+                                <p>Closed Lost: {{ person.username|lost }}</p>
+                            </div>
+                            <div class="contact-client-footer">
+                                <div class="btn-group">
+                                    {% if person.username|phone_value %}
+                                    <a class="btn btn-xs btn-white" style="font-size: 10px"><i class="fa fa-phone"></i> {{ person.username|phone_value }} </a>
+                                    {% else %}
+                                    <a class="btn btn-xs btn-white" style="font-size: 10px"><i class="fa fa-phone"></i>  </a>
+                                    {% endif %}
+                                    <a class="btn btn-xs btn-white" style="font-size: 10px"><i class="fa fa-envelope"></i> {{ person.username }} </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+{% endblock %}

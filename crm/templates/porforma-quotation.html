@@ -1,0 +1,224 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Proforma & Quotation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Proforma & Quotation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="adminpro-accordion-area">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="admin-pro-accordion-wrap mg-b-15 shadow-reset">
+                    <div class="alert-title">
+                        <div class="row"><br>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                               <!--  <h3>&nbsp <u><strong>Proforma & Quotation Details</strong></u> :</h3> -->
+                            </div><br><br>
+
+
+                            <br>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group adminpro-custon-design" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading accordion-head" style="background-color: #00b0df">
+                               <!--  <div class="col-lg-12 col-md-12 col-xs-12 pull-right"> -->
+                                    <a class=" mg-b-10" href="/proforma/form"><button class="btn  pull-right" style="size: 14px;">Add Proforma Details&nbsp
+                                            <i class="fa fa-plus" aria-hidden="true"></i></button></a><br>
+                                <h3 style="color: black">
+                                    <b>PROFORMA</b> <i class="fa fa-angle-double-right"></i></h3><a><span data-toggle="collapse" type="button" data-parent="#accordion" href="#collapse1" class="pull-right fa fa-arrow-circle-down btn"  style='color:black; margin-top: -15px;'> Pull Down</span></a>
+                            </div>
+                                <div id="collapse1" class="panel-collapse panel-ic collapse ">
+                                    <div class="panel-body admin-panel-content animated bounce">
+                                        <!-- Leads table area Start-->
+                                        <div class="admin-dashone-data-table-area">
+                                            <!-- <div class="container-fluid"> -->
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="sparkline8-list shadow-reset">
+                                                        <div class="sparkline8-hd">
+                                                            <div class="main-sparkline8-hd">
+                                                                <h1 style="color: black">Proforma <span class="table-project-n">Data</span> Table</h1>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sparkline8-graph">
+                                                            <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                                                    data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th data-field="id">Customer ID</th>
+                                                                            <th>Customer Name</th>
+                                                                            <th>Customer Contact</th>
+                                                                            <th>Customer Address</th>
+                                                                            <th>Product Name</th>
+                                                                            <th>Total Amount</th>
+                                                                            <th>Tentative Shipping Date</th>
+                                                                            <th>GST NO.</th>
+                                                                            <th>PDF</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {% for i in performas %}
+                                                                        <tr>
+                                                                            <td><a href="/detail/performa/{{i.id}}">{{i.customer_name.code}}</a></td>
+                                                                            <td>{{i.customer_name.lead_company}}</td>
+                                                                            <td>{{i.customer_contact}}</td>
+
+                                                                            <td>{{i.customer_name.address}}</td>
+                                                                            <td>{{i.product_name.product_name}}, 
+                                                                                {% if i.product2 %}{{ i.product2}}{% endif %},
+                                                                                {% if i.product3 %}{{ i.product3}}{% endif %},
+                                                                                {% if i.product4 %}{{ i.product4}}{% endif %},
+                                                                                {% if i.product5 %}{{ i.product5}}{% endif %}
+
+                                                                            </td>
+
+                                                                            <td>{{i.total_amount}}</td>
+                                                                            <td>{{i.tentative_date}}</td>
+                                                                            <td>{{i.gst_number}}</td>
+                                                                            <td>
+                                                                                <a type="button" href="/performa/invoice/pdf/{{ i.id}}" class="glyphicon glyphicon-edit btn-info" aria-hidden="true" style="border-radius: 40%"></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
+                                        <!-- Leads table area End-->
+                                    </div>
+                                </div>
+                            </div><br>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading accordion-head" style="background-color: #11ad1e">
+                                    <!-- <div class="col-lg-12 col-md-12 col-xs-12 pull-right"> --> <a class=" mg-b-10" href="/quotation/form"><button class="btn pull-right">Add Quotation Details &nbsp 
+                                                <i class="fa fa-plus" aria-hidden="true"></i></button></a>
+                                   <br>
+                                    <h3 style="color: black">
+                                       <b> QUOTATIONS</b> <i class="fa fa-angle-double-right"></i></h3>
+                                       <a><span data-toggle="collapse" type="button" data-parent="#accordion" href="#collapse2" class="pull-right fa fa-arrow-circle-down btn" style='color:black;margin-top: -15px;'> Pull Down</span></a>
+                                
+                                </div>
+                                <div id="collapse2" class="panel-collapse panel-ic collapse">
+                                    <div class="panel-body admin-panel-content animated bounce">
+                                        <!-- Opportunity table area Start-->
+                                        <div class="admin-dashone-data-table-area">
+                                            <div class="container-fluid">
+                                                <div class="col-lg-12">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="sparkline8-list shadow-reset">
+                                                            <div class="sparkline8-hd">
+                                                                <div class="main-sparkline8-hd">
+                                                                    <h1>Quotation<span class="table-project-n">Data</span> Table</h1>
+                                                                </div>
+                                                            </div>
+                                                            <div class="sparkline8-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                                                    data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th data-field="id">Product ID</th>
+                                                                            <th data-field="name" data-editable="false">Product Name</th>
+                                                                            <th data-field="currency" data-editable="false">Customer Name</th>
+                                                                            <th data-field="currency" data-editable="false">Customer Address</th>
+                                                                            <th data-field="currency" data-editable="false">Customer Contact</th>
+                                                                            <th data-field="amount" data-editable="false"> IGST</th>
+                                                                            <th data-field="stage" data-editable="false">Payment Term</th>
+                                                                            <th data-field="pdf" data-editable="false">PDF</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {% for quotation in quotations %}
+                                                                        <tr>
+                                                                            <td>{{ quotation.id }}</td>
+                                                                            <td><a href="/detail/quotation/{{quotation.id}}">{{ quotation.product_name }}</a></td>
+                                                                            <td>{{ quotation.customer_name }}</td>
+                                                                            <td>{{ quotation.address }}</td>
+                                                                            <td>{{ quotation.contact_name }}</td>
+                                                                            <td>{{ quotation.igst }}</td>
+                                                                            <td>{{ quotation.payment_term }}</td>
+                                                                            <td>
+                                                                                <a type="button" href="/quotation/invoice/pdf/{{ quotation.id}}" class="glyphicon glyphicon-edit btn-info" aria-hidden="true" style="border-radius: 40%"></a>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                        {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Opportunity table area End-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- accordion End-->
+</div>
+</div>
+{% endblock %}

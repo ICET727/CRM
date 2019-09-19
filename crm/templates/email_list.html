@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Chatter <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Important Mails</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Chatter</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Important Mails</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                        
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <div class="row">
+                                <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                            <h1>Mails <span class="table-project-n"> </span></h1>
+                        </div>
+                        <div class=" col-lg-6 col-md-6 col-xs-6 col-sm-6">
+                            <a href="/email/send" class="btn btn-warning pull-right">
+                            <div >
+                            <span class="glyphicon glyphicon-plus"></span> Compose Mail</div>
+                        </a>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                            </div>
+                            <table id="table3" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar4">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">ID</th>
+                                        <th data-field="name">Name</th>
+                                        <th data-field="email">Title</th>
+                                        <th data-field="company">File</th>
+                                        <th data-field="complete">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in emails %}
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ i.email_id }}</td>
+                                        <td>{{ i.sender }}</td>
+                                        <td>{{ i.Subject }}</td>
+                                        {% if i.attachment %}
+                                        <td><a href="/media/{{ i.attachment }}"><button class="btn btn-success btn-sm" type="button">View</button></a></td>
+                                        {% else %}
+                                        <td>File Not Exist</td>
+                                        {% endif %}
+                                        <td>{{ i.date }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+
+
+
+{% endblock %}

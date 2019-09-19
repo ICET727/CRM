@@ -1,0 +1,95 @@
+ {% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Orders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li>Dashboard<span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Orders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Data table area Start-->
+<div class="admin-dashone-data-table-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Order <span class="table-project-n">Records</span></h1>
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                data-cookie-id-table="saveId" data-click-to-select="true" data-show-export="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th data-field="lead name" data-editable="false">Name</th>
+                                        <th data-field="Sales name" data-editable="false">Sales Person</th>
+                                        <th data-field="product code" data-editable="false">Amount</th>
+                                        <th data-field="order quantity" data-editable="false">Stage</th>
+                                        <th data-field="unit price" data-editable="false">Contacts</th>
+                                        <th data-field="option">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in pending %}
+                                    <tr>
+                                        <td>{{ i.name }}</td>
+                                        <td>{{ i.created_by }}</td>
+                                        <td>{{ i.amount }}</td>
+                                        <td>{{ i.stage }}</td>
+                                        <td>{% for j in i.contacts.values %}{{ j.title }}, {% endfor %}</td>
+                                        <td><a class="fa fa-check btn btn-success" href="/pending/orders/{{i.id}}1" aria-hidden="true" style="border-radius: 20%"></a>&nbsp <a class="fa fa-times btn btn-danger" aria-hidden="true" href="/pending/orders/{{i.id}}0" style="border-radius: 20%"></a> </td>
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data table area End-->
+
+{% endblock %}

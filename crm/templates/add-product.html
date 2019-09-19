@@ -1,0 +1,156 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/ordered/items">Products</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Products</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/ordered/items">Products</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Products</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>Add Products</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="all-form-element-inner">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                                        <label class="">Product Name</label>
+                                                        <!-- <input type="text" class="form-control" /> -->
+                                                        {{ form.product_name|add_class:"form-control"|attr:'maxlength:35'}} {{ form.product_name.errors }}
+
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                        <label class="">Product Code</label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.product_code|add_class:" form-control"|attr:'maxlength:35'}} {{ form.product_code.errors }}
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                        <label class="">Product Description</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.description|add_class:"form-control"}} {{ form.description.errors }}
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">HSN Number</label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.HSN_Number|add_class:"form-control"}} {{ form.HSN_Number.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility</label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.solubility|add_class:"form-control"}} {{ form.categories.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Type</label>
+                                                        <!-- <textarea rows="3" cols="30" class="form-control">
+                                                            </textarea> -->
+                                                        {{ form.type1|add_class:"form-control"|attr:'maxlength:35'}} {{ form.type1.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Tentative dose</label>
+                                                        <!-- <textarea rows="3" cols="30" class="form-control">
+                                                            </textarea> -->
+                                                        {{ form.tentative_dose|add_class:"form-control"|attr:'maxlength:35'}} {{ form.tentative_dose.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">UOM</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.UOM|add_class:"form-control"}} {{ form.UOM.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Packaging</label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.packaging|add_class:"select2_demo_2 form-control"}} {{ form.packaging.errors }}
+                                                    </div>
+                                                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                                        <label class="">Tag</label>
+                                                        <rbl-tag-input id="tagElement"></rbl-tag-input>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="login-btn-inner">
+                                                    <div class="column">
+                                                        <div class="col-lg-3"></div>
+                                                        <div class="col-lg-9">
+                                                            <div class="login-horizental cancel-wp pull-right">
+                                                                <a href="/dash-test"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                                <button class="btn btn-white" type="button">Cancel</button>
+                                                                <button class="btn btn-sm btn-primary login-submit-cs" id="add_product" type="submit">Save Change</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% endblock %}

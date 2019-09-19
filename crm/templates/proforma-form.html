@@ -1,0 +1,896 @@
+{% load staticfiles %} {% load widget_tweaks %} {% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CRM - Amar Bio-Organics India Private Limited</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <scriptr src="{% static 'js/cart_product_add.js' %}">
+        </script>
+        <!-- Bootstrap CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <!-- Bootstrap CSS
+        ============================================ -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!-- adminpro icon CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/adminpro-custon-icon.css' %}">
+        <!-- meanmenu icon CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+        <!-- mCustomScrollbar CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+        <!-- animate CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+        <!-- data-table CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-table.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/data-table/bootstrap-editable.css' %}">
+        <!-- normalize CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+        <!-- Select2 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/select2.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/select2-bootstrap.css' %}">
+        <!-- charts C3 CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/c3.min.css' %}">
+        <!-- forms CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/form/all-type-forms.css' %}">
+        <!-- style CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+
+        <!-- responsive CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <!-- charts CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{% static 'assets/css/charts.css' %}">
+
+
+        <!-- modernizr JS
+        ============================================ -->
+        <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+
+        <script src="{% static 'assets/js/webcomponents.min.js' %}"></script>
+        <style>
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+            /* Hide default HTML checkbox */
+            
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            /* The slider */
+            
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+            
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+            
+            input:checked+.slider {
+                background-color: #2196F3;
+            }
+            
+            input:focus+.slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+            
+            input:checked+.slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+            /* Rounded sliders */
+            
+            .slider.round {
+                border-radius: 30px;
+            }
+            
+            .slider.round:before {
+                border-radius: 50%;
+            }
+        </style>
+
+</head>
+
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <!-- <a href="#"><img src="{% static 'assets/img/a.jpg' %}" alt="" /> -->
+                    </a>
+                    <h3>{{ user.first_name }}</h3>
+                    <p>{{ profile.designation }}</p>
+                    <strong>CRM</strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro d-flex ml-auto">
+                        <li class="nav-item"><a href="/sales/profile" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-chart-line" aria-hidden="true"></i> <span class="mini-dn">Dashboard</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/contact/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-user-circle" aria-hidden="true"></i> <span class="mini-dn">Contacts</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/customer/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-user" aria-hidden="true"></i> <span class="mini-dn">Customers</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/ordered/items" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-shopping-cart"></i> <span class="mini-dn">Commercial Order</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/sample/items" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-shopping-basket"></i> <span class="mini-dn">Sample Order</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/case/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-table"></i> <span class="mini-dn">Cases</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/document/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-edit"></i> <span class="mini-dn">Documents</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/porforma_quotation/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-list"></i> <span class="mini-dn">Proforma & Quotaion</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/user/payment/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-money-bill-alt"></i> <span class="mini-dn">Payment Tracking</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+
+                        <li class="nav-item"><a href="/product/brief" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-plus" aria-hidden="true"></i> <span class="mini-dn">Product Request</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="/email/list" class="nav-link dropdown-toggle" style="padding-top: 16px;padding-bottom: 10px;"><i class="fa  fa-envelope" aria-hidden="true"></i> <span class="mini-dn">Email</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+        <div class="content-inner-all">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-11">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                                <i class="fa fa-bars"></i>
+                                            </button>
+                            </div>
+                            <!-- <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
+                                        <div class="header-top-menu tabl-d-n">
+                                            <ul class="nav navbar-nav mai-top-nav">
+        
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link"></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link"></a>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                    <a href="#" data-toggle="" role="button" aria-expanded="false" class="nav-link dropdown-toggle"></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+                                <div allign="right">
+                                    <div class="header-right-info pull-right">
+                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <li class="nav-item dropdown">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="fa fa-tasks"></span><span class="indicator-ms"></span></a>
+                                                <div role="menu" class="author-message-top dropdown-menu animated flipInX" style="margin-left: -240%">
+                                                    <div class="message-single-top">
+                                                        <h1>Message</h1>
+                                                    </div>
+                                                    <!-- <ul class="message-menu">
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/1.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>{{ user1.first_name }} {{ user1.last_name }}</h2>
+                                                                    <p>Please do this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/4.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Sulaiman din</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/3.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="message-img">
+                                                                    <img src="{% static 'assets/img/message/2.jpg' %}" alt="">
+                                                                </div>
+                                                                <div class="message-content">
+                                                                    <span class="message-date">16 Sept</span>
+                                                                    <h2>Victor Jara</h2>
+                                                                    <p>Please done this project as soon possible.</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul> -->
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+
+                                                    <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX" style="margin-left: -215%">
+
+                                                    <li><a href="/sales/profile"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>My Profile</a>
+                                                    </li>
+                                                    <li><a href="/ordered/items"><span class="adminpro-icon adminpro-money author-log-ic"></span>Total Order</a>
+                                                    </li>
+                                                    <!-- <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a> -->
+                                            </li>
+                                            <li><a href="/log_out"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                            </li>
+                                            </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="mobile-menu-nav">
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="/sales/profile">Dashboard <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="/ordered/items">Orders <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#others" href="/customer/list">Customers <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="/contact/list">Contacts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="/add/product">Add Products <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="/cases/list">Cases <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#formsmob" href="/document/list">Documents <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="/email/list">Chatter <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                        <li><a data-toggle="collapse" data-target="#Others" href="/admin/payment">Payment Tracking<span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcome-area mg-b-30 small-dn">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="/ordered/items">Proforma & Quotations</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Add Proforma</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area des-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="/ordered/items">Proforma & Quotations</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Add Proforma</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- Basic Form Start -->
+            <div class="basic-form-area mg-b-15">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="sparkline12-list shadow-reset mg-t-30">
+                                <div class="sparkline12-hd">
+                                    <div class="main-sparkline12-hd">
+                                        <h1>Add Performa</h1>
+                                        <div class="sparkline12-outline-icon">
+                                            <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                            <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sparkline12-graph">
+                                    <div class="basic-login-form-ad">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <form method="POST">
+                                                    {% csrf_token %}
+                                                    <div class="all-form-element-inner">
+                                                        <br>
+                                                        <h5><u>Customer Details</u></h5>
+
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Customer Name<span style="color:  #b30000">*</span></label>
+                                                                    <!-- <select class="form-control">
+                                                                        <option></option>
+                                                                </select> -->
+                                                                    {{ form.customer_name|add_class:"form-control"|attr:"id:cu_name"}}
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Customer Contact<span style="color:  #b30000">*</span></label> {{ form.customer_contact |add_class:"form-control"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <h5><u>Product Details</u></h5>
+                                                        1.
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name<span style="color:  #b30000">*</span></label> {{ form.product_name |add_class:"form-control"|attr:"id:prn1"}}
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code<span style="color:  #b30000">*</span></label> <input type="text" class="form-control" name="" id="pco1">
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity<span style="color:  #b30000">*</span></label> {{ form.quantity | add_class:"form-control"|attr:"id:qty1"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate<span style="color:  #b30000">*</span></label> {{ form.per_item_price| add_class:"form-control"|attr:"id:rate1"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <b> Click! To Add More Products </b><br><i class="fa fa-angle-double-down hover"></i><br>
+                                                        <label class="switch">
+                                                                 <input type="checkbox" class="form-control" onclick=onOffFunction2()> <span class="slider round" ></span>
+                                                                </label>
+                                                    </div>
+                                                    <div id="onOff2" style="display:none;">
+                                                        2.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name<span style="color:  #b30000">*</span></label>
+                                                                    <select name="product2" class="form-control" id="prn2">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code<span style="color:  #b30000">*</span></label> {{ form.code2 |add_class:"form-control"|attr:"id:pco2"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity<span style="color:  #b30000">*</span></label> {{ form.quantity2 | add_class:"form-control"|attr:"id:qty2"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate<span style="color:  #b30000">*</span></label> {{ form.per_item_price2| add_class:"form-control"|attr:"id:rate2"}}
+                                                                </div>
+                                                            </div>
+                                                        </div> 3.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name<span style="color:  #b30000">*</span></label> <select name="product3" class="form-control" id="pcn3">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code<span style="color:  #b30000">*</span></label> {{ form.code3 |add_class:"form-control"|attr:"id:pco3"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity<span style="color:  #b30000">*</span></label> {{ form.quantity3 | add_class:"form-control"|attr:"id:qty3"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate<span style="color:  #b30000">*</span></label> {{ form.per_item_price3| add_class:"form-control"|attr:"id:rate3"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        4.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name<span style="color:  #b30000">*</span></label> <select name="product4" class="form-control" id="pcn4">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code<span style="color:  #b30000">*</span></label> {{ form.code4 |add_class:"form-control"|attr:"id:pco4"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity<span style="color:  #b30000">*</span></label> {{ form.quantity4 | add_class:"form-control"|attr:"id:qty4"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate<span style="color:  #b30000">*</span></label> {{ form.per_item_price4| add_class:"form-control"|attr:"id:rate4"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        5.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name<span style="color:  #b30000">*</span></label> <select name="product5" class="form-control" id="pcn5">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code<span style="color:  #b30000">*</span></label> {{ form.code5 |add_class:"form-control"|attr:"id:pco5"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity<span style="color:  #b30000">*</span></label> {{ form.quantity5 | add_class:"form-control"|attr:"id:qty5"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate<span style="color:  #b30000">*</span></label> {{ form.per_item_price5| add_class:"form-control"|attr:"id:rate5"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        6.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name</label> <select name="product6" class="form-control" id="pcn6">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code</label> {{ form.code6 |add_class:"form-control"|attr:"id:pco6"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity</label> {{ form.quantity6 | add_class:"form-control"|attr:"id:qty6"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate</label> {{ form.per_item_price6| add_class:"form-control"|attr:"id:rate6"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        7.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name</label> <select name="product7" class="form-control" id="pcn7">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code</label> {{ form.code7 |add_class:"form-control"|attr:"id:pco7"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity</label> {{ form.quantity7 | add_class:"form-control"|attr:"id:qty7"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate</label> {{ form.per_item_price7| add_class:"form-control"|attr:"id:rate7"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        8.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name</label> <select name="product8" class="form-control" id="pcn8">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code</label> {{ form.code8 |add_class:"form-control"|attr:"id:pco8"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity</label> {{ form.quantity8 | add_class:"form-control"|attr:"id:qty8"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate</label> {{ form.per_item_price8| add_class:"form-control"|attr:"id:rate8"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        9.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name</label> <select name="product9" class="form-control" id="pcn9">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code</label> {{ form.code9 |add_class:"form-control"|attr:"id:pco9"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity</label> {{ form.quantity9 | add_class:"form-control"|attr:"id:qty9"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate</label> {{ form.per_item_price9| add_class:"form-control"|attr:"id:rate9"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        10.<br>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Name</label> <select name="product10" class="form-control" id="pcn10">
+                                                                        <option value selected></option>
+                                                                        {% for i in products %}
+                                                                        <option value="{{ i.id }}">{{ i }}</option>
+                                                                        {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                    <label class="">Product Code</label> {{ form.code10 |add_class:"form-control"|attr:"id:pco10"}}
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                                    <label class="">Quantity</label> {{ form.quantity10 | add_class:"form-control"|attr:"id:qty10"}}
+
+                                                                </div>
+
+                                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                                                    <label class="">Product Rate</label> {{ form.per_item_price10| add_class:"form-control"|attr:"id:rate10"}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <h5><u>Other Details</u></h5>
+
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                                <label class="">Tentative Shipping Date<span style="color:  #b30000">*</span>/label> {{ form.tentative_date| add_class:"form-control"}}
+
+                                                            </div>
+
+                                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                                <label class="">Freight Charges<span style="color:  #b30000">*</span></label> {{ form.freight| add_class:"form-control"}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <h5><u>Bank Details</u></h5>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                <label class="">Bankers Name<span style="color:  #b30000">*</span></label> {{ form.bank_name| add_class:"form-control"}}
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <br>
+                                                            <h5><u>Statutory Details<span style="color:  #b30000">*</span></u></h5>
+
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                <label class="">GST NO.</label> {{ form.gst_number| add_class:"form-control"}}
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                <label class="">PAN NO.</label> {{ form.pan_number| add_class:"form-control"}}
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                                                <label class="">ECC</label> {{ form.ecc| add_class:"form-control"}}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                                <label class="">Payment Terms</label> {{ form.payment_terms| add_class:"form-control"}}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                                <label class="">Delivery Terms</label> {{ form.delivere_terms| add_class:"form-control"}}
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                                <label class="">Remarks</label> {{ form.remarks| add_class:"form-control"}}
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                {{ form.insurance|add_class:"pull-left"}}
+                                                                <label class="pull-left">&nbspInsurance<span style="color: red">** &nbsp&nbsp</span></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <p class="pull-left"><span style="color: blue">**Insurance charges will be 0.3% of the total product amount.</span></p><br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group-inner ">
+                                                        <br>
+                                                        <p class="pull-left" style="padding-left: 20px;"><span style="color:  #b30000">**Fields marked with '*' are manadatory.</span></p>
+
+                                                    </div>
+                                                    <div class="form-group-inner pull-right">
+                                                        <div class="login-btn-inner">
+                                                            <div class="column">
+                                                                <div class="login-horizental cancel-wp pull-right">
+                                                                    <a href="/porforma_quotation/list"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                                    <button class="btn btn-white" type="button" onClick="this.form.reset()">Cancel</button>
+                                                                    <button class="btn btn-sm btn-primary login-submit-cs" id="update_lead" type="submit">Save Change</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Start-->
+                <div class="footer-copyright-area">
+                    <div class="container-fluid">
+                        <footer>
+                            <div class-="row">
+                                <div class="col-lg-8">
+                                    <div class="container pull-left">
+                                        <p>© Copyright 2019. <a href="http://www.amarorganics.com/">Amar Bio-Organics</a> India Private Limited</p>
+                                    </div>
+                                </div><br>
+                                <div class="col-lg-4">
+                                    <p class="pull-right">Powered By: <a href="http://icetitsolutions.com" style="color: red">ICET IT Solutions</a></p>
+                                </div>
+                        </footer>
+                        </div>
+                    </div>
+
+                    <script>
+                        document.getElementById('cu_name').value = '{{ values.order_lead.lead_id }}';
+                        document.getElementById('prn1').value = '{{ values.product_name.id }}';
+                        document.getElementById('pco1').value = '{{ values.product_name.product_code }}';
+                        document.getElementById('qty1').value = '{{ values.item_quantity }}';
+                        document.getElementById('rate1').value = '{{ values.per_item_price }}';
+                        if ('{{ values.product_2}}') {
+                            document.getElementById('prn2').value = '{{ p2_id }}';
+                            document.getElementById('qty2').value = '{{ values.item_quantity2 }}';
+                            document.getElementById('rate2').value = '{{ values.per_item_price2 }}';
+                            document.getElementById('pco2').value = '{{ values.code2 }}';
+                        }
+                        if ('{{ values.product_3}}') {
+                            document.getElementById('prn3').value = '{{ p3_id }}';
+                            document.getElementById('qty3').value = '{{ values.item_quantity3 }}';
+                            document.getElementById('rate3').value = '{{ values.per_item_price3 }}';
+                            document.getElementById('pco3').value = '{{ values.code3 }}';
+                        }
+                        if ('{{ values.product_4}}') {
+                            document.getElementById('prn4').value = '{{ p4_id }}';
+                            document.getElementById('qty4').value = '{{ values.item_quantity4 }}';
+                            document.getElementById('rate4').value = '{{ values.per_item_price4 }}';
+                            document.getElementById('pco4').value = '{{ values.code4 }}';
+                        }
+                        if ('{{ values.product_5}}') {
+                            document.getElementById('prn5').value = '{{ p5_id }}';
+                            document.getElementById('qty5').value = '{{ values.item_quantity5 }}';
+                            document.getElementById('rate5').value = '{{ values.per_item_price5 }}';
+                            document.getElementById('pco5').value = '{{ values.code5 }}';
+                        }
+                        if ('{{ values.product_6}}') {
+                            document.getElementById('prn6').value = '{{ p6_id }}';
+                            document.getElementById('qty6').value = '{{ values.item_quantity6 }}';
+                            document.getElementById('rate6').value = '{{ values.per_item_price6 }}';
+                            document.getElementById('pco6').value = '{{ values.code6 }}';
+                        }
+                        if ('{{ values.product_7}}') {
+                            document.getElementById('prn7').value = '{{ p7_id }}';
+                            document.getElementById('qty7').value = '{{ values.item_quantity7 }}';
+                            document.getElementById('rate7').value = '{{ values.per_item_price7 }}';
+                            document.getElementById('pco7').value = '{{ values.code7 }}';
+                        }
+                        if ('{{ values.product_8}}') {
+                            document.getElementById('prn8').value = '{{ p8_id }}';
+                            document.getElementById('qty8').value = '{{ values.item_quantity8 }}';
+                            document.getElementById('rate8').value = '{{ values.per_item_price8 }}';
+                            document.getElementById('pco8').value = '{{ values.code8 }}';
+                        }
+                        if ('{{ values.product_9}}') {
+                            document.getElementById('prn9').value = '{{ p9_id }}';
+                            document.getElementById('qty9').value = '{{ values.item_quantity9 }}';
+                            document.getElementById('rate9').value = '{{ values.per_item_price9 }}';
+                            document.getElementById('pco9').value = '{{ values.code9 }}';
+                        }
+                        if ('{{ values.product_10}}') {
+                            document.getElementById('prn10').value = '{{ p10_id }}';
+                            document.getElementById('qty10').value = '{{ values.item_quantity10 }}';
+                            document.getElementById('rate10').value = '{{ values.per_item_price10 }}';
+                            document.getElementById('pco10').value = '{{ values.code10 }}';
+                        }
+
+                        function onOffFunction2() {
+                            var x = document.getElementById("onOff2");
+                            if (x.style.display == "none") {
+                                x.style.display = "block";
+                            } else {
+                                x.style.display = "block";
+                                document.getElementById("onOff2").style.display = 'none';
+                            }
+                        }
+                    </script>
+                    <scriptr src="{% static 'assets/js/cart_product_add.js' %}">
+                        </script>
+                        <script src="{% static 'assets/js/vendor/jquery-1.11.3.min.js' %}"></script>
+                        <script src="{% static 'js/performa.js' %}"></script>
+
+                        <!-- format: 'DD/MM/YYYY HH:mm',
+ -->
+                        <!-- bootstrap JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+                        <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+                        <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+
+                        <!-- meanmenu JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+                        <!-- mCustomScrollbar JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+                        <!-- sticky JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+                        <!-- scrollUp JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+                        <!-- counterup JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/counterup/jquery.counterup.min.js' %}"></script>
+                        <script src="{% static 'assets/js/counterup/waypoints.min.js' %}"></script>
+                        <script src="{% static 'assets/js/counterup/counterup-active.js' %}"></script>
+
+                        <!-- main JS
+        ============================================ -->
+                        <script src="{% static 'assets/js/main.js' %}"></script>
+                        <srcipt src="{% static 'assets/js/lead.js' %}"></srcipt>
+                        <script src="{% static 'assets/js/select2/select2.full.min.js' %}"></script>
+                        <script src="{% static 'assets/js/select2/select2-active.js' %}"></script>
+                        <script type="text/javascript" src="{% static 'js/quotation.js' %}"></script>
+
+</body>
+
+</html>

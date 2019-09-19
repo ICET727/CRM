@@ -1,0 +1,167 @@
+{% extends 'base2.html' %} {% load staticfiles %} {% block content %}
+
+<!-- Header top area end-->
+<!-- Breadcome start-->
+<style type="text/css">
+    h4{
+       font: italic bold 12px/30px Georgia, serif;
+    }
+    p{
+        font-family: 12px/30px Scheherazade, serif;
+        font-size: 12px;
+    }
+</style>
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">lead</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/dash-test">Dashboard</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">lead</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- accordion start-->
+<div class="button-ad-wrap shadow-reset nt-mg-b-30">
+                                <div class="alert-title">
+                                    <h2>lead Details :</h2>                                   
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Name: </h4> 
+                                        <p>{{lead.lead_company}}</p>
+                                         </div>                                 
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                        <h4>Customer Contact: </h4>
+                                        {% for i in lead.contacts.all %}
+                                         <p> {{ i.phone }}</p>
+                                         {%endfor%}
+                                    </div>
+                                    </div>
+                                   <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div>
+                                     <h4>Customer Address:</h4>
+                                      <p>{{lead.get_complete_address}}</p>
+                                 </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>GST No.:</h4> 
+                                      <p>{{lead.gst_number}}</p>
+                                     </div>     
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                     
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>lead Designation</h4>
+                                  <p>{{ lead.designation }}</p>
+                              </div>
+                                    </div>
+                                     <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                     <div>
+                                     <h4>Landline</h4>
+                                     {% if lead.landline %}
+                                  <p>{{ lead.landline }}</p>
+                                  {% else %}
+                                  <p></p>
+                                  {% endif %}
+                              </div>
+                                </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                            <h4>Factory Address</h4>
+                                            <p>{{ lead.address }}</p>
+                                        </div>
+                                    </div>
+                                
+                                <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                            <h4>Currency</h4>
+                                            <p>{{ lead.currency_code }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                            <h4>Comments</h4>
+                                            {% if lead.description %}
+                                            <p>{{ lead.description }}</p>
+                                            {% else %}
+                                            <p>No comments</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>FSSAI Licence</h4>
+                                          {% if lead.attachment %}
+                                        <p><a href="/media/{{ lead.attachment }}"><button class="btn btn-success btn-sm" type="button">View</button></a></p>
+                                        {% else %}
+                                        <p>No file </p>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>GST No Certificate</h4>
+                                          {% if lead.attachment1 %}
+                                        <p><a href="/media/{{ lead.attachment1 }}"><button class="btn btn-success btn-sm" type="button">View</button></a></p>
+                                        {% else %}
+                                        <p>No file</p>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div>
+                                         <h4>I.E.C</h4>
+                                          {% if lead.attachment2 %}
+                                        <p><a href="/media/{{ lead.attachment2 }}"><button class="btn btn-success btn-sm" type="button">View</button></a></p>
+                                        {% else %}
+                                        <p>No file</p>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+{% endblock %}

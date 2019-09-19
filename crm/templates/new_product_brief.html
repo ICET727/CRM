@@ -1,0 +1,169 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load widget_tweaks %} {% block content %}
+<!-- Mobile Menu end -->
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/ordered/items">Products</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Product Brief</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Breadcome start-->
+<div class="breadcome-area des-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right">
+                            <ul class="breadcome-menu">
+                                <li><a href="/ordered/items">Products</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Add Product Brief</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!-- Basic Form Start -->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline12-list shadow-reset mg-t-30">
+                    <div class="sparkline12-hd">
+                        <div class="main-sparkline12-hd">
+                            <h1>New Product Brief</h1>
+                            <div class="sparkline12-outline-icon">
+                                <span class="sparkline12-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <!-- <span><i class="fa fa-wrench"></i></span> -->
+                                <!-- <span class="sparkline12-collapse-close"><i class="fa fa-times"></i></span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline12-graph">
+                        <div class="basic-login-form-ad">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="all-form-element-inner">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <label class="">New Product Brief<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="text" class="form-control" /> -->
+                                                        {{ form.new_product|add_class:"form-control"|attr:'maxlength:35,height:61px'}} {{ form.new_product.errors }}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                        <label class="">Application<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="text" class="form-control" required/> -->
+                                                        {{ form.application|add_class:" form-control"|attr:'maxlength:35'}} {{ form.application.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Tentative Rate<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.tentative_rate|add_class:"form-control"}} {{ form.tentative_rate.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Request Quantity<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.quantity_req|add_class:"form-control"}} {{ form.quantity_req.errors }}
+                                                    </div>
+
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">Tentative Consumption<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.tentative_consumption|add_class:"form-control"}} {{ form.tentative_consumption.errors }}
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                                        <label class="">Product Priority<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.project_priority|add_class:"form-control"}} {{ form.project_priority.errors }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">Form<span style="color:  #b30000">*</span></label>
+                                                        <select class=" form-control " id="powder1">
+                                                            <option selected disabled>----------</option>
+                                                            <option value="liquid">Liquid</option>
+                                                            <option value="powder">Powder</option>
+                                                       </select>
+
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id="mesh" style='display:none;'>
+                                                        <label class="">Mesh<span style="color:  #b30000">*</span></label> {{ form.mesh|add_class:"form-control"}} {{ form.mesh.errors }}
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">Solubility<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.solubility|add_class:"form-control"}} {{ form.solubility.errors }}
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                        <label class="">Criteria<span style="color:  #b30000">*</span></label>
+                                                        <!-- <input type="phone" class="form-control" /> -->
+                                                        {{ form.criteria|add_class:"form-control"}} {{ form.criteria.errors }}
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner ">
+                                                <br>
+                                                <p class="pull-left" style="padding-left: 20px;"><span style="color:  #b30000">**Fields marked with '*' are manadatory.</span></p>
+
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="login-btn-inner">
+                                                    <div class="column">
+                                                        <div class="login-horizental cancel-wp pull-right">
+                                                            <a href="/dash-test"><button class="btn btn-warning" type="button">Go Back</button></a>
+                                                            <button class="btn btn-white" type="button" onClick="this.form.reset()">Cancel</button>
+                                                            <button class="btn btn-sm btn-primary login-submit-cs" id="brief_product" type="submit">Save Change</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script>
+            $('#powder1').on('change', function() {
+                $("#mesh").css('display', (this.value == 'powder') ? 'block' : 'none');
+            });
+        </script>
+
+        {% endblock %}
