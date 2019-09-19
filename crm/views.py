@@ -423,7 +423,7 @@ def update_profile(request):
 				'profile_form': profile_form
 	}
 	if user.is_superuser:
-		return render(request,'update_profile.html', context)
+		return render(request,'update_profile_admin.html', context)
 	else:
 		return render(request,'update_profile.html', context)
 

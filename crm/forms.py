@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import *
 from django.forms import DateTimeInput,PasswordInput
-
+class DateInput(forms.DateInput):
+    input_type = 'date'
 class UserForm(forms.ModelForm):
 	#password = forms.CharField(widget = forms.PasswordInput())
 	class Meta:
@@ -16,6 +17,7 @@ class UserProfileForm(forms.ModelForm):
     fields = ('user_phone','about','DOB','user_photo','email','password')
     widgets = {
               'password':PasswordInput(),
+              'DOB':DateInput(),
             }   
 # class AccountForm(forms.ModelForm):
 #   #account_attachment = forms.
@@ -28,8 +30,7 @@ class UserProfileForm(forms.ModelForm):
 #                 'postcode', 'country')
 
         # fields = '__all__'
-class DateInput(forms.DateInput):
-    input_type = 'date'
+
 
 class LeadForm(forms.ModelForm):
   class Meta:
