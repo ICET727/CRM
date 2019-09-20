@@ -936,7 +936,7 @@ def Order_place(request):
 					#print(product2)
 				quantity2 = request.POST.get('quantity2')
 				per_item_price2 = request.POST.get('per_item_price2')
-				categories2 = request.POST.get('categories2')
+				
 				# product 3
 				product3 = request.POST.get('product_name3')
 				if product3:
@@ -948,7 +948,7 @@ def Order_place(request):
 					code3 = 0
 				quantity3 = request.POST.get('quantity3')
 				per_item_price3 = request.POST.get('per_item_price3')
-				categories3 = request.POST.get('categories3')
+				
 				# product 4
 				product4 = request.POST.get('product_name4')
 				if product4:
@@ -972,7 +972,7 @@ def Order_place(request):
 					code5 = 0
 				quantity5 = request.POST.get('quantity5')
 				per_item_price5 = request.POST.get('per_item_price5')
-				categories5 = request.POST.get('categories5')
+				
 				# product 6
 				product6 = request.POST.get('product_name6')
 				if product6:
@@ -984,7 +984,7 @@ def Order_place(request):
 					code6 = 0
 				quantity6 = request.POST.get('quantity6')
 				per_item_price6 = request.POST.get('per_item_price6')
-				categories6 = request.POST.get('categories6')
+				
 				# product 7
 				product7 = request.POST.get('product_name7')
 				if product7:
@@ -1008,7 +1008,7 @@ def Order_place(request):
 					code8 = 0
 				quantity8 = request.POST.get('quantity8')
 				per_item_price8 = request.POST.get('per_item_price8')
-				categories8 = request.POST.get('categories8')
+				
 				# product 9
 				product9 = request.POST.get('product_name9')
 				if product9:
@@ -1020,7 +1020,7 @@ def Order_place(request):
 					code9 = 0
 				quantity9 = request.POST.get('quantity9')
 				per_item_price9 = request.POST.get('per_item_price9')
-				categories9 = request.POST.get('categories9')
+				
 				# product 10
 				product10 = request.POST.get('product_name10')
 				if product10:
@@ -1032,7 +1032,7 @@ def Order_place(request):
 					code10 = 0
 				quantity10 = request.POST.get('quantity10')
 				per_item_price10 = request.POST.get('per_item_price10')
-				categories10 = request.POST.get('categories10')
+				
 				total_amount = int(quantity)*int(per_item_price)
 				user = request.user
 				if request.FILES:
@@ -1046,15 +1046,15 @@ def Order_place(request):
 							postal_code=postal_code,ship_country=country,total_amount=total_amount,
 							shipment_priority=shipment_priority,shipment_mode=shipment_preference, 
 							attachment=attachment,attachment1=attachment1,attachment2=attachment2,
-							product_2=product2,code2 = code2, item_quantity2=quantity2,categories2=categories2,per_item_price2=per_item_price2,
-							product_3=product3,code3 = code3, item_quantity3=quantity3,categories3=categories3,per_item_price3=per_item_price3,
-							product_4=product4,code4 = code4, item_quantity4=quantity4,categories4=categories4,per_item_price4=per_item_price4,
-							product_5=product5,code5 = code5, item_quantity5=quantity5,categories5=categories5,per_item_price5=per_item_price5,
-							product_6=product6,code6 = code6, item_quantity6=quantity6,categories6=categories6,per_item_price6=per_item_price6,
-							product_7=product7,code7 = code7, item_quantity7=quantity7,categories7=categories7,per_item_price7=per_item_price7,
-							product_8=product8,code8 = code8, item_quantity8=quantity8,categories8=categories8,per_item_price8=per_item_price8,
-							product_9=product9,code9 = code9, item_quantity9=quantity9,categories9=categories9,per_item_price9=per_item_price9,
-							product_10=product10,code10 = code10, item_quantity10=quantity10,categories10=categories10,per_item_price10=per_item_price10)
+							product_2=product2,code2 = code2, item_quantity2=quantity2,per_item_price2=per_item_price2,
+							product_3=product3,code3 = code3, item_quantity3=quantity3,per_item_price3=per_item_price3,
+							product_4=product4,code4 = code4, item_quantity4=quantity4,per_item_price4=per_item_price4,
+							product_5=product5,code5 = code5, item_quantity5=quantity5,per_item_price5=per_item_price5,
+							product_6=product6,code6 = code6, item_quantity6=quantity6,per_item_price6=per_item_price6,
+							product_7=product7,code7 = code7, item_quantity7=quantity7,per_item_price7=per_item_price7,
+							product_8=product8,code8 = code8, item_quantity8=quantity8,per_item_price8=per_item_price8,
+							product_9=product9,code9 = code9, item_quantity9=quantity9,per_item_price9=per_item_price9,
+							product_10=product10,code10 = code10, item_quantity10=quantity10,per_item_price10=per_item_price10)
 					if attachment and attachment1:
 						p = Order(order_lead=customer_name,sales_member=user,product_name=product_name,
 							item_quantity=quantity,packaging=packaging,gst_number=gst,statutory=statutory,
@@ -1062,15 +1062,15 @@ def Order_place(request):
 							postal_code=postal_code,ship_country=country,total_amount=total_amount,
 							shipment_priority=shipment_priority,shipment_mode=shipment_preference, 
 							attachment=attachment,attachment1=attachment1,
-							product_2=product2,code2 = code2, item_quantity2=quantity2,categories2=categories2,per_item_price2=per_item_price2,
-							product_3=product3,code3 = code3, item_quantity3=quantity3,categories3=categories3,per_item_price3=per_item_price3,
-							product_4=product4,code4 = code4, item_quantity4=quantity4,categories4=categories4,per_item_price4=per_item_price4,
-							product_5=product5,code5 = code5, item_quantity5=quantity5,categories5=categories5,per_item_price5=per_item_price5,
-							product_6=product6,code6 = code6, item_quantity6=quantity6,categories6=categories6,per_item_price6=per_item_price6,
-							product_7=product7,code7 = code7, item_quantity7=quantity7,categories7=categories7,per_item_price7=per_item_price7,
-							product_8=product8,code8 = code8, item_quantity8=quantity8,categories8=categories8,per_item_price8=per_item_price8,
-							product_9=product9,code9 = code9, item_quantity9=quantity9,categories9=categories9,per_item_price9=per_item_price9,
-							product_10=product10,code10 = code10, item_quantity10=quantity10,categories10=categories10,per_item_price10=per_item_price10)
+							product_2=product2,code2 = code2, item_quantity2=quantity2,per_item_price2=per_item_price2,
+							product_3=product3,code3 = code3, item_quantity3=quantity3,per_item_price3=per_item_price3,
+							product_4=product4,code4 = code4, item_quantity4=quantity4,per_item_price4=per_item_price4,
+							product_5=product5,code5 = code5, item_quantity5=quantity5,per_item_price5=per_item_price5,
+							product_6=product6,code6 = code6, item_quantity6=quantity6,per_item_price6=per_item_price6,
+							product_7=product7,code7 = code7, item_quantity7=quantity7,per_item_price7=per_item_price7,
+							product_8=product8,code8 = code8, item_quantity8=quantity8,per_item_price8=per_item_price8,
+							product_9=product9,code9 = code9, item_quantity9=quantity9,per_item_price9=per_item_price9,
+							product_10=product10,code10 = code10, item_quantity10=quantity10,per_item_price10=per_item_price10)
 					if attachment:
 						p = Order(order_lead=customer_name,sales_member=user,product_name=product_name,
 							item_quantity=quantity,packaging=packaging,gst_number=gst,statutory=statutory,
@@ -1078,30 +1078,30 @@ def Order_place(request):
 							postal_code=postal_code,ship_country=country,total_amount=total_amount,
 							shipment_priority=shipment_priority,shipment_mode=shipment_preference, 
 							attachment=attachment,
-							product_2=product2, code2 = code2, item_quantity2=quantity2,categories2=categories2,per_item_price2=per_item_price2,
-							product_3=product3, code3 = code3, item_quantity3=quantity3,categories3=categories3,per_item_price3=per_item_price3,
-							product_4=product4, code4 = code4, item_quantity4=quantity4,categories4=categories4,per_item_price4=per_item_price4,
-							product_5=product5, code5 = code5, item_quantity5=quantity5,categories5=categories5,per_item_price5=per_item_price5,
-							product_6=product6, code6 = code6, item_quantity6=quantity6,categories6=categories6,per_item_price6=per_item_price6,
-							product_7=product7, code7 = code7, item_quantity7=quantity7,categories7=categories7,per_item_price7=per_item_price7,
-							product_8=product8, code8 = code8, item_quantity8=quantity8,categories8=categories8,per_item_price8=per_item_price8,
-							product_9=product9, code9 = code9, item_quantity9=quantity9,categories9=categories9,per_item_price9=per_item_price9,
-							product_10=product10, code10 = code10, item_quantity10=quantity10,categories10=categories10,per_item_price10=per_item_price10)
+							product_2=product2, code2 = code2, item_quantity2=quantity2,per_item_price2=per_item_price2,
+							product_3=product3, code3 = code3, item_quantity3=quantity3,per_item_price3=per_item_price3,
+							product_4=product4, code4 = code4, item_quantity4=quantity4,per_item_price4=per_item_price4,
+							product_5=product5, code5 = code5, item_quantity5=quantity5,per_item_price5=per_item_price5,
+							product_6=product6, code6 = code6, item_quantity6=quantity6,per_item_price6=per_item_price6,
+							product_7=product7, code7 = code7, item_quantity7=quantity7,per_item_price7=per_item_price7,
+							product_8=product8, code8 = code8, item_quantity8=quantity8,per_item_price8=per_item_price8,
+							product_9=product9, code9 = code9, item_quantity9=quantity9,per_item_price9=per_item_price9,
+							product_10=product10, code10 = code10, item_quantity10=quantity10,per_item_price10=per_item_price10)
 				else:
 					p = Order(order_lead=customer_name,sales_member=user,product_name=product_name,
 						item_quantity=quantity,packaging=packaging,gst_number=gst,statutory=statutory,
 						per_item_price=per_item_price,address=address,street=street,city=city,state=state,
 						postal_code=postal_code,ship_country=country,total_amount=total_amount,
 						shipment_priority=shipment_priority,shipment_mode=shipment_preference,
-						product_2=product2,code2 = code2,item_quantity2=quantity2,categories2=categories2,per_item_price2=per_item_price2,
-							product_3=product3,code3 = code3,item_quantity3=quantity3,categories3=categories3,per_item_price3=per_item_price3,
-							product_4=product4,code4 = code4,item_quantity4=quantity4,categories4=categories4,per_item_price4=per_item_price4,
-							product_5=product5,code5 = code5,item_quantity5=quantity5,categories5=categories5,per_item_price5=per_item_price5,
-							product_6=product6,code6 = code6,item_quantity6=quantity6,categories6=categories6,per_item_price6=per_item_price6,
-							product_7=product7,code7 = code7,item_quantity7=quantity7,categories7=categories7,per_item_price7=per_item_price7,
-							product_8=product8,code8 = code8,item_quantity8=quantity8,categories8=categories8,per_item_price8=per_item_price8,
-							product_9=product9,code9 = code9,item_quantity9=quantity9,categories9=categories9,per_item_price9=per_item_price9,
-							product_10=product10,code10 = code10,item_quantity10=quantity10,categories10=categories10,per_item_price10=per_item_price10)
+						product_2=product2,code2 = code2,item_quantity2=quantity2,per_item_price2=per_item_price2,
+							product_3=product3,code3 = code3,item_quantity3=quantity3,per_item_price3=per_item_price3,
+							product_4=product4,code4 = code4,item_quantity4=quantity4,per_item_price4=per_item_price4,
+							product_5=product5,code5 = code5,item_quantity5=quantity5,per_item_price5=per_item_price5,
+							product_6=product6,code6 = code6,item_quantity6=quantity6,per_item_price6=per_item_price6,
+							product_7=product7,code7 = code7,item_quantity7=quantity7,per_item_price7=per_item_price7,
+							product_8=product8,code8 = code8,item_quantity8=quantity8,per_item_price8=per_item_price8,
+							product_9=product9,code9 = code9,item_quantity9=quantity9,per_item_price9=per_item_price9,
+							product_10=product10,code10 = code10,item_quantity10=quantity10,per_item_price10=per_item_price10)
 					p.save()
 					p.categories.add(cat1)
 				return redirect('/ordered/items')
