@@ -204,7 +204,7 @@
                                                         {{ form.country|add_class:"form-control"|attr:"required"}} {{ form.country.errors }}
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                        <label class="">Description</label>
+                                                        <label class="">Description/Remarks</label>
                                                         <!-- <textarea rows="3" cols="30" class="form-control">
                                                                     </textarea> -->
                                                         {{ form.description|add_class:"form-control"|attr:"rows:3"}} {{ form.description.errors }}
@@ -226,7 +226,7 @@
                                                         {{ form.currency_code|add_class:"form-control"|attr:"rows:3"|attr:"required"}} {{ form.currency.errors }}
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                        <label class="">D.O.B</label>
+                                                        <label class="">Anniversary</label>
                                                         <!-- <textarea rows="3" cols="30" class="form-control">
                                                                     </textarea> -->
                                                         {{ form.dob1|add_class:"form-control"|attr:"rows:3"}} {{ form.dob1.errors }}
@@ -238,28 +238,22 @@
                                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                                 <label>FSSAI Licence</label>
                                                                 <div class="file-upload-inner ts-forms">
-                                                                    {{ form.attachment1|add_class:"b1"|attr:"style:margin-left:0px" }} {{ form.attachment1.errors }}
+                                                                    {{ form.attachment1|add_class:"b1"|attr:"style:margin-left:0px"|attr:"id:file" }} {{ form.attachment1.errors }}
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                                 <label>GST No Certificate</label>
                                                                 <div class="file-upload-inner ts-forms">
-                                                                    {{ form.attachment2|add_class:"b1"|attr:"style:margin-left:0px" }} {{ form.attachment2.errors }}
+                                                                    {{ form.attachment2|add_class:"b1"|attr:"style:margin-left:0px"|attr:"id:fi" }} {{ form.attachment2.errors }}
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                                 <label>I.E.C</label>
                                                                 <div class="file-upload-inner ts-forms">
-                                                                    {{ form.attachment|add_class:"b1"|attr:"style:margin-left:0px" }} {{ form.attachment.errors }}
+                                                                    {{ form.attachment|add_class:"b1"|attr:"style:margin-left:0px"|attr:"id:fil" }} {{ form.attachment.errors }}
                                                                 </div>
                                                             </div>
-                                                              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"><br>
-                                                        <label class="">Description</label>
-                                                        <!-- <textarea rows="3" cols="40" class="form-control">
-                                                                </textarea> -->
-                                                        {{ form.description|add_class:"form-control"|attr:"rows:3"|attr:"cols:40"}} {{ form.description.errors }}
-                                                    </div>
-
+                                                              
                                                         </div>
                                                     </div>
                                                     <div class="form-group-inner">
@@ -290,6 +284,28 @@
             </div>
         </div>
     </div>
-
+<script>
+    var uploadField = document.getElementById("file");
+uploadField.onchange = function() {
+   if(this.files[0].size > 4097152){
+      alert("File size is too big!");
+      this.value = "";
+   };
+};
+var uploadField1 = document.getElementById("fi");
+uploadField1.onchange = function() {
+   if(this.files[0].size > 4097152){
+      alert("File size is too big!");
+      this.value = "";
+   };
+};
+var uploadField2 = document.getElementById("fil");
+uploadField2.onchange = function() {
+   if(this.files[0].size > 4097152){
+      alert("File size is too big!");
+      this.value = "";
+   };
+};
+</script>
 
     {% endblock %}

@@ -15,10 +15,10 @@ $(document).ready(function() {
             // console.log(response);
             a = '';
             if (response) {
-                // console.log(response);
+                console.log(response.date);
                 for (i = 0; i < response.date.length; i++) {
                     a = a + '<li><span class="message-serial message-cl-one ">'
-                    a = a + (i+1) + '</span>'+ response.title[i] + ' <span class="message-info ">'
+                    a = a + (i+1) + '</span>'+ response.title[i] +'('+response.date[i]+')'+' <span class="message-info ">'
                     a = a + '</span> <span class="message-time ">'
                     a = a + response.time[i] + '</span>'+'</li>'
                 }
@@ -48,7 +48,10 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            alert("Meeting generated")
+            
+            alert("Meeting generated");
+            $('#InformationproModalhdbgcl').modal('hide');
+            // $("#InformationproModalhdbgcl").close();
         }
     });
     });

@@ -169,7 +169,7 @@
                                                     <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                     <select id="p_name" name="product_name" class="form-control" required>
                                                             
-                                                            <option selected="True"></option>
+                                                            <option selected="True" value="">------</option>
                                                              {% for product in products %}
                                                             <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                             {% endfor %}
@@ -188,7 +188,7 @@
                                                 <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                     <label class="">UOM<span style="color:  #b30000">*</label>
                                                     <select name="uom" id="uom" class="form-control" required>
-                                                        <option>----Select----</option>
+                                                        <option value="">----Select----</option>
                                                         <option>N/A</option>
                                                         <option value="KGS">KGS</option>
                                                         <option value="LITRES">LITRES</option>
@@ -202,7 +202,7 @@
                                                 <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                     <label class="">Solubility<span style="color:  #b30000">*</label>
                                                     <select class="form-control" id="sol" name="solubility" required>
-                                                        <option>----Select----</option>
+                                                        <option value="">----Select----</option>
                                                         <option>N/A</option>
                                                         <option value="Oil Soluable">Oil Soluable</option>
                                                         <option value="Water Soluable">Water Soluable</option>
@@ -212,7 +212,7 @@
                                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                     <label class="">Packaging<span style="color:  #b30000">*</label>
                                                     <select name="packaging" class="form-control" required>
-                                                            <option selected>----Select---</option>
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -221,20 +221,7 @@
                                                         </select>
                                                 </div>
 
-                                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                    <label class="">Categories<span style="color:  #b30000">*</label>
-                                                    <select name="categories" class="form-control" required>
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option value="spf">SPF</option>
-                                                        </select>
-                                                </div>
+                                                
 
                                             </div>
                                         </div>
@@ -259,7 +246,7 @@
                                                         <label class="">Product Name<span style="color:  #b30000">*</span></label>
 
                                                         <select id="p_name2" name="product_name2" class="form-control">
-                                                            <option selected="True"></option>
+                                                            <option selected="True" value="">-------</option>
                                                             {% for product in products %}
                                                             <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                             {% endfor %}
@@ -268,7 +255,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity<span style="color:  #b30000">*</span></label>
-                                                        <input type="text" name="quantity2" class="form-control" />
+                                                        <input type="text" id="quantity2" name="quantity2" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -278,7 +265,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM<span style="color:  #b30000">*</span></label>
                                                         <select name="uom2" id="uom2" class="form-control">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="KGS">KGS</option>
                                                             <option value="LITRES">LITRES</option>
@@ -292,7 +279,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility<span style="color:  #b30000">*</span></label>
                                                         <select class="form-control" id="solu2" name="solubility2">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -300,8 +287,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging<span style="color:  #b30000">*</span></label>
-                                                        <select name="packaging2" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging2" id="packaging2" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -309,20 +296,7 @@
                                                             <option>FIBER DRUM OF 25KGS</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories<span style="color:  #b30000">*</span></label>
-                                                        <select name="categories2" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option>SPF</option>
-                                                        </select>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -347,7 +321,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name3" name="product_name3" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value="">------</option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -356,7 +330,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity<span style="color:  #b30000">*</span></label>
-                                                        <input type="text" name="quantity3" class="form-control" />
+                                                        <input type="text" id="quantity3" name="quantity3" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -366,7 +340,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM<span style="color:  #b30000">*</span></label>
                                                         <select name="uom3" id="uom3" class="form-control" required>
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -380,7 +354,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility<span style="color:  #b30000">*</span></label>
                                                         <select class="form-control" id="sol3" name="solubility3">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -389,8 +363,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging<span style="color:  #b30000">*</span></label>
-                                                        <select name="packaging3" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging3" id="packaging3" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -400,21 +374,7 @@
 
                                                     </div>
 
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories<span style="color:  #b30000">*</span></label>
-                                                        <select name="categories3" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option>SPF</option>
-                                                        </select>
-
-                                                    </div>
+                                                    
 
                                                 </div>
                                             </div>
@@ -440,7 +400,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name4" name="product_name4" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value="">------</option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -449,7 +409,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity</label>
-                                                        <input type="text" name="quantity4" class="form-control" />
+                                                        <input type="text" id="quantity4" name="quantity4" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -459,7 +419,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom4" id="uom4" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -473,7 +433,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol4" name="solubility4">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -482,8 +442,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging4" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging4" id="packaging4" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -493,21 +453,7 @@
 
                                                     </div>
 
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories4" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option>SPF</option>
-                                                        </select>
-
-                                                    </div>
+                                                    
 
                                                 </div>
                                             </div>
@@ -533,7 +479,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name5" name="product_name5" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value="">------</option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -542,7 +488,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity</label>
-                                                        <input type="text" name="quantity5" class="form-control" />
+                                                        <input type="text" id="quantity5" name="quantity5" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -552,7 +498,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom5" id="uom5" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -566,7 +512,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol5" name="solubility5">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -575,8 +521,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging5" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging5" id="packaging5" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -586,21 +532,7 @@
 
                                                     </div>
 
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories5" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option>SPF</option>
-                                                        </select>
-
-                                                    </div>
+                                                    
 
                                                 </div>
                                             </div>
@@ -626,7 +558,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name6" name="product_name6" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value=""></option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -635,7 +567,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity</label>
-                                                        <input type="text" name="quantity6" class="form-control" />
+                                                        <input type="text" id="quantity6" name="quantity6" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -645,7 +577,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom6" id="uom6" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -659,7 +591,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol6" name="solubility6">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -668,8 +600,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging6" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging6" id="packaging6" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -678,23 +610,6 @@
                                                         </select>
 
                                                     </div>
-
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories6" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option value="spf">SPF</option>
-                                                        </select>
-
-                                                    </div>
-
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -719,7 +634,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name7" name="product_name7" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value="">------</option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -728,7 +643,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity</label>
-                                                        <input type="text" name="quantity7" class="form-control" />
+                                                        <input type="text" id="quantity7" name="quantity7" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -738,7 +653,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom7" id="uom7" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -752,7 +667,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol7" name="solubility7">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -761,8 +676,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging7" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging7" id="packaging7" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -771,23 +686,6 @@
                                                         </select>
 
                                                     </div>
-
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories7" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option>SPF</option>
-                                                        </select>
-
-                                                    </div>
-
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -812,7 +710,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name8" name="product_name8" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value="">------</option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -821,7 +719,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity</label>
-                                                        <input type="text" name="quantity8" class="form-control" />
+                                                        <input type="text" id="quantity8" name="quantity8" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -831,7 +729,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom8" id="uom8" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -845,7 +743,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol8" name="solubility8">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -854,29 +752,13 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging8" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging8" id="packaging8" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
                                                             <option>50 KGS HDPE CAN</option>
                                                             <option>FIBER DRUM OF 25KGS</option>
-                                                        </select>
-
-                                                    </div>
-
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories8" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option>SPF</option>
                                                         </select>
 
                                                     </div>
@@ -905,7 +787,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name9" name="product_name9" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value=""></option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -914,7 +796,7 @@
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Item Quantity</label>
-                                                        <input type="text" name="quantity9" class="form-control" />
+                                                        <input type="text" id="quantity9" name="quantity9" class="form-control" />
 
                                                     </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
@@ -924,7 +806,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom9" id="uom9" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -938,7 +820,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol9" name="solubility9">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -947,8 +829,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging9" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging9" id="packaging9" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -957,23 +839,6 @@
                                                         </select>
 
                                                     </div>
-
-                                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories9" class="form-control">
-                                                            <option>----Select----</option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option>Backery Customers</option><option>Cookies</option>
-                                                            <option value="spf">SPF</option>
-                                                        </select>
-
-                                                    </div>
-
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -998,7 +863,7 @@
                                                         <!-- <input name="product_name" type="text" class="form-control" required/> -->
                                                         <select id="p_name10" name="product_name10" class="form-control">
                                                     
-                                                    <option selected="True"></option>
+                                                    <option selected="True" value="">------</option>
                                                      {% for product in products %}
                                                     <option value="{{ product.id }}" id="{{ product.id }}">{{ product }}</option>
                                                     {% endfor %}
@@ -1017,7 +882,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">UOM</label>
                                                         <select name="uom10" id="uom10" class="form-control">
-                                                    <option>----Select----</option>
+                                                    <option value="">----Select----</option>
                                                     <option>N/A</option>
                                                     <option value="KGS">KGS</option>
                                                     <option value="LITRES">LITRES</option>
@@ -1031,7 +896,7 @@
                                                     <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
                                                         <label class="">Solubility</label>
                                                         <select class="form-control" id="sol10" name="solubility10">
-                                                            <option>----Select----</option>
+                                                            <option value="">----Select----</option>
                                                             <option>N/A</option>
                                                             <option value="Oil Soluable">Oil Soluable</option>
                                                             <option value="Water Soluable">Water Soluable</option>
@@ -1040,8 +905,8 @@
                                                     </div>
                                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                         <label class="">Packaging</label>
-                                                        <select name="packaging10" class="form-control">
-                                                            <option selected>----Select---</option>
+                                                        <select name="packaging10" id="packaging10" class="form-control">
+                                                            <option selected value="">----Select---</option>
                                                             <option>KILO GRAM</option>
                                                             <option>5 KGS HDPE CAN</option>
                                                             <option>25 KGS HDPE CAN</option>
@@ -1050,24 +915,6 @@
                                                         </select>
 
                                                     </div>
-
-                                                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                                                        <label class="">Categories</label>
-                                                        <select name="categories10" class="form-control">
-                                                            <option></option>
-                                                            <option>Bakery</option>
-                                                            <option>Ice-Creams</option>
-                                                            <option>Confectionaries</option>
-                                                            <option>Pharma</option>
-                                                            <option>Beverages</option>
-                                                            <option >Buiscuits</option>
-                                                            <option >Backery Customers</option>
-                                                            <option >Cookies</option>
-                                                            <option >SPF</option>
-                                                        </select>
-
-                                                    </div>
-
                                                 </div>
                                             </div>
                                             <!-- 
@@ -1082,20 +929,20 @@
                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                             <label>FSSAI Licence</label>
                                             <div class="file-upload-inner ts-forms">
-                                                <input type="file" name="attachment" class="b1">
+                                                <input type="file" name="attachment" class="b1" id="file">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                             <label>GST No Certificate</label>
                                             <div class="file-upload-inner ts-forms">
-                                                <input type="file" name="attachment1" class="b1">
+                                                <input type="file" name="attachment1" class="b1" id="fi">
 
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                             <label>I.E.C</label>
                                             <div class="file-upload-inner ts-forms">
-                                                <input type="file" name="attachment2" class="b1">
+                                                <input type="file" name="attachment2" class="b1" id="fil">
 
                                             </div>
                                         </div>
@@ -1205,6 +1052,27 @@
             $("#onOff11").show();
         });
     });
+    var uploadField = document.getElementById("file");
+uploadField.onchange = function() {
+   if(this.files[0].size > 4097152){
+      alert("File size is too big!");
+      this.value = "";
+   };
+};
+var uploadField1 = document.getElementById("fi");
+uploadField1.onchange = function() {
+   if(this.files[0].size > 4097152){
+      alert("File size is too big!");
+      this.value = "";
+   };
+};
+var uploadField2 = document.getElementById("fil");
+uploadField2.onchange = function() {
+   if(this.files[0].size > 4097152){
+      alert("File size is too big!");
+      this.value = "";
+   };
+};
 </script>
 
 {% endblock %}

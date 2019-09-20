@@ -70,8 +70,19 @@ $(document).ready(function() {
     $("#p_name2").change(function (){
     // var code = $(this).val();
     var a = document.getElementById("p_name2").value;
-    // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity2").prop("required",true);
+        $("#pup2").prop("required",true);
+        $("#uom2").prop("required",true);
+        $("#solu2").prop("required",true);
+    }
+    else{
+        $("#quantity2").prop("required",false);
+        $("#pup2").prop("required",false);
+        $("#uom2").prop("required",false);
+        $("#solu2").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -80,7 +91,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response.solubility);
+            // console.log(response.solubility);
             // console.log(response.data[0].item_name_id);
             $('#uom2').val(response.uom);
             $('#solu2').val(response.solubility);
@@ -92,6 +103,11 @@ $(document).ready(function() {
 
            
 
+        },
+        error: function(){
+            $('#uom2').val('');
+            $('#solu2').val('');
+            $('#pup2').val('');
         }
     });
 });
@@ -101,7 +117,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name3").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity3").prop("required",true);
+        $("#pup3").prop("required",true);
+        $("#uom3").prop("required",true);
+        $("#sol3").prop("required",true);
+        $("#packaging3").prop("required",true);
+    }
+    else{
+        $("#quantity3").prop("required",false);
+        $("#pup3").prop("required",false);
+        $("#uom3").prop("required",false);
+        $("#sol3").prop("required",false);
+        $("#packaging3").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -110,7 +140,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response);
+            // console.log(response);
             // console.log(response.data[0].item_name_id);
             $('#uom3').val(response.uom);
             $('#sol3').val(response.solubility);
@@ -120,8 +150,11 @@ $(document).ready(function() {
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
 
-           
-
+        },
+        error: function(){
+            $('#uom3').val('');
+            $('#sol3').val('');
+            $('#pup3').val('');
         }
     });
 });
@@ -131,7 +164,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name4").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity4").prop("required",true);
+        $("#pup4").prop("required",true);
+        $("#uom4").prop("required",true);
+        $("#sol4").prop("required",true);
+        $("#packaging4").prop("required",true);
+    }
+    else{
+        $("#quantity4").prop("required",false);
+        $("#pup4").prop("required",false);
+        $("#uom4").prop("required",false);
+        $("#sol4").prop("required",false);
+        $("#packaging4").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -140,7 +187,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response);
+            // console.log(response);
             // console.log(response.data[0].item_name_id);
             $('#uom4').val(response.uom);
             $('#sol4').val(response.solubility);
@@ -152,6 +199,11 @@ $(document).ready(function() {
 
            
 
+        },
+        error: function(){
+            $('#uom4').val('');
+            $('#sol4').val('');
+            $('#pup4').val('');
         }
     });
 });
@@ -162,7 +214,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name5").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity5").prop("required",true);
+        $("#pup5").prop("required",true);
+        $("#uom5").prop("required",true);
+        $("#sol5").prop("required",true);
+        $("#packaging5").prop("required",true);
+    }
+    else{
+        $("#quantity5").prop("required",false);
+        $("#pup5").prop("required",false);
+        $("#uom5").prop("required",false);
+        $("#sol5").prop("required",false);
+        $("#packaging5").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -171,7 +237,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response);
+            // console.log(response);
             // console.log(response.data[0].item_name_id);
             $('#uom5').val(response.uom);
             $('#sol5').val(response.solubility);
@@ -181,8 +247,11 @@ $(document).ready(function() {
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
 
-           
-
+        },
+        error: function(){
+            $('#uom5').val('');
+            $('#sol5').val('');
+            $('#pup5').val('');
         }
     });
 });
@@ -193,6 +262,20 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name6").value;
     // var b = document.getElementById("p1");
+    if (a.length>0){
+        $("#quantity6").prop("required",true);
+        $("#pup6").prop("required",true);
+        $("#uom6").prop("required",true);
+        $("#sol6").prop("required",true);
+        $("#packaging6").prop("required",true);
+    }
+    else{
+        $("#quantity6").prop("required",false);
+        $("#pup6").prop("required",false);
+        $("#uom6").prop("required",false);
+        $("#sol6").prop("required",false);
+        $("#packaging6").prop("required",false);
+    };
     console.log(a);
     $.ajax({
         type: 'GET',
@@ -212,8 +295,11 @@ $(document).ready(function() {
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
 
-           
-
+        },
+        error: function(){
+            $('#uom6').val('');
+            $('#sol6').val('');
+            $('#pup6').val('');
         }
     });
 });
@@ -223,7 +309,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name7").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity7").prop("required",true);
+        $("#pup7").prop("required",true);
+        $("#uom7").prop("required",true);
+        $("#sol7").prop("required",true);
+        $("#packaging7").prop("required",true);
+    }
+    else{
+        $("#quantity7").prop("required",false);
+        $("#pup7").prop("required",false);
+        $("#uom7").prop("required",false);
+        $("#sol7").prop("required",false);
+        $("#packaging7").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -232,7 +332,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response);
+            // console.log(response);
             // console.log(response.data[0].item_name_id);
             $('#uom7').val(response.uom);
             $('#sol7').val(response.solubility);
@@ -242,8 +342,11 @@ $(document).ready(function() {
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
 
-           
-
+        },
+        error: function(){
+            $('#uom7').val('');
+            $('#sol7').val('');
+            $('#pup7').val('');
         }
     });
 });
@@ -253,7 +356,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name8").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity8").prop("required",true);
+        $("#pup8").prop("required",true);
+        $("#uom8").prop("required",true);
+        $("#sol8").prop("required",true);
+        $("#packaging8").prop("required",true);
+    }
+    else{
+        $("#quantity8").prop("required",false);
+        $("#pup8").prop("required",false);
+        $("#uom8").prop("required",false);
+        $("#sol8").prop("required",false);
+        $("#packaging8").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -262,7 +379,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response);
+            // console.log(response);
             // console.log(response.data[0].item_name_id);
             $('#uom8').val(response.uom);
             $('#sol8').val(response.solubility);
@@ -271,9 +388,11 @@ $(document).ready(function() {
            pup8.value = response.price;
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
-
-           
-
+        },
+        error: function(){
+            $('#uom8').val('');
+            $('#sol8').val('');
+            $('#pup8').val('');
         }
     });
 });
@@ -284,7 +403,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name9").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity9").prop("required",true);
+        $("#pup9").prop("required",true);
+        $("#uom9").prop("required",true);
+        $("#sol9").prop("required",true);
+        $("#packaging9").prop("required",true);
+    }
+    else{
+        $("#quantity9").prop("required",false);
+        $("#pup9").prop("required",false);
+        $("#uom9").prop("required",false);
+        $("#sol9").prop("required",false);
+        $("#packaging9").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -302,9 +435,11 @@ $(document).ready(function() {
            pup9.value = response.price;
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
-
-           
-
+        },
+        error: function(){
+            $('#uom9').val('');
+            $('#sol9').val('');
+            $('#pup9').val('');
         }
     });
 });
@@ -315,7 +450,21 @@ $(document).ready(function() {
     // var code = $(this).val();
     var a = document.getElementById("p_name10").value;
     // var b = document.getElementById("p1");
-    console.log(a);
+    if (a.length>0){
+        $("#quantity10").prop("required",true);
+        $("#pup10").prop("required",true);
+        $("#uom10").prop("required",true);
+        $("#sol10").prop("required",true);
+        $("#packaging10").prop("required",true);
+    }
+    else{
+        $("#quantity10").prop("required",false);
+        $("#pup10").prop("required",false);
+        $("#uom10").prop("required",false);
+        $("#sol10").prop("required",false);
+        $("#packaging10").prop("required",false);
+    };
+    // console.log(a);
     $.ajax({
         type: 'GET',
         url:'/get/product',
@@ -324,7 +473,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(response){
-            console.log(response);
+            // console.log(response);
             // console.log(response.data[0].item_name_id);
             $('#uom10').val(response.uom);
             $('#sol10').val(response.solubility);
@@ -333,9 +482,11 @@ $(document).ready(function() {
            pup10.value = response.price;
            // pack.value = response.packaging;
            // uom_id.value = response.uom;
-
-           
-
+        },
+        error: function(){
+            $('#uom10').val('');
+            $('#sol10').val('');
+            $('#pup10').val('');
         }
     });
 });

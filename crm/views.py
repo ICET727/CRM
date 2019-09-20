@@ -1492,7 +1492,7 @@ def meetingpost(request):
 	return JsonResponse({"data":True})
 
 def meeting_list(request):
-	meeting = Meeting.objects.filter(date=now.date())
+	meeting = Meeting.objects.filter(date__gte=now.date())
 	t = []
 	s_d = []
 	e_d = []
